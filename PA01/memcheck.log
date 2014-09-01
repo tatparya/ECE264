@@ -1,0 +1,80 @@
+==14105== Memcheck, a memory error detector
+==14105== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==14105== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==14105== Command: ./pa01
+==14105== Parent PID: 10219
+==14105== 
+--14105-- 
+--14105-- Valgrind options:
+--14105--    --tool=memcheck
+--14105--    --leak-check=full
+--14105--    --verbose
+--14105--    --log-file=memcheck.log
+--14105-- Contents of /proc/version:
+--14105--   Linux version 3.13.0-24-generic (buildd@panlong) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #46-Ubuntu SMP Thu Apr 10 19:11:08 UTC 2014
+--14105-- Arch and hwcaps: AMD64, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--14105-- Page sizes: currently 4096, max supported 4096
+--14105-- Valgrind library directory: /usr/lib/valgrind
+--14105-- Reading syms from /home/tatparya/ECE264/solutions/ECE264_sol/PA01/pa01
+--14105-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--14105--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--14105--   .. CRC mismatch (computed 4cbae35e wanted 8d683c31)
+--14105--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--14105--   .. CRC is valid
+--14105-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--14105--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--14105--   .. CRC mismatch (computed 37cdde19 wanted adc367dd)
+--14105--    object doesn't have a symbol table
+--14105--    object doesn't have a dynamic symbol table
+--14105-- Scheduler: using generic scheduler lock implementation.
+--14105-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==14105== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-14105-by-tatparya-on-???
+==14105== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-14105-by-tatparya-on-???
+==14105== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-14105-by-tatparya-on-???
+==14105== 
+==14105== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==14105== don't want to do, unless you know exactly what you're doing,
+==14105== or are doing some strange experiment):
+==14105==   /usr/lib/valgrind/../../bin/vgdb --pid=14105 ...command...
+==14105== 
+==14105== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==14105==   /path/to/gdb ./pa01
+==14105== and then give GDB the following command
+==14105==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=14105
+==14105== --pid is optional if only one valgrind process is running
+==14105== 
+--14105-- REDIR: 0x4019ca0 (strlen) redirected to 0x38068331 (???)
+--14105-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--14105--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--14105--   .. CRC mismatch (computed 329d6860 wanted c0186920)
+--14105--    object doesn't have a symbol table
+--14105-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--14105--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--14105--   .. CRC mismatch (computed 1fb85af8 wanted 2e9e3c16)
+--14105--    object doesn't have a symbol table
+==14105== WARNING: new redirection conflicts with existing -- ignoring it
+--14105--     old: 0x04019ca0 (strlen              ) R-> (0000.0) 0x38068331 ???
+--14105--     new: 0x04019ca0 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--14105-- REDIR: 0x4019a50 (index) redirected to 0x4c2dd50 (index)
+--14105-- REDIR: 0x4019c70 (strcmp) redirected to 0x4c2f2f0 (strcmp)
+--14105-- REDIR: 0x401a9c0 (mempcpy) redirected to 0x4c31da0 (mempcpy)
+--14105-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--14105--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--14105--   .. CRC mismatch (computed e7228afa wanted 93ff6981)
+--14105--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--14105--   .. CRC is valid
+--14105-- REDIR: 0x4ec47e0 (strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--14105-- REDIR: 0x4ec6ad0 (strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--14105-- REDIR: 0x4ec3fb0 (memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--14105-- REDIR: 0x4ec2240 (rindex) redirected to 0x4c2da30 (rindex)
+--14105-- REDIR: 0x4ec0540 (strlen) redirected to 0x4c2e0e0 (strlen)
+--14105-- REDIR: 0x4eba870 (free) redirected to 0x4c2bd80 (free)
+==14105== 
+==14105== HEAP SUMMARY:
+==14105==     in use at exit: 0 bytes in 0 blocks
+==14105==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==14105== 
+==14105== All heap blocks were freed -- no leaks are possible
+==14105== 
+==14105== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==14105== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
