@@ -1,0 +1,21 @@
+Breakpoint 1 at 0x400959: file pa01.c, line 96.
+Starting program: /home/tatparya/ECE264/solutions/ECE264_sol/PA01/pa01 
+
+Breakpoint 1, main (argc=1, argv=0x7fffffffded8) at pa01.c:98
+98	    printf("Welcome to ECE264, we are working on PA01.\n\n");
+100		printf("Test_00_arraySun() here\n\n");
+101	    test_00_arraySum();
+test_00_arraySum () at pa01.c:40
+40	    printf("Testing arraySum(...)\n");
+43	    int array1[] = { -4, -1, 0, 1, 5, 10, 20, 21 };
+44	    int len1 = 8;
+45	    int expected1 = 52;
+46	    test_arraySum(array1, len1, expected1);
+50	    int len2 = 0;
+51	    int expected2 = 0;
+52	    test_arraySum(array2, len2, expected2);
+$1 = 8
+$2 = 52
+Continuing.
+[Inferior 1 (process 26282) exited normally]
+The program is not being run.

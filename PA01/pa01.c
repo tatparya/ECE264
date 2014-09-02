@@ -1,4 +1,4 @@
- 
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -18,6 +18,7 @@ void printArray(int * array, int len)
 	}
     }
     printf("}");
+    printf("\n");
     // If we don't include a '\n' character, then we need to 
     // include this line to ensure that our output is immediately
     // printed out output.
@@ -95,10 +96,12 @@ void test_01_arrayCountNegative()
 int main(int argc, char * * argv)
 {
     printf("Welcome to ECE264, we are working on PA01.\n\n");
-
-    // Uncomment to run two example (incomplete) testcases.
-    //test_00_arraySum();
-    //test_01_arrayCountNegative();
+	
+	printf("Test_00_arraySun() here\n\n");
+    test_00_arraySum();
+    
+	printf("Test_01_araryCountNegative() here\n\n");
+    test_01_arrayCountNegative();
 
     return EXIT_SUCCESS;
 }
