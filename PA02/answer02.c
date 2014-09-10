@@ -37,10 +37,16 @@ char * my_strchr(const char * str, int ch)
 {
 	int i=0;
 	int found = 0;
+	int empty = 0;
 
 	do
 	{
-		if ( str[i] == ch )
+		
+		if ( str[i] == '\0' )
+		{
+			empty++;
+		}			
+		else if ( str[i] == ch )
 		{
 			found++;
 		}
@@ -48,10 +54,21 @@ char * my_strchr(const char * str, int ch)
 		{
 			i++;
 		}
+
 	}
 	while ( str[i] != '\0' && !found );
 
-	if ( found )
+	if ( ch == '\0' )
+	{
+		return "";
+	}
+	
+	else if ( empty )
+	{
+		return NULL;
+	}
+
+	else if ( found )
 	{	
 		return ( char * ) &str[i];
 	}
@@ -65,12 +82,16 @@ char * my_strrchr(const char * str, int ch)
 {
 	int i=0;
 	int found=0;
-
+	int empty=0;
 	do
-	{
+	{		
+		if ( str[i] == '\0' )
+		{
+			empty++;
+		}		
 		i++;
 	}
-	while ( str[i] != '\0' );
+	while ( str[i] != '\0' && !empty );
 
 	while ( i > 0 && !found )
 	{
@@ -84,20 +105,24 @@ char * my_strrchr(const char * str, int ch)
 		}
 	}
 	
-	if ( found )
+	if ( empty )
+	{
+		return NULL;
+	}	
+	else if ( found )
 	{		
 		return ( char * ) &str[i];
 	}
 	else
 	{
-		return NULL;
+		return "";
 	}
 }
 
 char * my_strstr(const char * haystack, const char * needle)
 {
 	int i=0;
-	int empty=0;	// To check the number of elements in the string
+	int notEmpty=0;	// To check the number of elements in the string
 	int k;
 	int l;
 	int found=0;
@@ -114,23 +139,25 @@ char * my_strstr(const char * haystack, const char * needle)
 			{
 				same--;
 			}
+			l++;
 			k++;
+
 		}
 		if ( same )
 		{
 			found++;
 		}
 		i++;
-		empty++;
+		notEmpty++;
 	}
 
-	if ( empty )
+	if ( !notEmpty )
 	{
 		return ( char* ) haystack;
 	}
 	else if ( found )
 	{		
-		return ( char * ) &haystack[i];
+		return ( char * ) &haystack[i-1];
 	}
 	else 
 	{
