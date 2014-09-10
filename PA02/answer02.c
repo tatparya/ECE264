@@ -97,29 +97,94 @@ char * my_strrchr(const char * str, int ch)
 char * my_strstr(const char * haystack, const char * needle)
 {
 	int i=0;
-	int k=0;
-	int l=0;
+	int empty=0;	// To check the number of elements in the string
+	int k;
+	int l;
 	int found=0;
+	int same;
 
-	while ( haystack[i] != '\0' )
+	while ( haystack[i] != '\0' && !found )
 	{
-		while ( needle[i] != '\0' )
+		k = 0;
+		same=1;
+		l=i;
+		while ( needle[k] != '\0' && same )
+		{		
+			if (  needle[k] != haystack[l] )
+			{
+				same--;
+			}
+			k++;
+		}
+		if ( same )
 		{
-			if
+			found++;
+		}
+		i++;
+		num++;
+	}
+
+	if ( empty )
+	{
+		return haystack;
+	}
+	else if ( found )
+	{
+		return haystack[i];
+	}
+	else 
+	{
+		return NULL;
+	}
 }
+
 char * my_strcpy(char * dest, const char * src)
 {
+	int i=0;
 
+	do
+	{
+		dest[i] = src[i];
+	}
+	while ( src[i] != '\0' );
+
+	return dest;
 }
 
 char * my_strcat(char * dest, const char * src)
 {
 
+	int i=0;
+	int j=0;
+
+	while ( dest[i] != '\0' )
+	{
+		i++;
+	}
+	do
+	{
+		dest[i] = src[j];
+		j++;
+		i++;
+	}
+	while ( src[j] != '\0' );
+	
+	return dest;
 }
 
 int my_isspace(int ch)
 {
+	res;
 
+	if ( ch == ' ' || ch == '\f' || ch == '\n' || ch == '\t' || ch == '\v' )
+	{
+		res = 1;
+	}
+	else 
+	{
+		res = 0;
+	}
+	return res;
 }
 
 int my_atoi(const char * str)
