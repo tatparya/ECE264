@@ -38,26 +38,33 @@ int main(int argc, char * * argv)
     printf("my_strchr(\"%s\", 'l') = %s\n", s1, my_strchr(s1, 'l'));
     printf("my_strchr(\"%s\", 'o') = %s\n", s2, my_strchr(s2, 'o'));
     printf("my_strchr(\"%s\", '\\0') = %s\n", s3, my_strchr(s3, '\0'));
+    printf("my_strchr(\"%s\", '\\0') = %s\n", s2, my_strchr(s2, '\0'));
+    printf("my_strchr(\"%s\", '\\0') = %s\n", s2, my_strchr(s2, ' '));
 
 	// -- my_strrchr, should be: "ld!", "(null)", and ""
-    printf("my_strrchr(\"%s\", 'l') = %s\n", s1, my_strchr(s1, 'l'));
-    printf("my_strrchr(\"%s\", 'o') = %s\n", s2, my_strchr(s2, 'o'));
-    printf("my_strrchr(\"%s\", '\\0') = %s\n", s3, my_strchr(s3, '\0'));
+    printf("my_strrchr(\"%s\", 'l') = %s\n", s1, my_strrchr(s1, 'l'));
+    printf("my_strrchr(\"%s\", 'o') = %s\n", s2, my_strrchr(s2, 'o'));
+    printf("my_strrchr(\"%s\", '\\0') = %s\n", s3, my_strrchr(s3, '\0'));
+    printf("my_strrchr(\"%s\", '\\0') = %s\n", s2, my_strrchr(s2, '\0'));
+    printf("my_strrchr(\"%s\", '\\0') = %s\n", s2, my_strrchr(s2, ' '));
 
     // -- my_strstr, should be: "World!", "Hello World!", "(null)"
-    printf("my_strstr(\"%s\", \"World\") = %s\n", s1, my_strstr(s1, "World"));
+    printf("mny_strstr(\"%s\", \"World\") = %s\n", s1, my_strstr(s1, "World"));
     printf("my_strstr(\"%s\", \"\") = %s\n", s1, my_strstr(s1, ""));
+	printf("my_strstr(\"%s\", \"\") = %s\n", s2, my_strstr(s2, "hello"));
     printf("my_strstr(\"%s\", \"hello\") = %s\n", s1, my_strstr(s1, "hello"));
 
     // -- my_strcpy. For this function you need a buffer where you
     // copy the string to. 
     char buffer[BUFFER_LEN];
-    my_strcpy(buffer, s1);
-    printf("my_strcpy(buffer, \"%s\"), buffer = \"%s\"\n", s1, buffer);
-    my_strcpy(buffer, s2);
-    printf("my_strcpy(buffer, \"%s\"), buffer = \"%s\"\n", s2, buffer);
-    my_strcpy(buffer, s3);
-    printf("my_strcpy(buffer, \"%s\"), buffer = \"%s\"\n", s3, buffer);
+    my_strcpy(buffer, "Hello World");
+    printf("my_strcpy(buffer, \"%s\"), buffer = \"%s\"\n", "Hello World", buffer);
+    my_strcpy(buffer, "");
+    printf("my_strcpy(buffer, \"%s\"), buffer = \"%s\"\n", "", buffer);
+    my_strcpy(buffer, "l");
+    printf("my_strcpy(buffer, \"%s\"), buffer = \"%s\"\n", "l", buffer);
+    my_strcpy(buffer, "The quick brown fox jumped over the lazy dog.");
+    printf("my_strcpy(buffer, \"%s\"), buffer = \"%s\"\n", "The quick brown fox jumped over the lazy dog.", buffer);
 
     // -- my_strcat. You will have to do this yourself... just
     // look at my_strcpy for an example, and go from there.
@@ -65,6 +72,7 @@ int main(int argc, char * * argv)
     // -- my_isspace. You will have to do this for yourself.
 
     // -- my_atoi. You will have to do this for yourself.
+	printf ( %s, my_atoi("15th of March would be the ides.") );
 
     return EXIT_SUCCESS;
 }

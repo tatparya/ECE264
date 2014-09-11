@@ -58,14 +58,9 @@ char * my_strchr(const char * str, int ch)
 	}
 	while ( str[i] != '\0' && !found );
 
-	if ( ch == '\0' )
+	if ( str[i] == '\0' && ch =='\0' )
 	{
-		return "";
-	}
-	
-	else if ( empty )
-	{
-		return NULL;
+		return ( char * ) &str[i] ;
 	}
 
 	else if ( found )
@@ -83,6 +78,12 @@ char * my_strrchr(const char * str, int ch)
 	int i=0;
 	int found=0;
 	int empty=0;
+	
+	if ( str[i] == '\0' && ch != '\0' )
+	{
+		return NULL ;
+	}
+	
 	do
 	{		
 		if ( str[i] == '\0' )
@@ -93,7 +94,7 @@ char * my_strrchr(const char * str, int ch)
 	}
 	while ( str[i] != '\0' && !empty );
 
-	while ( i > 0 && !found )
+	while ( i >= 0 && !found )
 	{
 		if ( str[i] == ch )
 		{
@@ -105,18 +106,38 @@ char * my_strrchr(const char * str, int ch)
 		}
 	}
 	
-	if ( empty )
+	if ( str[i] == '\0' && ch =='\0' )
+	{
+		return ( char * ) &str[i] ;
+	}
+
+	else if ( found )
+	{	
+		return ( char * ) &str[i];
+	}
+	else
 	{
 		return NULL;
-	}	
+	}
+		
+	/*
+		
+
+	else if ( str[i] == '\0' && ch != '\0' )
+	{
+		return NULL;
+	}
+	
 	else if ( found )
 	{		
 		return ( char * ) &str[i];
 	}
 	else
 	{
-		return "";
+		return NULL;
 	}
+	*/
+
 }
 
 char * my_strstr(const char * haystack, const char * needle)
@@ -149,12 +170,29 @@ char * my_strstr(const char * haystack, const char * needle)
 		}
 		i++;
 		notEmpty++;
-	}
+	}	
 
-	if ( !notEmpty )
+/*
+	if ( haystack[0] == '\0' )
+	{
+		return NULL;
+	}
+	
+	else if ( !notEmpty )
 	{
 		return ( char* ) haystack;
 	}
+*/
+	if ( needle[0] == '\0' )
+	{
+	return ( char * ) haystack;;
+	}
+	
+	else if ( haystack[0] == '\0' )
+	{
+		return NULL;
+	}
+		
 	else if ( found )
 	{		
 		return ( char * ) &haystack[i-1];
@@ -169,12 +207,14 @@ char * my_strcpy(char * dest, const char * src)
 {
 	int i=0;
 
-	do
+	while ( src[i] != '\0' )
 	{
 		dest[i] = src[i];
+		i++;
 	}
-	while ( src[i] != '\0' );
-
+	
+	dest[i] = '\0';
+	
 	return dest;
 }
 
@@ -188,13 +228,14 @@ char * my_strcat(char * dest, const char * src)
 	{
 		i++;
 	}
-	do
+	while ( src[j] != '\0' )
 	{
 		dest[i] = src[j];
 		j++;
 		i++;
 	}
-	while ( src[j] != '\0' );
+	
+	dest[i] = '\0';
 	
 	return dest;
 }
@@ -203,8 +244,8 @@ int my_isspace(int ch)
 {
 	int res;
 
-	if ( ch == ' ' || ch == '\f' || ch == '\n' || ch == '\t' || ch == '\v' )
-	{
+	if ( ch == ' ' || ch == '\f' || ch == '\n' || ch == '\t' || ch == '\v' || ch == '\r' )
+	{	
 		res = 1;
 	}
 	else 
@@ -221,12 +262,11 @@ int my_atoi(const char * str)
 	int minus=1;
 	int ischar = 0;
 	
-	do
+	while ( my_isspace ( str[i] ))	
 	{
 		i++;
 	}
-	while ( my_isspace ( str[i] ));	
-
+	
 	if ( str[i] == '-' )
 	{
 		minus = -1;
@@ -239,12 +279,13 @@ int my_atoi(const char * str)
 		i++;
 	}
 
-	while ( str[i] != '\0' || !ischar )
+	while ( str[i] != '\0' && !ischar )
 	{
-		if ( str[i] >= 0 || str[i] <= 9 )
+		if ( (int)str[i] >= 48 && (int)str[i] <= 57 )
 		{
+			ret = ret * 10 + (int)str[i] - 48; 
 			i++;
-			ret = ret * 10 + str[i]; 
+			
 		}
 		else
 		{
