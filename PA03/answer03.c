@@ -2,8 +2,13 @@
 
 char * strcat_ex( char** dest, int * n, const char * src )
 {
+	// dest = Destination
+	// src = source 
+	// n = address of location which stores the value of num of characters that can be stored in *dest
+		
 	// Append C string src to end of dest
 
+	return *dest;
 }
 
 char * * explode ( const char * str, const char * delims, int * arrLen )
