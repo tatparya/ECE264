@@ -1,39 +1,86 @@
-Breakpoint 1 at 0x400777: file main.c, line 57.
-Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA03/a.out 
+Breakpoint 1 at 0x4006fc: file pa03.c, line 12.
+Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA03/pa03 
 
-Breakpoint 1, main (argc=1, argv=0x7fffffffdfa8) at main.c:57
-57		swapString(&str1, &str2);
-$1 = 0x400999 "one"
-$2 = (const char **) 0x7fffffffdeb0
-$3 = 0x40099d "two"
-$4 = (const char **) 0x7fffffffdeb8
-swapString (a=0x7fffffffdeb0, b=0x7fffffffdeb8) at main.c:10
-10	    printf("&a = %p\n", &a);
-$5 = 0x400999 "one"
-$6 = 0x40099d "two"
-$7 = (const char **) 0x7fffffffdeb0
-$8 = (const char **) 0x7fffffffdeb8
-$9 = 111 'o'
-11		printf("&b = %p\n\n", &b);
-12		printf("a = %p\n", a);
-13		printf("b = %p\n\n", b);
-17		const char * tmp = *a;
-19	    *a = *b;
-20	    *b = tmp;
-21	    printf("\nCalling swapString(...)\n");
-$10 = 0x400999 "one"
-$11 = 111 'o'
-22	3.\n"
-23	ake sure that the swapString(...) function works\n"
-24	) function works\n"
-25	");
-30	illustrate how memory is laid out.\n");
-32	", &argc);
-main (argc=1, argv=0x7fffffffdfa8) at main.c:58
-__libc_start_main (main=0x400683 <main>, argc=1, argv=0x7fffffffdfa8, 
-    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
-    stack_end=0x7fffffffdf98) at libc-start.c:321
-321	libc-start.c: No such file or directory.
-[Inferior 1 (process 20684) exited normally]
-The program is not being run.
-The program is not being run.
+Breakpoint 1, main (argc=1, argv=0x7fffffffdfa8) at pa03.c:12
+12		char ** strArr = explode ( "The\nTurning test", " \t\v\n\r\f", &len ); 
+explode (str=0x400abb "The\nTurning test", delims=0x400ab4 " \t\v\n\r\f", 
+    arrLen=0x7fffffffdeb4) at answer03.c:34
+34		int lastDelim = 0;	// 	To store index of last + 1 delim
+35		int numDelims = 0;  //  To store the number of delims in str
+36		int i = 0;			//	Index to go through loops
+37		int j = 0;			//	Index to incremend through retArr[0] 
+38		int k = 0;			//	To copy strings from str to retArr
+43		while ( str[i] != '\0' )
+45			if ( strchr ( delims, str[i] ) != NULL )
+50			i++;
+43		while ( str[i] != '\0' )
+45			if ( strchr ( delims, str[i] ) != NULL )
+50			i++;
+43		while ( str[i] != '\0' )
+45			if ( strchr ( delims, str[i] ) != NULL )
+50			i++;
+43		while ( str[i] != '\0' )
+45			if ( strchr ( delims, str[i] ) != NULL )
+47				numDelims++;
+50			i++;
+43		while ( str[i] != '\0' )
+45			if ( strchr ( delims, str[i] ) != NULL )
+50			i++;
+43		while ( str[i] != '\0' )
+45			if ( strchr ( delims, str[i] ) != NULL )
+50			i++;
+43		while ( str[i] != '\0' )
+45			if ( strchr ( delims, str[i] ) != NULL )
+50			i++;
+43		while ( str[i] != '\0' )
+45			if ( strchr ( delims, str[i] ) != NULL )
+50			i++;
+43		while ( str[i] != '\0' )
+45			if ( strchr ( delims, str[i] ) != NULL )
+50			i++;
+43		while ( str[i] != '\0' )
+45			if ( strchr ( delims, str[i] ) != NULL )
+50			i++;
+43		while ( str[i] != '\0' )
+45			if ( strchr ( delims, str[i] ) != NULL )
+50			i++;
+43		while ( str[i] != '\0' )
+45			if ( strchr ( delims, str[i] ) != NULL )
+47				numDelims++;
+50			i++;
+43		while ( str[i] != '\0' )
+45			if ( strchr ( delims, str[i] ) != NULL )
+50			i++;
+43		while ( str[i] != '\0' )
+45			if ( strchr ( delims, str[i] ) != NULL )
+50			i++;
+43		while ( str[i] != '\0' )
+45			if ( strchr ( delims, str[i] ) != NULL )
+50			i++;
+43		while ( str[i] != '\0' )
+45			if ( strchr ( delims, str[i] ) != NULL )
+50			i++;
+43		while ( str[i] != '\0' )
+54		* arrLen = numDelims + 1;
+57		retArray = malloc ( ( * arrLen ) * sizeof ( char * ) );  
+60		for ( i = 0; str[i] != '\0'; i++ )
+62			if ( strchr ( delims, str[i] ) != NULL )
+60		for ( i = 0; str[i] != '\0'; i++ )
+62			if ( strchr ( delims, str[i] ) != NULL )
+60		for ( i = 0; str[i] != '\0'; i++ )
+62			if ( strchr ( delims, str[i] ) != NULL )
+60		for ( i = 0; str[i] != '\0'; i++ )
+62			if ( strchr ( delims, str[i] ) != NULL )
+66				for ( l = 0 ; lastDelim < i; lastDelim++, l++ )
+68					retArray[j] =  malloc ( ( i - lastDelim + 1 ) * sizeof ( char ) ); 
+$1 = 4
+70					retArray[j][l] = str[lastDelim];
+66				for ( l = 0 ; lastDelim < i; lastDelim++, l++ )
+$2 = 0x602030 "T"
+68					retArray[j] =  malloc ( ( i - lastDelim + 1 ) * sizeof ( char ) ); 
+70					retArray[j][l] = str[lastDelim];
+A debugging session is active.
+
+	Inferior 1 [process 29603] will be killed.
+
+Quit anyway? (y or n) 

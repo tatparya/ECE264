@@ -6,4 +6,6 @@ zip pa03.zip answer03.c main.c git.log
 
 gcc -Wall -Wshadow -g main.c -o a.out
 
+gcc -Wall -Wshadow -g pa03.c -o pa03
+
 gdb -ex "set logging overwrite on" -ex "set logging on" ./pa01
