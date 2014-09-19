@@ -1,0 +1,183 @@
+==13499== Memcheck, a memory error detector
+==13499== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==13499== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==13499== Command: ./pa03
+==13499== Parent PID: 27853
+==13499== 
+--13499-- 
+--13499-- Valgrind options:
+--13499--    --tool=memcheck
+--13499--    --leak-check=full
+--13499--    --track-origins=yes
+--13499--    --verbose
+--13499--    --log-file=memcheck1.log
+--13499-- Contents of /proc/version:
+--13499--   Linux version 3.13.0-35-generic (buildd@panlong) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #62-Ubuntu SMP Fri Aug 15 01:58:42 UTC 2014
+--13499-- Arch and hwcaps: AMD64, amd64-cx16-rdtscp-sse3
+--13499-- Page sizes: currently 4096, max supported 4096
+--13499-- Valgrind library directory: /usr/lib/valgrind
+--13499-- Reading syms from /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA03/pa03
+--13499-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--13499--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--13499--   .. CRC mismatch (computed 4cbae35e wanted 8d683c31)
+--13499--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--13499--   .. CRC is valid
+--13499-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--13499--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--13499--   .. CRC mismatch (computed 37cdde19 wanted adc367dd)
+--13499--    object doesn't have a symbol table
+--13499--    object doesn't have a dynamic symbol table
+--13499-- Scheduler: using generic scheduler lock implementation.
+--13499-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==13499== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-13499-by-tatparya-on-???
+==13499== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-13499-by-tatparya-on-???
+==13499== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-13499-by-tatparya-on-???
+==13499== 
+==13499== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==13499== don't want to do, unless you know exactly what you're doing,
+==13499== or are doing some strange experiment):
+==13499==   /usr/lib/valgrind/../../bin/vgdb --pid=13499 ...command...
+==13499== 
+==13499== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==13499==   /path/to/gdb ./pa03
+==13499== and then give GDB the following command
+==13499==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=13499
+==13499== --pid is optional if only one valgrind process is running
+==13499== 
+--13499-- REDIR: 0x4019ca0 (strlen) redirected to 0x38068331 (???)
+--13499-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--13499--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--13499--   .. CRC mismatch (computed 329d6860 wanted c0186920)
+--13499--    object doesn't have a symbol table
+--13499-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--13499--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--13499--   .. CRC mismatch (computed 1fb85af8 wanted 2e9e3c16)
+--13499--    object doesn't have a symbol table
+==13499== WARNING: new redirection conflicts with existing -- ignoring it
+--13499--     old: 0x04019ca0 (strlen              ) R-> (0000.0) 0x38068331 ???
+--13499--     new: 0x04019ca0 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--13499-- REDIR: 0x4019a50 (index) redirected to 0x4c2dd50 (index)
+--13499-- REDIR: 0x4019c70 (strcmp) redirected to 0x4c2f2f0 (strcmp)
+--13499-- REDIR: 0x401a9c0 (mempcpy) redirected to 0x4c31da0 (mempcpy)
+--13499-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--13499--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--13499--   .. CRC mismatch (computed e7228afa wanted 93ff6981)
+--13499--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--13499--   .. CRC is valid
+--13499-- REDIR: 0x4ec47e0 (strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--13499-- REDIR: 0x4ec6ad0 (strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--13499-- REDIR: 0x4ec3fb0 (memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--13499-- REDIR: 0x4ec2240 (rindex) redirected to 0x4c2da30 (rindex)
+--13499-- REDIR: 0x4eba1d0 (malloc) redirected to 0x4c2ab10 (malloc)
+--13499-- REDIR: 0x4ec0540 (strlen) redirected to 0x4c2e0e0 (strlen)
+--13499-- REDIR: 0x4eba870 (free) redirected to 0x4c2bd80 (free)
+--13499-- REDIR: 0x4ebe6a0 (strcat) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--13499-- REDIR: 0x4ed7430 (__strcat_sse2_unaligned) redirected to 0x4c2dd90 (strcat)
+--13499-- REDIR: 0x4ecb540 (strchrnul) redirected to 0x4c319b0 (strchrnul)
+--13499-- REDIR: 0x4ebe8a0 (index) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--13499-- REDIR: 0x4ebe8d0 (__GI_strchr) redirected to 0x4c2db90 (__GI_strchr)
+--13499-- REDIR: 0x4ebff80 (strcpy) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--13499-- REDIR: 0x4ed4610 (__strcpy_sse2_unaligned) redirected to 0x4c2e1c0 (strcpy)
+==13499== Conditional jump or move depends on uninitialised value(s)
+==13499==    at 0x400CB7: implode (answer03.c:131)
+==13499==    by 0x4007F5: main (pa03.c:48)
+==13499==  Uninitialised value was created by a stack allocation
+==13499==    at 0x400C16: implode (answer03.c:113)
+==13499== 
+==13499== Conditional jump or move depends on uninitialised value(s)
+==13499==    at 0x40087A: strcat_ex (answer03.c:15)
+==13499==    by 0x400CF1: implode (answer03.c:135)
+==13499==    by 0x4007F5: main (pa03.c:48)
+==13499==  Uninitialised value was created by a stack allocation
+==13499==    at 0x400C16: implode (answer03.c:113)
+==13499== 
+==13499== Conditional jump or move depends on uninitialised value(s)
+==13499==    at 0x4008B9: strcat_ex (answer03.c:17)
+==13499==    by 0x400CF1: implode (answer03.c:135)
+==13499==    by 0x4007F5: main (pa03.c:48)
+==13499==  Uninitialised value was created by a stack allocation
+==13499==    at 0x400C16: implode (answer03.c:113)
+==13499== 
+==13499== Conditional jump or move depends on uninitialised value(s)
+==13499==    at 0x400929: strcat_ex (answer03.c:22)
+==13499==    by 0x400CF1: implode (answer03.c:135)
+==13499==    by 0x4007F5: main (pa03.c:48)
+==13499==  Uninitialised value was created by a stack allocation
+==13499==    at 0x400C16: implode (answer03.c:113)
+==13499== 
+==13499== Conditional jump or move depends on uninitialised value(s)
+==13499==    at 0x40097B: strcat_ex (answer03.c:30)
+==13499==    by 0x400CF1: implode (answer03.c:135)
+==13499==    by 0x4007F5: main (pa03.c:48)
+==13499==  Uninitialised value was created by a stack allocation
+==13499==    at 0x400C16: implode (answer03.c:113)
+==13499== 
+==13499== Conditional jump or move depends on uninitialised value(s)
+==13499==    at 0x40099D: strcat_ex (answer03.c:35)
+==13499==    by 0x400CF1: implode (answer03.c:135)
+==13499==    by 0x4007F5: main (pa03.c:48)
+==13499==  Uninitialised value was created by a stack allocation
+==13499==    at 0x400C16: implode (answer03.c:113)
+==13499== 
+==13499== 
+==13499== HEAP SUMMARY:
+==13499==     in use at exit: 0 bytes in 0 blocks
+==13499==   total heap usage: 10 allocs, 10 frees, 176 bytes allocated
+==13499== 
+==13499== All heap blocks were freed -- no leaks are possible
+==13499== 
+==13499== ERROR SUMMARY: 6 errors from 6 contexts (suppressed: 0 from 0)
+==13499== 
+==13499== 1 errors in context 1 of 6:
+==13499== Conditional jump or move depends on uninitialised value(s)
+==13499==    at 0x40099D: strcat_ex (answer03.c:35)
+==13499==    by 0x400CF1: implode (answer03.c:135)
+==13499==    by 0x4007F5: main (pa03.c:48)
+==13499==  Uninitialised value was created by a stack allocation
+==13499==    at 0x400C16: implode (answer03.c:113)
+==13499== 
+==13499== 
+==13499== 1 errors in context 2 of 6:
+==13499== Conditional jump or move depends on uninitialised value(s)
+==13499==    at 0x40097B: strcat_ex (answer03.c:30)
+==13499==    by 0x400CF1: implode (answer03.c:135)
+==13499==    by 0x4007F5: main (pa03.c:48)
+==13499==  Uninitialised value was created by a stack allocation
+==13499==    at 0x400C16: implode (answer03.c:113)
+==13499== 
+==13499== 
+==13499== 1 errors in context 3 of 6:
+==13499== Conditional jump or move depends on uninitialised value(s)
+==13499==    at 0x400929: strcat_ex (answer03.c:22)
+==13499==    by 0x400CF1: implode (answer03.c:135)
+==13499==    by 0x4007F5: main (pa03.c:48)
+==13499==  Uninitialised value was created by a stack allocation
+==13499==    at 0x400C16: implode (answer03.c:113)
+==13499== 
+==13499== 
+==13499== 1 errors in context 4 of 6:
+==13499== Conditional jump or move depends on uninitialised value(s)
+==13499==    at 0x4008B9: strcat_ex (answer03.c:17)
+==13499==    by 0x400CF1: implode (answer03.c:135)
+==13499==    by 0x4007F5: main (pa03.c:48)
+==13499==  Uninitialised value was created by a stack allocation
+==13499==    at 0x400C16: implode (answer03.c:113)
+==13499== 
+==13499== 
+==13499== 1 errors in context 5 of 6:
+==13499== Conditional jump or move depends on uninitialised value(s)
+==13499==    at 0x40087A: strcat_ex (answer03.c:15)
+==13499==    by 0x400CF1: implode (answer03.c:135)
+==13499==    by 0x4007F5: main (pa03.c:48)
+==13499==  Uninitialised value was created by a stack allocation
+==13499==    at 0x400C16: implode (answer03.c:113)
+==13499== 
+==13499== 
+==13499== 1 errors in context 6 of 6:
+==13499== Conditional jump or move depends on uninitialised value(s)
+==13499==    at 0x400CB7: implode (answer03.c:131)
+==13499==    by 0x4007F5: main (pa03.c:48)
+==13499==  Uninitialised value was created by a stack allocation
+==13499==    at 0x400C16: implode (answer03.c:113)
+==13499== 
+==13499== ERROR SUMMARY: 6 errors from 6 contexts (suppressed: 0 from 0)
