@@ -1,0 +1,22 @@
+Breakpoint 1 at 0x40058c: file echo-lite.c, line 5.
+Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA04/echo-lite 
+
+Breakpoint 1, main (argc=1, argv=0x7fffffffdf98) at echo-lite.c:11
+11		int showHelp = FALSE;
+12		int echo = FALSE;
+13		int badSwitch = FALSE;
+16	   	int ind = 1; // we always skip 0, which is the program path
+$1 = 1
+$2 = (char **) 0x7fffffffdf98
+$3 = 0x7fffffffe2f9 "/home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA04/echo-lite"
+$4 = 0x0
+$5 = 0x7fffffffe33b "XDG_VTNR=7"
+$6 = 0x7fffffffe36b "XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/tatparya"
+17	   	for( ; ind < argc; ++ind)
+22		printf("\n");
+24	   return EXIT_SUCCESS;
+A debugging session is active.
+
+	Inferior 1 [process 5374] will be killed.
+
+Quit anyway? (y or n) 
