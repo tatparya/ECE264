@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+#define MAXSIZE 2000
+
 int main ( int argc, char ** argv )
 {
 	
@@ -13,7 +15,7 @@ int main ( int argc, char ** argv )
 	// Check for help switch	
 	for ( index = 1; index < argc; index++ )	//	Index = 1 because we want to skip the first string
 	{
-		if ( strcmp ( argv[index], "--help" ) )
+		if ( strcmp ( argv[index], "--help" ) == 0 )
 		{
 			help++;
 		}
@@ -36,9 +38,38 @@ int main ( int argc, char ** argv )
 		return EXIT_SUCCESS;
 	}
 
-	else
+	//		OPEN FILES AND PRINT CONTENT TO STDOUT
+
+	for ( index = 1; index < argc; index++ )
 	{
-		//		OPEN FILES AND PRINT CONTENT TO STDOUT
+		//	argv[index] gives File name
+		FILE * filePtr;			// File pointer to find file location
+		//	Open file
+		filePtr = fopen( argv[index], "r" );
+
+		//	Check if file opened successfully
+		if ( filePtr == NULL )
+		{
+			//	If file open failed
+			fprintf ( stderr, "cat cannot open %s\n", argv[index] );
+			return EXIT_FAILURE;
+		}
+
+		//	Read from file
+		char buffer[ MAXSIZE ];
+		while ( fscanf ( filePtr, "%s", buffer ) == 1 )
+		{
+			//		Write to stdout
+			printf( "%s", buffer);
+		}
+
+		printf ( "\n" );						
+
+		//	Close File when done reading
+		if ( filePtr != NULL )
+		{	
+			fclose ( filePtr );
+		}
 
 	}
 
