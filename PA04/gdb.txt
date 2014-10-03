@@ -1,29 +1,141 @@
-Breakpoint 1 at 0x400895: file cat-lite.c, line 5.
-Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA04/cat-lite -
+Breakpoint 1 at 0x40086c: file cat-lite.c, line 10.
+Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA04/cat-lite testcases/file3
 
-Breakpoint 1, main (argc=2, argv=0x7fffffffdf88) at cat-lite.c:8
-8	{
-$1 = 0x7fffffffe33b "-"
-10		int help = 0;					// To trigger help switch	
-15		for ( index = 1; index < argc; index++ )	//	Index = 1 because we want to skip the first string
-17			if ( strcmp ( argv[index], "--help" ) == 0 )
-15		for ( index = 1; index < argc; index++ )	//	Index = 1 because we want to skip the first string
-23		if ( help )
-41		for ( index = 1; index < argc; index++ )
-46			if ( argv[index][0] != '-' )
-81				while ( fgets ( buffer, MAXSIZE, stdin ) != NULL )
-83					printf("%s\n", buffer );
-81				while ( fgets ( buffer, MAXSIZE, stdin ) != NULL )
-83					printf("%s\n", buffer );
-81				while ( fgets ( buffer, MAXSIZE, stdin ) != NULL )
+Breakpoint 1, main (argc=2, argv=0x7fffffffdf78) at cat-lite.c:14
+14		int help = 0;			// To trigger help switch	
+18		if ( argc == 1 )		// ( ./cat-lite ) => Printf stdin to stdout
+27		for ( index = 1; index < argc; index++ )		//	Index = 1 because we want to skip the first string
+29			if ( strcmp ( argv[index], "--help" ) == 0 )
+27		for ( index = 1; index < argc; index++ )		//	Index = 1 because we want to skip the first string
+35		if ( help )		// If help switch present then, Print help message and return EXIT_SUCCESS
+44		for ( index = 1; index < argc; index++ )	//	To go through all args
+47			int fileStatus = 0;			// To check if file opened
+50			if ( argv[index][0] != '-' )
+53				fileStatus = readFile( argv[index] );
+55				if ( fileStatus == 0 )
+44		for ( index = 1; index < argc; index++ )	//	To go through all args
+68		return EXIT_SUCCESS;
+Undefined command: "nn".  Try "help".
+69	}
+The program being debugged has been started already.
+Start it from the beginning? (y or n) Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA04/cat-lite testcases/file3
+
+Breakpoint 1, main (argc=2, argv=0x7fffffffdf78) at cat-lite.c:14
+14		int help = 0;			// To trigger help switch	
+18		if ( argc == 1 )		// ( ./cat-lite ) => Printf stdin to stdout
+27		for ( index = 1; index < argc; index++ )		//	Index = 1 because we want to skip the first string
+29			if ( strcmp ( argv[index], "--help" ) == 0 )
+27		for ( index = 1; index < argc; index++ )		//	Index = 1 because we want to skip the first string
+35		if ( help )		// If help switch present then, Print help message and return EXIT_SUCCESS
+44		for ( index = 1; index < argc; index++ )	//	To go through all args
+47			int fileStatus = 0;			// To check if file opened
+50			if ( argv[index][0] != '-' )
+53				fileStatus = readFile( argv[index] );
+readFile (filename=0x7fffffffe32c "testcases/file3") at cat-lite.c:97
+97	{
+102		filePtr = fopen( filename, "r" );
+105		if ( filePtr == NULL )
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+No symbol "filePts" in current context.
+$1 = 32
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+Undefined command: "nn".  Try "help".
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
+113		while ( fgetc ( filePtr ) != EOF )
+115			fputc( fgetc( filePtr ), stdout );
 Continuing.
-
-Program received signal SIGINT, Interrupt.
-0x00007ffff7b00350 in __read_nocancel ()
-    at ../sysdeps/unix/syscall-template.S:81
-81	../sysdeps/unix/syscall-template.S: No such file or directory.
-A debugging session is active.
-
-	Inferior 1 [process 32260] will be killed.
-
-Quit anyway? (y or n) 
+[Inferior 1 (process 4660) exited normally]
+The program is not being run.

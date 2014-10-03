@@ -7,12 +7,11 @@
 
 int main(int argc, char * * argv)
 {
-   	// Loop through the arguments
-   	int ind = 1; // skip 0, which is the program path
+   // Loop through the arguments, looking for our switches...
+   	int ind = 1; // we always skip 0, which is the program path
    	for( ; ind < argc; ++ind)
 	{
-		// Print to the stdout
-		fprintf ( stdout, "%s ", argv[ind] );		
+		printf ( "%s ", argv[ind] );		
 	}
 
 	printf("\n");
