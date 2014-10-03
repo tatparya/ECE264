@@ -9,7 +9,6 @@ int main ( int argc, char ** argv )
 	
 	int help = 0;					// To trigger help switch	
 	int index;						// Index to go through loops
-	
 	//	Check for argv[1] present
 
 	// Check for help switch	
@@ -39,38 +38,51 @@ int main ( int argc, char ** argv )
 	}
 
 	//		OPEN FILES AND PRINT CONTENT TO STDOUT
-
 	for ( index = 1; index < argc; index++ )
 	{
 		//	argv[index] gives File name
-		FILE * filePtr;			// File pointer to find file location
-		//	Open file
-		filePtr = fopen( argv[index], "r" );
 
-		//	Check if file opened successfully
-		if ( filePtr == NULL )
+		//	Check for stdin trigger
+		if ( argv[index][0] != '-' )
 		{
-			//	If file open failed
-			fprintf ( stderr, "cat cannot open %s\n", argv[index] );
-			return EXIT_FAILURE;
-		}
+			FILE * filePtr;			// File pointer to find file location
+			//	Open file
+			filePtr = fopen( argv[index], "r" );
 
-		//	Read from file
-		char buffer[ MAXSIZE ];
-		while ( fscanf ( filePtr, "%s", buffer ) == 1 )
+			//	Check if file opened successfully		
+			if ( filePtr == NULL )
+			{
+				//	If file open failed
+				fprintf ( stderr, "cat cannot open %s\n", argv[index] );
+				return EXIT_FAILURE;
+			}
+	
+			//	Read from file
+			char buffer[ MAXSIZE ];
+			while ( fscanf ( filePtr, "%s", buffer ) == 1 )
+			{
+				//		Write to stdout
+				printf( "%s", buffer);
+			}
+	
+			printf ( "\n" );						
+	
+			//	Close File when done reading
+			if ( filePtr != NULL )
+			{	
+				fclose ( filePtr );
+			}
+		}
+		else
 		{
-			//		Write to stdout
-			printf( "%s", buffer);
+			char buffer[ MAXSIZE ];
+			
+			//	Read from stdin and write to stdout
+			while ( fgets ( buffer, MAXSIZE, stdin ) != NULL )
+			{
+				printf("%s\n", buffer );
+			}
 		}
-
-		printf ( "\n" );						
-
-		//	Close File when done reading
-		if ( filePtr != NULL )
-		{	
-			fclose ( filePtr );
-		}
-
 	}
 
 	return EXIT_SUCCESS;

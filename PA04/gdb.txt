@@ -1,22 +1,29 @@
-Breakpoint 1 at 0x40058c: file echo-lite.c, line 5.
-Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA04/echo-lite 
+Breakpoint 1 at 0x400895: file cat-lite.c, line 5.
+Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA04/cat-lite -
 
-Breakpoint 1, main (argc=1, argv=0x7fffffffdf98) at echo-lite.c:11
-11		int showHelp = FALSE;
-12		int echo = FALSE;
-13		int badSwitch = FALSE;
-16	   	int ind = 1; // we always skip 0, which is the program path
-$1 = 1
-$2 = (char **) 0x7fffffffdf98
-$3 = 0x7fffffffe2f9 "/home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA04/echo-lite"
-$4 = 0x0
-$5 = 0x7fffffffe33b "XDG_VTNR=7"
-$6 = 0x7fffffffe36b "XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/tatparya"
-17	   	for( ; ind < argc; ++ind)
-22		printf("\n");
-24	   return EXIT_SUCCESS;
+Breakpoint 1, main (argc=2, argv=0x7fffffffdf88) at cat-lite.c:8
+8	{
+$1 = 0x7fffffffe33b "-"
+10		int help = 0;					// To trigger help switch	
+15		for ( index = 1; index < argc; index++ )	//	Index = 1 because we want to skip the first string
+17			if ( strcmp ( argv[index], "--help" ) == 0 )
+15		for ( index = 1; index < argc; index++ )	//	Index = 1 because we want to skip the first string
+23		if ( help )
+41		for ( index = 1; index < argc; index++ )
+46			if ( argv[index][0] != '-' )
+81				while ( fgets ( buffer, MAXSIZE, stdin ) != NULL )
+83					printf("%s\n", buffer );
+81				while ( fgets ( buffer, MAXSIZE, stdin ) != NULL )
+83					printf("%s\n", buffer );
+81				while ( fgets ( buffer, MAXSIZE, stdin ) != NULL )
+Continuing.
+
+Program received signal SIGINT, Interrupt.
+0x00007ffff7b00350 in __read_nocancel ()
+    at ../sysdeps/unix/syscall-template.S:81
+81	../sysdeps/unix/syscall-template.S: No such file or directory.
 A debugging session is active.
 
-	Inferior 1 [process 5374] will be killed.
+	Inferior 1 [process 32260] will be killed.
 
 Quit anyway? (y or n) 

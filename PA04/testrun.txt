@@ -1,0 +1,65 @@
+   ---------------------------------------------------------------------------
+   Welcome to the PA04 testing program. This program takes a _long_ time
+   to execute. There is a reason for this. You should not rely on this
+   program to test your code as you go. Instead, you should think about
+   what your code should be doing, and what inputs should produce what
+   outputs for each of your functions.
+   
+        YOU SHOULD THEN TEST EVERY PIECE OF CODE AS YOU WRITE IT 
+   
+                                 AND 
+   
+                        FIX MISTAKES AS YOU GO.
+   
+   When you are convinced that you have the entire assignment 100% correct,
+   then you can use this testing program to test it. 
+   
+   This will give you your mark assuming that you submit it correctly, and 
+   there are no other irregularities.
+   ---------------------------------------------------------------------------
+gcc -Wall -Wshadow -g echo-lite.c -o echo-lite
+Compilation successful.
+
+gcc -Wall -Wshadow -g cat-lite.c -o cat-lite
+Compilation successful.
+
+gcc -Wall -Wshadow -g grep-lite.c -o grep-lite
+Compilation successful.
+
+
+Testcase 1
+   ./echo-lite Say cheese
+   Say cheese 
+Testcase passed.
+
+Testcase 2
+   ./echo-lite
+   
+Testcase passed.
+
+Testcase 3
+   ./echo-lite a b c
+   a b c 
+Testcase passed.
+
+Testcase 4
+   ./echo-lite note that    multiple space becomes 1.
+   note that multiple space becomes 1. 
+Testcase passed.
+
+Testcase 5
+   ./echo-lite but you can use " quotes " to pass along spaces.
+   but you can use  quotes  to pass along spaces. 
+Testcase passed.
+
+Testcase 6
+   ./cat-lite --help
+   Usage: cat-lite [--help] [FILE]...
+   With no FILE, or when FILE is -, read standard input.
+   
+   Examples:
+     cat-lite README   Print the file README to standard output.
+     cat-lite f - g    Print f's contents, then standard input,
+                       then g's contents.
+     cat-lite          Copy standard input to standard output.
+Testcase passed.
