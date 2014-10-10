@@ -1,0 +1,125 @@
+Breakpoint 1 at 0x40061c: file pa05.c, line 5.
+Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA05/pa05 
+
+Breakpoint 1, main (argv=1, argc=0x7fffffffdfa8) at pa05.c:8
+8		partitionAll ( 4 );
+partitionAll (value=4) at answer05.c:42
+42		int index = 0;				//	To store index value
+45		arr = malloc ( sizeof ( int ) * value );
+48		partitionAll_fn ( arr, index, value );
+partitionAll_fn (arr=0x602010, index=0, value=4) at answer05.c:22
+22		if ( value > 0 )
+26			for ( val = 1; val <= value; val++ )
+28				arr[index] = val;
+29				partitionAll_fn ( arr, index + 1, value - 1 );
+partitionAll_fn (arr=0x602010, index=1, value=3) at answer05.c:22
+22		if ( value > 0 )
+26			for ( val = 1; val <= value; val++ )
+28				arr[index] = val;
+29				partitionAll_fn ( arr, index + 1, value - 1 );
+partitionAll_fn (arr=0x602010, index=2, value=2) at answer05.c:22
+22		if ( value > 0 )
+26			for ( val = 1; val <= value; val++ )
+28				arr[index] = val;
+29				partitionAll_fn ( arr, index + 1, value - 1 );
+partitionAll_fn (arr=0x602010, index=3, value=1) at answer05.c:22
+22		if ( value > 0 )
+26			for ( val = 1; val <= value; val++ )
+28				arr[index] = val;
+29				partitionAll_fn ( arr, index + 1, value - 1 );
+partitionAll_fn (arr=0x602010, index=4, value=0) at answer05.c:22
+22		if ( value > 0 )
+32		else if ( value == 0 )
+35			printArray ( arr, index );
+37	}
+partitionAll_fn (arr=0x602010, index=3, value=1) at answer05.c:26
+26			for ( val = 1; val <= value; val++ )
+37	}
+partitionAll_fn (arr=0x602010, index=2, value=2) at answer05.c:26
+26			for ( val = 1; val <= value; val++ )
+28				arr[index] = val;
+29				partitionAll_fn ( arr, index + 1, value - 1 );
+26			for ( val = 1; val <= value; val++ )
+37	}
+partitionAll_fn (arr=0x602010, index=1, value=3) at answer05.c:26
+26			for ( val = 1; val <= value; val++ )
+28				arr[index] = val;
+29				partitionAll_fn ( arr, index + 1, value - 1 );
+partitionAll_fn (arr=0x602010, index=2, value=2) at answer05.c:22
+22		if ( value > 0 )
+26			for ( val = 1; val <= value; val++ )
+28				arr[index] = val;
+29				partitionAll_fn ( arr, index + 1, value - 1 );
+partitionAll_fn (arr=0x602010, index=3, value=1) at answer05.c:22
+22		if ( value > 0 )
+26			for ( val = 1; val <= value; val++ )
+28				arr[index] = val;
+29				partitionAll_fn ( arr, index + 1, value - 1 );
+partitionAll_fn (arr=0x602010, index=4, value=0) at answer05.c:22
+22		if ( value > 0 )
+32		else if ( value == 0 )
+No symbol "val" in current context.
+35			printArray ( arr, index );
+37	}
+partitionAll_fn (arr=0x602010, index=3, value=1) at answer05.c:26
+26			for ( val = 1; val <= value; val++ )
+37	}
+partitionAll_fn (arr=0x602010, index=2, value=2) at answer05.c:26
+26			for ( val = 1; val <= value; val++ )
+Continuing.
+[Inferior 1 (process 8053) exited normally]
+Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA05/pa05 
+
+Breakpoint 1, main (argv=1, argc=0x7fffffffdfa8) at pa05.c:8
+8		partitionAll ( 4 );
+partitionAll (value=4) at answer05.c:42
+42		int index = 0;				//	To store index value
+45		arr = malloc ( sizeof ( int ) * value );
+48		partitionAll_fn ( arr, index, value );
+partitionAll_fn (arr=0x602010, index=0, value=4) at answer05.c:22
+22		if ( value > 0 )
+26			for ( val = 1; val <= value; val++ )
+28				arr[index] = val;
+29				partitionAll_fn ( arr, index + 1, value - 1 );
+partitionAll_fn (arr=0x602010, index=1, value=3) at answer05.c:22
+22		if ( value > 0 )
+26			for ( val = 1; val <= value; val++ )
+28				arr[index] = val;
+29				partitionAll_fn ( arr, index + 1, value - 1 );
+partitionAll_fn (arr=0x602010, index=2, value=2) at answer05.c:22
+22		if ( value > 0 )
+26			for ( val = 1; val <= value; val++ )
+28				arr[index] = val;
+29				partitionAll_fn ( arr, index + 1, value - 1 );
+partitionAll_fn (arr=0x602010, index=3, value=1) at answer05.c:22
+22		if ( value > 0 )
+26			for ( val = 1; val <= value; val++ )
+28				arr[index] = val;
+29				partitionAll_fn ( arr, index + 1, value - 1 );
+partitionAll_fn (arr=0x602010, index=4, value=0) at answer05.c:22
+22		if ( value > 0 )
+32		else if ( value == 0 )
+35			printArray ( arr, index );
+37	}
+partitionAll_fn (arr=0x602010, index=3, value=1) at answer05.c:26
+26			for ( val = 1; val <= value; val++ )
+$1 = 1
+37	}
+No symbol "val" in current context.
+partitionAll_fn (arr=0x602010, index=2, value=2) at answer05.c:26
+26			for ( val = 1; val <= value; val++ )
+$2 = 1
+$3 = 2
+28				arr[index] = val;
+$4 = 2
+$5 = 2
+29				partitionAll_fn ( arr, index + 1, value - 1 );
+partitionAll_fn (arr=0x602010, index=3, value=1) at answer05.c:22
+22		if ( value > 0 )
+26			for ( val = 1; val <= value; val++ )
+28				arr[index] = val;
+A debugging session is active.
+
+	Inferior 1 [process 8061] will be killed.
+
+Quit anyway? (y or n) 

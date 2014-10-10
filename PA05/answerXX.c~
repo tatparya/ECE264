@@ -3,16 +3,52 @@
 
 #include "answer05.h"
 
+void printArray ( int * arr, int length )
+{
+	//	PRINT ARRAY
+	int i = 0;				// To go through array
+	printf ( "= %d", arr[i] );
+	for ( i = 1; i < index; i++ )
+	{
+		printf ( "+ %d", arr[i] );
+	} 
+}
+
+//	1
 void partitionAll ( int value )
 {
+	int * arr;				//	Array to store partition
+	int index;				//	To store index value
 	
+	//	Allocate array to value
+	arr = malloc ( sizeof ( int ) * value );
+	
+	//	Partition function call
+	partitionAll_fn ( arr, index, value );
+	
+	//	Free array to avoid memory leak
+	free arr;
 }
 
 void partitionAll_fn ( int * arr, int index, int value ) 
 {
-
+	//	Check value for base case
+	if ( value > 0 )
+	{
+		//	RECURSIVE CASE
+		for ( index = 0; index < value; index++ )
+		{
+			partitionAll_fn ( int * arr, index, value - 1 )
+		}
+	}
+	else if ( value == 0 )
+	{
+		//	BASE CASE
+		printArray ( arr, index );
+	}
 }
 
+//	2
 void partitionIncreasing ( int value )
 {
 	
@@ -23,6 +59,7 @@ void partitionIncreasing_fn ( int * arr, int index, int value )
 
 }
 
+//	3
 void partitionDecreasing ( int value )
 {
 	
@@ -33,6 +70,7 @@ void partitionDecreasing_fn ( int * arr, int index, int value )
 
 }
 
+//	4
 void partitionOdd ( int value )
 {
 	
@@ -43,6 +81,7 @@ void partitionOdd_fn ( int * arr, int index, int value )
 
 }
 
+//	5
 void partitionEven ( int value )
 {
 	
@@ -53,6 +92,7 @@ void partitionEven_fn ( int * arr, int index, int value )
 
 }
 
+//	6
 void partitionOddAndEven ( int value )
 {
 	
@@ -63,6 +103,7 @@ void partitionOddAndEven_fn ( int * arr, int index, int value )
 
 }
 
+//	7
 void partitionPrime ( int value )
 {
 	

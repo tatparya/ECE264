@@ -1,0 +1,1180 @@
+   ---------------------------------------------------------------------------
+   Welcome to the PA05 testing program. This program takes a _long_ time
+   to execute. There is a reason for this. You should not rely on this
+   program to test your code as you go. Instead, you should think about
+   what your code should be doing, and what inputs should produce what
+   outputs for each of your functions.
+   
+        YOU SHOULD THEN TEST EVERY PIECE OF CODE AS YOU WRITE IT 
+   
+                                 AND 
+   
+                        FIX MISTAKES AS YOU GO.
+   
+   When you are convinced that you have the entire assignment 100% correct,
+   then you can use this testing program to test it. 
+   
+   This will give you your mark assuming that you submit it correctly, and 
+   there are no other irregularities.
+   ---------------------------------------------------------------------------
+
+partitionAll(1)
+= 1 
+(success)
+
+partitionAll(2)
+= 1 + 1 
+= 2 
+(success)
+
+partitionAll(3)
+= 1 + 1 + 1 
+= 1 + 2 
+= 2 + 1 
+= 3 
+(success)
+
+partitionAll(4)
+= 1 + 1 + 1 + 1 
+= 1 + 1 + 2 
+= 1 + 2 + 1 
+= 1 + 3 
+= 2 + 1 + 1 
+= 2 + 2 
+= 3 + 1 
+= 4 
+(success)
+
+partitionAll(5)
+= 1 + 1 + 1 + 1 + 1 
+= 1 + 1 + 1 + 2 
+= 1 + 1 + 2 + 1 
+= 1 + 1 + 3 
+= 1 + 2 + 1 + 1 
+= 1 + 2 + 2 
+= 1 + 3 + 1 
+= 1 + 4 
+= 2 + 1 + 1 + 1 
+= 2 + 1 + 2 
+= 2 + 2 + 1 
+= 2 + 3 
+= 3 + 1 + 1 
+= 3 + 2 
+= 4 + 1 
+= 5 
+(success)
+
+partitionAll(6)
+= 1 + 1 + 1 + 1 + 1 + 1 
+= 1 + 1 + 1 + 1 + 2 
+= 1 + 1 + 1 + 2 + 1 
+= 1 + 1 + 1 + 3 
+= 1 + 1 + 2 + 1 + 1 
+= 1 + 1 + 2 + 2 
+= 1 + 1 + 3 + 1 
+= 1 + 1 + 4 
+= 1 + 2 + 1 + 1 + 1 
+= 1 + 2 + 1 + 2 
+= 1 + 2 + 2 + 1 
+= 1 + 2 + 3 
+= 1 + 3 + 1 + 1 
+= 1 + 3 + 2 
+= 1 + 4 + 1 
+= 1 + 5 
+= 2 + 1 + 1 + 1 + 1 
+= 2 + 1 + 1 + 2 
+= 2 + 1 + 2 + 1 
+= 2 + 1 + 3 
+= 2 + 2 + 1 + 1 
+= 2 + 2 + 2 
+= 2 + 3 + 1 
+= 2 + 4 
+= 3 + 1 + 1 + 1 
+= 3 + 1 + 2 
+= 3 + 2 + 1 
+= 3 + 3 
+= 4 + 1 + 1 
+= 4 + 2 
+= 5 + 1 
+= 6 
+(success)
+
+partitionAll(7)
+= 1 + 1 + 1 + 1 + 1 + 1 + 1 
+= 1 + 1 + 1 + 1 + 1 + 2 
+= 1 + 1 + 1 + 1 + 2 + 1 
+= 1 + 1 + 1 + 1 + 3 
+= 1 + 1 + 1 + 2 + 1 + 1 
+= 1 + 1 + 1 + 2 + 2 
+= 1 + 1 + 1 + 3 + 1 
+= 1 + 1 + 1 + 4 
+= 1 + 1 + 2 + 1 + 1 + 1 
+= 1 + 1 + 2 + 1 + 2 
+= 1 + 1 + 2 + 2 + 1 
+= 1 + 1 + 2 + 3 
+= 1 + 1 + 3 + 1 + 1 
+= 1 + 1 + 3 + 2 
+= 1 + 1 + 4 + 1 
+= 1 + 1 + 5 
+= 1 + 2 + 1 + 1 + 1 + 1 
+= 1 + 2 + 1 + 1 + 2 
+= 1 + 2 + 1 + 2 + 1 
+= 1 + 2 + 1 + 3 
+= 1 + 2 + 2 + 1 + 1 
+= 1 + 2 + 2 + 2 
+= 1 + 2 + 3 + 1 
+= 1 + 2 + 4 
+= 1 + 3 + 1 + 1 + 1 
+= 1 + 3 + 1 + 2 
+= 1 + 3 + 2 + 1 
+= 1 + 3 + 3 
+= 1 + 4 + 1 + 1 
+= 1 + 4 + 2 
+= 1 + 5 + 1 
+= 1 + 6 
+= 2 + 1 + 1 + 1 + 1 + 1 
+= 2 + 1 + 1 + 1 + 2 
+= 2 + 1 + 1 + 2 + 1 
+= 2 + 1 + 1 + 3 
+= 2 + 1 + 2 + 1 + 1 
+= 2 + 1 + 2 + 2 
+= 2 + 1 + 3 + 1 
+= 2 + 1 + 4 
+= 2 + 2 + 1 + 1 + 1 
+= 2 + 2 + 1 + 2 
+= 2 + 2 + 2 + 1 
+= 2 + 2 + 3 
+= 2 + 3 + 1 + 1 
+= 2 + 3 + 2 
+= 2 + 4 + 1 
+= 2 + 5 
+= 3 + 1 + 1 + 1 + 1 
+= 3 + 1 + 1 + 2 
+= 3 + 1 + 2 + 1 
+= 3 + 1 + 3 
+= 3 + 2 + 1 + 1 
+= 3 + 2 + 2 
+= 3 + 3 + 1 
+= 3 + 4 
+= 4 + 1 + 1 + 1 
+= 4 + 1 + 2 
+= 4 + 2 + 1 
+= 4 + 3 
+= 5 + 1 + 1 
+= 5 + 2 
+= 6 + 1 
+= 7 
+(success)
+
+partitionAll(8)
+= 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 
+= 1 + 1 + 1 + 1 + 1 + 1 + 2 
+= 1 + 1 + 1 + 1 + 1 + 2 + 1 
+= 1 + 1 + 1 + 1 + 1 + 3 
+= 1 + 1 + 1 + 1 + 2 + 1 + 1 
+= 1 + 1 + 1 + 1 + 2 + 2 
+= 1 + 1 + 1 + 1 + 3 + 1 
+= 1 + 1 + 1 + 1 + 4 
+= 1 + 1 + 1 + 2 + 1 + 1 + 1 
+= 1 + 1 + 1 + 2 + 1 + 2 
+= 1 + 1 + 1 + 2 + 2 + 1 
+= 1 + 1 + 1 + 2 + 3 
+= 1 + 1 + 1 + 3 + 1 + 1 
+= 1 + 1 + 1 + 3 + 2 
+= 1 + 1 + 1 + 4 + 1 
+= 1 + 1 + 1 + 5 
+= 1 + 1 + 2 + 1 + 1 + 1 + 1 
+= 1 + 1 + 2 + 1 + 1 + 2 
+= 1 + 1 + 2 + 1 + 2 + 1 
+= 1 + 1 + 2 + 1 + 3 
+= 1 + 1 + 2 + 2 + 1 + 1 
+= 1 + 1 + 2 + 2 + 2 
+= 1 + 1 + 2 + 3 + 1 
+= 1 + 1 + 2 + 4 
+= 1 + 1 + 3 + 1 + 1 + 1 
+= 1 + 1 + 3 + 1 + 2 
+= 1 + 1 + 3 + 2 + 1 
+= 1 + 1 + 3 + 3 
+= 1 + 1 + 4 + 1 + 1 
+= 1 + 1 + 4 + 2 
+= 1 + 1 + 5 + 1 
+= 1 + 1 + 6 
+= 1 + 2 + 1 + 1 + 1 + 1 + 1 
+= 1 + 2 + 1 + 1 + 1 + 2 
+= 1 + 2 + 1 + 1 + 2 + 1 
+= 1 + 2 + 1 + 1 + 3 
+= 1 + 2 + 1 + 2 + 1 + 1 
+= 1 + 2 + 1 + 2 + 2 
+= 1 + 2 + 1 + 3 + 1 
+= 1 + 2 + 1 + 4 
+= 1 + 2 + 2 + 1 + 1 + 1 
+= 1 + 2 + 2 + 1 + 2 
+= 1 + 2 + 2 + 2 + 1 
+= 1 + 2 + 2 + 3 
+= 1 + 2 + 3 + 1 + 1 
+= 1 + 2 + 3 + 2 
+= 1 + 2 + 4 + 1 
+= 1 + 2 + 5 
+= 1 + 3 + 1 + 1 + 1 + 1 
+= 1 + 3 + 1 + 1 + 2 
+= 1 + 3 + 1 + 2 + 1 
+= 1 + 3 + 1 + 3 
+= 1 + 3 + 2 + 1 + 1 
+= 1 + 3 + 2 + 2 
+= 1 + 3 + 3 + 1 
+= 1 + 3 + 4 
+= 1 + 4 + 1 + 1 + 1 
+= 1 + 4 + 1 + 2 
+= 1 + 4 + 2 + 1 
+= 1 + 4 + 3 
+= 1 + 5 + 1 + 1 
+= 1 + 5 + 2 
+= 1 + 6 + 1 
+= 1 + 7 
+= 2 + 1 + 1 + 1 + 1 + 1 + 1 
+= 2 + 1 + 1 + 1 + 1 + 2 
+= 2 + 1 + 1 + 1 + 2 + 1 
+= 2 + 1 + 1 + 1 + 3 
+= 2 + 1 + 1 + 2 + 1 + 1 
+= 2 + 1 + 1 + 2 + 2 
+= 2 + 1 + 1 + 3 + 1 
+= 2 + 1 + 1 + 4 
+= 2 + 1 + 2 + 1 + 1 + 1 
+= 2 + 1 + 2 + 1 + 2 
+= 2 + 1 + 2 + 2 + 1 
+= 2 + 1 + 2 + 3 
+= 2 + 1 + 3 + 1 + 1 
+= 2 + 1 + 3 + 2 
+= 2 + 1 + 4 + 1 
+= 2 + 1 + 5 
+= 2 + 2 + 1 + 1 + 1 + 1 
+= 2 + 2 + 1 + 1 + 2 
+= 2 + 2 + 1 + 2 + 1 
+= 2 + 2 + 1 + 3 
+= 2 + 2 + 2 + 1 + 1 
+= 2 + 2 + 2 + 2 
+= 2 + 2 + 3 + 1 
+= 2 + 2 + 4 
+= 2 + 3 + 1 + 1 + 1 
+= 2 + 3 + 1 + 2 
+= 2 + 3 + 2 + 1 
+= 2 + 3 + 3 
+= 2 + 4 + 1 + 1 
+= 2 + 4 + 2 
+= 2 + 5 + 1 
+= 2 + 6 
+= 3 + 1 + 1 + 1 + 1 + 1 
+= 3 + 1 + 1 + 1 + 2 
+= 3 + 1 + 1 + 2 + 1 
+= 3 + 1 + 1 + 3 
+= 3 + 1 + 2 + 1 + 1 
+= 3 + 1 + 2 + 2 
+= 3 + 1 + 3 + 1 
+= 3 + 1 + 4 
+= 3 + 2 + 1 + 1 + 1 
+= 3 + 2 + 1 + 2 
+= 3 + 2 + 2 + 1 
+= 3 + 2 + 3 
+= 3 + 3 + 1 + 1 
+= 3 + 3 + 2 
+= 3 + 4 + 1 
+= 3 + 5 
+= 4 + 1 + 1 + 1 + 1 
+= 4 + 1 + 1 + 2 
+= 4 + 1 + 2 + 1 
+= 4 + 1 + 3 
+= 4 + 2 + 1 + 1 
+= 4 + 2 + 2 
+= 4 + 3 + 1 
+= 4 + 4 
+= 5 + 1 + 1 + 1 
+= 5 + 1 + 2 
+= 5 + 2 + 1 
+= 5 + 3 
+= 6 + 1 + 1 
+= 6 + 2 
+= 7 + 1 
+= 8 
+(success)
+
+partitionAll(9)
+= 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 
+= 1 + 1 + 1 + 1 + 1 + 1 + 1 + 2 
+= 1 + 1 + 1 + 1 + 1 + 1 + 2 + 1 
+= 1 + 1 + 1 + 1 + 1 + 1 + 3 
+= 1 + 1 + 1 + 1 + 1 + 2 + 1 + 1 
+= 1 + 1 + 1 + 1 + 1 + 2 + 2 
+= 1 + 1 + 1 + 1 + 1 + 3 + 1 
+= 1 + 1 + 1 + 1 + 1 + 4 
+= 1 + 1 + 1 + 1 + 2 + 1 + 1 + 1 
+= 1 + 1 + 1 + 1 + 2 + 1 + 2 
+= 1 + 1 + 1 + 1 + 2 + 2 + 1 
+= 1 + 1 + 1 + 1 + 2 + 3 
+= 1 + 1 + 1 + 1 + 3 + 1 + 1 
+= 1 + 1 + 1 + 1 + 3 + 2 
+= 1 + 1 + 1 + 1 + 4 + 1 
+= 1 + 1 + 1 + 1 + 5 
+= 1 + 1 + 1 + 2 + 1 + 1 + 1 + 1 
+= 1 + 1 + 1 + 2 + 1 + 1 + 2 
+= 1 + 1 + 1 + 2 + 1 + 2 + 1 
+= 1 + 1 + 1 + 2 + 1 + 3 
+= 1 + 1 + 1 + 2 + 2 + 1 + 1 
+= 1 + 1 + 1 + 2 + 2 + 2 
+= 1 + 1 + 1 + 2 + 3 + 1 
+= 1 + 1 + 1 + 2 + 4 
+= 1 + 1 + 1 + 3 + 1 + 1 + 1 
+= 1 + 1 + 1 + 3 + 1 + 2 
+= 1 + 1 + 1 + 3 + 2 + 1 
+= 1 + 1 + 1 + 3 + 3 
+= 1 + 1 + 1 + 4 + 1 + 1 
+= 1 + 1 + 1 + 4 + 2 
+= 1 + 1 + 1 + 5 + 1 
+= 1 + 1 + 1 + 6 
+= 1 + 1 + 2 + 1 + 1 + 1 + 1 + 1 
+= 1 + 1 + 2 + 1 + 1 + 1 + 2 
+= 1 + 1 + 2 + 1 + 1 + 2 + 1 
+= 1 + 1 + 2 + 1 + 1 + 3 
+= 1 + 1 + 2 + 1 + 2 + 1 + 1 
+= 1 + 1 + 2 + 1 + 2 + 2 
+= 1 + 1 + 2 + 1 + 3 + 1 
+= 1 + 1 + 2 + 1 + 4 
+= 1 + 1 + 2 + 2 + 1 + 1 + 1 
+= 1 + 1 + 2 + 2 + 1 + 2 
+= 1 + 1 + 2 + 2 + 2 + 1 
+= 1 + 1 + 2 + 2 + 3 
+= 1 + 1 + 2 + 3 + 1 + 1 
+= 1 + 1 + 2 + 3 + 2 
+= 1 + 1 + 2 + 4 + 1 
+= 1 + 1 + 2 + 5 
+= 1 + 1 + 3 + 1 + 1 + 1 + 1 
+= 1 + 1 + 3 + 1 + 1 + 2 
+= 1 + 1 + 3 + 1 + 2 + 1 
+= 1 + 1 + 3 + 1 + 3 
+= 1 + 1 + 3 + 2 + 1 + 1 
+= 1 + 1 + 3 + 2 + 2 
+= 1 + 1 + 3 + 3 + 1 
+= 1 + 1 + 3 + 4 
+= 1 + 1 + 4 + 1 + 1 + 1 
+= 1 + 1 + 4 + 1 + 2 
+= 1 + 1 + 4 + 2 + 1 
+= 1 + 1 + 4 + 3 
+= 1 + 1 + 5 + 1 + 1 
+= 1 + 1 + 5 + 2 
+= 1 + 1 + 6 + 1 
+= 1 + 1 + 7 
+= 1 + 2 + 1 + 1 + 1 + 1 + 1 + 1 
+= 1 + 2 + 1 + 1 + 1 + 1 + 2 
+= 1 + 2 + 1 + 1 + 1 + 2 + 1 
+= 1 + 2 + 1 + 1 + 1 + 3 
+= 1 + 2 + 1 + 1 + 2 + 1 + 1 
+= 1 + 2 + 1 + 1 + 2 + 2 
+= 1 + 2 + 1 + 1 + 3 + 1 
+= 1 + 2 + 1 + 1 + 4 
+= 1 + 2 + 1 + 2 + 1 + 1 + 1 
+= 1 + 2 + 1 + 2 + 1 + 2 
+= 1 + 2 + 1 + 2 + 2 + 1 
+= 1 + 2 + 1 + 2 + 3 
+= 1 + 2 + 1 + 3 + 1 + 1 
+= 1 + 2 + 1 + 3 + 2 
+= 1 + 2 + 1 + 4 + 1 
+= 1 + 2 + 1 + 5 
+= 1 + 2 + 2 + 1 + 1 + 1 + 1 
+= 1 + 2 + 2 + 1 + 1 + 2 
+= 1 + 2 + 2 + 1 + 2 + 1 
+= 1 + 2 + 2 + 1 + 3 
+= 1 + 2 + 2 + 2 + 1 + 1 
+= 1 + 2 + 2 + 2 + 2 
+= 1 + 2 + 2 + 3 + 1 
+= 1 + 2 + 2 + 4 
+= 1 + 2 + 3 + 1 + 1 + 1 
+= 1 + 2 + 3 + 1 + 2 
+= 1 + 2 + 3 + 2 + 1 
+= 1 + 2 + 3 + 3 
+= 1 + 2 + 4 + 1 + 1 
+= 1 + 2 + 4 + 2 
+= 1 + 2 + 5 + 1 
+= 1 + 2 + 6 
+= 1 + 3 + 1 + 1 + 1 + 1 + 1 
+= 1 + 3 + 1 + 1 + 1 + 2 
+= 1 + 3 + 1 + 1 + 2 + 1 
+= 1 + 3 + 1 + 1 + 3 
+= 1 + 3 + 1 + 2 + 1 + 1 
+= 1 + 3 + 1 + 2 + 2 
+= 1 + 3 + 1 + 3 + 1 
+= 1 + 3 + 1 + 4 
+= 1 + 3 + 2 + 1 + 1 + 1 
+= 1 + 3 + 2 + 1 + 2 
+= 1 + 3 + 2 + 2 + 1 
+= 1 + 3 + 2 + 3 
+= 1 + 3 + 3 + 1 + 1 
+= 1 + 3 + 3 + 2 
+= 1 + 3 + 4 + 1 
+= 1 + 3 + 5 
+= 1 + 4 + 1 + 1 + 1 + 1 
+= 1 + 4 + 1 + 1 + 2 
+= 1 + 4 + 1 + 2 + 1 
+= 1 + 4 + 1 + 3 
+= 1 + 4 + 2 + 1 + 1 
+= 1 + 4 + 2 + 2 
+= 1 + 4 + 3 + 1 
+= 1 + 4 + 4 
+= 1 + 5 + 1 + 1 + 1 
+= 1 + 5 + 1 + 2 
+= 1 + 5 + 2 + 1 
+= 1 + 5 + 3 
+= 1 + 6 + 1 + 1 
+= 1 + 6 + 2 
+= 1 + 7 + 1 
+= 1 + 8 
+= 2 + 1 + 1 + 1 + 1 + 1 + 1 + 1 
+= 2 + 1 + 1 + 1 + 1 + 1 + 2 
+= 2 + 1 + 1 + 1 + 1 + 2 + 1 
+= 2 + 1 + 1 + 1 + 1 + 3 
+= 2 + 1 + 1 + 1 + 2 + 1 + 1 
+= 2 + 1 + 1 + 1 + 2 + 2 
+= 2 + 1 + 1 + 1 + 3 + 1 
+= 2 + 1 + 1 + 1 + 4 
+= 2 + 1 + 1 + 2 + 1 + 1 + 1 
+= 2 + 1 + 1 + 2 + 1 + 2 
+= 2 + 1 + 1 + 2 + 2 + 1 
+= 2 + 1 + 1 + 2 + 3 
+= 2 + 1 + 1 + 3 + 1 + 1 
+= 2 + 1 + 1 + 3 + 2 
+= 2 + 1 + 1 + 4 + 1 
+= 2 + 1 + 1 + 5 
+= 2 + 1 + 2 + 1 + 1 + 1 + 1 
+= 2 + 1 + 2 + 1 + 1 + 2 
+= 2 + 1 + 2 + 1 + 2 + 1 
+= 2 + 1 + 2 + 1 + 3 
+= 2 + 1 + 2 + 2 + 1 + 1 
+= 2 + 1 + 2 + 2 + 2 
+= 2 + 1 + 2 + 3 + 1 
+= 2 + 1 + 2 + 4 
+= 2 + 1 + 3 + 1 + 1 + 1 
+= 2 + 1 + 3 + 1 + 2 
+= 2 + 1 + 3 + 2 + 1 
+= 2 + 1 + 3 + 3 
+= 2 + 1 + 4 + 1 + 1 
+= 2 + 1 + 4 + 2 
+= 2 + 1 + 5 + 1 
+= 2 + 1 + 6 
+= 2 + 2 + 1 + 1 + 1 + 1 + 1 
+= 2 + 2 + 1 + 1 + 1 + 2 
+= 2 + 2 + 1 + 1 + 2 + 1 
+= 2 + 2 + 1 + 1 + 3 
+= 2 + 2 + 1 + 2 + 1 + 1 
+= 2 + 2 + 1 + 2 + 2 
+= 2 + 2 + 1 + 3 + 1 
+= 2 + 2 + 1 + 4 
+= 2 + 2 + 2 + 1 + 1 + 1 
+= 2 + 2 + 2 + 1 + 2 
+= 2 + 2 + 2 + 2 + 1 
+= 2 + 2 + 2 + 3 
+= 2 + 2 + 3 + 1 + 1 
+= 2 + 2 + 3 + 2 
+= 2 + 2 + 4 + 1 
+= 2 + 2 + 5 
+= 2 + 3 + 1 + 1 + 1 + 1 
+= 2 + 3 + 1 + 1 + 2 
+= 2 + 3 + 1 + 2 + 1 
+= 2 + 3 + 1 + 3 
+= 2 + 3 + 2 + 1 + 1 
+= 2 + 3 + 2 + 2 
+= 2 + 3 + 3 + 1 
+= 2 + 3 + 4 
+= 2 + 4 + 1 + 1 + 1 
+= 2 + 4 + 1 + 2 
+= 2 + 4 + 2 + 1 
+= 2 + 4 + 3 
+= 2 + 5 + 1 + 1 
+= 2 + 5 + 2 
+= 2 + 6 + 1 
+= 2 + 7 
+= 3 + 1 + 1 + 1 + 1 + 1 + 1 
+= 3 + 1 + 1 + 1 + 1 + 2 
+= 3 + 1 + 1 + 1 + 2 + 1 
+= 3 + 1 + 1 + 1 + 3 
+= 3 + 1 + 1 + 2 + 1 + 1 
+= 3 + 1 + 1 + 2 + 2 
+= 3 + 1 + 1 + 3 + 1 
+= 3 + 1 + 1 + 4 
+= 3 + 1 + 2 + 1 + 1 + 1 
+= 3 + 1 + 2 + 1 + 2 
+= 3 + 1 + 2 + 2 + 1 
+= 3 + 1 + 2 + 3 
+= 3 + 1 + 3 + 1 + 1 
+= 3 + 1 + 3 + 2 
+= 3 + 1 + 4 + 1 
+= 3 + 1 + 5 
+= 3 + 2 + 1 + 1 + 1 + 1 
+= 3 + 2 + 1 + 1 + 2 
+= 3 + 2 + 1 + 2 + 1 
+= 3 + 2 + 1 + 3 
+= 3 + 2 + 2 + 1 + 1 
+= 3 + 2 + 2 + 2 
+= 3 + 2 + 3 + 1 
+= 3 + 2 + 4 
+= 3 + 3 + 1 + 1 + 1 
+= 3 + 3 + 1 + 2 
+= 3 + 3 + 2 + 1 
+= 3 + 3 + 3 
+= 3 + 4 + 1 + 1 
+= 3 + 4 + 2 
+= 3 + 5 + 1 
+= 3 + 6 
+= 4 + 1 + 1 + 1 + 1 + 1 
+= 4 + 1 + 1 + 1 + 2 
+= 4 + 1 + 1 + 2 + 1 
+= 4 + 1 + 1 + 3 
+= 4 + 1 + 2 + 1 + 1 
+= 4 + 1 + 2 + 2 
+= 4 + 1 + 3 + 1 
+= 4 + 1 + 4 
+= 4 + 2 + 1 + 1 + 1 
+= 4 + 2 + 1 + 2 
+= 4 + 2 + 2 + 1 
+= 4 + 2 + 3 
+= 4 + 3 + 1 + 1 
+= 4 + 3 + 2 
+= 4 + 4 + 1 
+= 4 + 5 
+= 5 + 1 + 1 + 1 + 1 
+= 5 + 1 + 1 + 2 
+= 5 + 1 + 2 + 1 
+= 5 + 1 + 3 
+= 5 + 2 + 1 + 1 
+= 5 + 2 + 2 
+= 5 + 3 + 1 
+= 5 + 4 
+= 6 + 1 + 1 + 1 
+= 6 + 1 + 2 
+= 6 + 2 + 1 
+= 6 + 3 
+= 7 + 1 + 1 
+= 7 + 2 
+= 8 + 1 
+= 9 
+(success)
+
+partitionIncreasing(1)
+ERROR: expected 1 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1
+
+partitionIncreasing(2)
+ERROR: expected 1 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 2
+
+partitionIncreasing(3)
+ERROR: expected 2 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 2
+= 3
+
+partitionIncreasing(4)
+ERROR: expected 2 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 3
+= 4
+
+partitionIncreasing(5)
+ERROR: expected 3 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 4
+= 2 + 3
+= 5
+
+partitionIncreasing(6)
+ERROR: expected 4 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 2 + 3
+= 1 + 5
+= 2 + 4
+= 6
+
+partitionIncreasing(7)
+ERROR: expected 5 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 2 + 4
+= 1 + 6
+= 2 + 5
+= 3 + 4
+= 7
+
+partitionIncreasing(8)
+ERROR: expected 6 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 2 + 5
+= 1 + 3 + 4
+= 1 + 7
+= 2 + 6
+= 3 + 5
+= 8
+
+partitionIncreasing(9)
+ERROR: expected 8 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 2 + 6
+= 1 + 3 + 5
+= 1 + 8
+= 2 + 3 + 4
+= 2 + 7
+= 3 + 6
+= 4 + 5
+= 9
+
+partitionDecreasing(1)
+ERROR: expected 1 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1
+
+partitionDecreasing(2)
+ERROR: expected 1 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 2
+
+partitionDecreasing(3)
+ERROR: expected 2 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 2 + 1
+= 3
+
+partitionDecreasing(4)
+ERROR: expected 2 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 3 + 1
+= 4
+
+partitionDecreasing(5)
+ERROR: expected 3 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 3 + 2
+= 4 + 1
+= 5
+
+partitionDecreasing(6)
+ERROR: expected 4 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 3 + 2 + 1
+= 4 + 2
+= 5 + 1
+= 6
+
+partitionDecreasing(7)
+ERROR: expected 5 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 4 + 2 + 1
+= 4 + 3
+= 5 + 2
+= 6 + 1
+= 7
+
+partitionDecreasing(8)
+ERROR: expected 6 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 4 + 3 + 1
+= 5 + 2 + 1
+= 5 + 3
+= 6 + 2
+= 7 + 1
+= 8
+
+partitionDecreasing(9)
+ERROR: expected 8 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 4 + 3 + 2
+= 5 + 3 + 1
+= 5 + 4
+= 6 + 2 + 1
+= 6 + 3
+= 7 + 2
+= 8 + 1
+= 9
+
+partitionOdd(1)
+ERROR: expected 1 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1
+
+partitionOdd(2)
+ERROR: expected 1 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 1
+
+partitionOdd(3)
+ERROR: expected 2 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 1 + 1
+= 3
+
+partitionOdd(4)
+ERROR: expected 3 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 1 + 1 + 1
+= 1 + 3
+= 3 + 1
+
+partitionOdd(5)
+ERROR: expected 5 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 1 + 1 + 1 + 1
+= 1 + 1 + 3
+= 1 + 3 + 1
+= 3 + 1 + 1
+= 5
+
+partitionOdd(6)
+ERROR: expected 8 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 1 + 1 + 1 + 1 + 1
+= 1 + 1 + 1 + 3
+= 1 + 1 + 3 + 1
+= 1 + 3 + 1 + 1
+= 1 + 5
+= 3 + 1 + 1 + 1
+= 3 + 3
+= 5 + 1
+
+partitionOdd(7)
+ERROR: expected 13 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 1 + 1 + 1 + 1 + 1 + 1
+= 1 + 1 + 1 + 1 + 3
+= 1 + 1 + 1 + 3 + 1
+= 1 + 1 + 3 + 1 + 1
+= 1 + 1 + 5
+= 1 + 3 + 1 + 1 + 1
+= 1 + 3 + 3
+= 1 + 5 + 1
+= 3 + 1 + 1 + 1 + 1
+= 3 + 1 + 3
+= 3 + 3 + 1
+= 5 + 1 + 1
+= 7
+
+partitionOdd(8)
+ERROR: expected 21 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1
+= 1 + 1 + 1 + 1 + 1 + 3
+= 1 + 1 + 1 + 1 + 3 + 1
+= 1 + 1 + 1 + 3 + 1 + 1
+= 1 + 1 + 1 + 5
+= 1 + 1 + 3 + 1 + 1 + 1
+= 1 + 1 + 3 + 3
+= 1 + 1 + 5 + 1
+= 1 + 3 + 1 + 1 + 1 + 1
+= 1 + 3 + 1 + 3
+= 1 + 3 + 3 + 1
+= 1 + 5 + 1 + 1
+= 1 + 7
+= 3 + 1 + 1 + 1 + 1 + 1
+= 3 + 1 + 1 + 3
+= 3 + 1 + 3 + 1
+= 3 + 3 + 1 + 1
+= 3 + 5
+= 5 + 1 + 1 + 1
+= 5 + 3
+= 7 + 1
+
+partitionOdd(9)
+ERROR: expected 34 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1
+= 1 + 1 + 1 + 1 + 1 + 1 + 3
+= 1 + 1 + 1 + 1 + 1 + 3 + 1
+= 1 + 1 + 1 + 1 + 3 + 1 + 1
+= 1 + 1 + 1 + 1 + 5
+= 1 + 1 + 1 + 3 + 1 + 1 + 1
+= 1 + 1 + 1 + 3 + 3
+= 1 + 1 + 1 + 5 + 1
+= 1 + 1 + 3 + 1 + 1 + 1 + 1
+= 1 + 1 + 3 + 1 + 3
+= 1 + 1 + 3 + 3 + 1
+= 1 + 1 + 5 + 1 + 1
+= 1 + 1 + 7
+= 1 + 3 + 1 + 1 + 1 + 1 + 1
+= 1 + 3 + 1 + 1 + 3
+= 1 + 3 + 1 + 3 + 1
+= 1 + 3 + 3 + 1 + 1
+= 1 + 3 + 5
+= 1 + 5 + 1 + 1 + 1
+= 1 + 5 + 3
+= 1 + 7 + 1
+= 3 + 1 + 1 + 1 + 1 + 1 + 1
+= 3 + 1 + 1 + 1 + 3
+= 3 + 1 + 1 + 3 + 1
+= 3 + 1 + 3 + 1 + 1
+= 3 + 1 + 5
+= 3 + 3 + 1 + 1 + 1
+= 3 + 3 + 3
+= 3 + 5 + 1
+= 5 + 1 + 1 + 1 + 1
+= 5 + 1 + 3
+= 5 + 3 + 1
+= 7 + 1 + 1
+= 9
+
+partitionEven(1)
+(success)
+
+partitionEven(2)
+ERROR: expected 1 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 2
+
+partitionEven(3)
+(success)
+
+partitionEven(4)
+ERROR: expected 2 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 2 + 2
+= 4
+
+partitionEven(5)
+(success)
+
+partitionEven(6)
+ERROR: expected 4 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 2 + 2 + 2
+= 2 + 4
+= 4 + 2
+= 6
+
+partitionEven(7)
+(success)
+
+partitionEven(8)
+ERROR: expected 8 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 2 + 2 + 2 + 2
+= 2 + 2 + 4
+= 2 + 4 + 2
+= 2 + 6
+= 4 + 2 + 2
+= 4 + 4
+= 6 + 2
+= 8
+
+partitionEven(9)
+(success)
+
+partitionOddAndEven(1)
+ERROR: expected 1 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1
+
+partitionOddAndEven(2)
+ERROR: expected 1 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 2
+
+partitionOddAndEven(3)
+ERROR: expected 3 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 2
+= 2 + 1
+= 3
+
+partitionOddAndEven(4)
+ERROR: expected 2 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 2 + 1
+= 4
+
+partitionOddAndEven(5)
+ERROR: expected 6 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 4
+= 2 + 1 + 2
+= 2 + 3
+= 3 + 2
+= 4 + 1
+= 5
+
+partitionOddAndEven(6)
+ERROR: expected 6 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 2 + 1 + 2
+= 1 + 2 + 3
+= 1 + 4 + 1
+= 2 + 1 + 2 + 1
+= 3 + 2 + 1
+= 6
+
+partitionOddAndEven(7)
+ERROR: expected 11 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 2 + 1 + 2 + 1
+= 1 + 6
+= 2 + 1 + 4
+= 2 + 3 + 2
+= 2 + 5
+= 3 + 4
+= 4 + 1 + 2
+= 4 + 3
+= 5 + 2
+= 6 + 1
+= 7
+
+partitionOddAndEven(8)
+ERROR: expected 16 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 2 + 1 + 4
+= 1 + 2 + 3 + 2
+= 1 + 2 + 5
+= 1 + 4 + 1 + 2
+= 1 + 4 + 3
+= 1 + 6 + 1
+= 2 + 1 + 2 + 1 + 2
+= 2 + 1 + 2 + 3
+= 2 + 1 + 4 + 1
+= 2 + 3 + 2 + 1
+= 3 + 2 + 1 + 2
+= 3 + 2 + 3
+= 3 + 4 + 1
+= 4 + 1 + 2 + 1
+= 5 + 2 + 1
+= 8
+
+partitionOddAndEven(9)
+ERROR: expected 22 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 1 + 2 + 1 + 2 + 1 + 2
+= 1 + 2 + 1 + 2 + 3
+= 1 + 2 + 1 + 4 + 1
+= 1 + 2 + 3 + 2 + 1
+= 1 + 4 + 1 + 2 + 1
+= 1 + 8
+= 2 + 1 + 2 + 1 + 2 + 1
+= 2 + 1 + 6
+= 2 + 3 + 4
+= 2 + 5 + 2
+= 2 + 7
+= 3 + 2 + 1 + 2 + 1
+= 3 + 6
+= 4 + 1 + 4
+= 4 + 3 + 2
+= 4 + 5
+= 5 + 4
+= 6 + 1 + 2
+= 6 + 3
+= 7 + 2
+= 8 + 1
+= 9
+
+partitionPrime(1)
+(success)
+
+partitionPrime(2)
+ERROR: expected 1 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 2
+
+partitionPrime(3)
+ERROR: expected 1 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 3
+
+partitionPrime(4)
+ERROR: expected 1 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 2 + 2
+
+partitionPrime(5)
+ERROR: expected 3 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 2 + 3
+= 3 + 2
+= 5
+
+partitionPrime(6)
+ERROR: expected 2 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 2 + 2 + 2
+= 3 + 3
+
+partitionPrime(7)
+ERROR: expected 6 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 2 + 2 + 3
+= 2 + 3 + 2
+= 2 + 5
+= 3 + 2 + 2
+= 5 + 2
+= 7
+
+partitionPrime(8)
+ERROR: expected 6 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 2 + 2 + 2 + 2
+= 2 + 3 + 3
+= 3 + 2 + 3
+= 3 + 3 + 2
+= 3 + 5
+= 5 + 3
+
+partitionPrime(9)
+ERROR: expected 10 lines of output. (You had 0 lines.)
+
+Remember that only lines beginning with a '=' character are marked.
+Printing the solution...
+
+= 2 + 2 + 2 + 3
+= 2 + 2 + 3 + 2
+= 2 + 2 + 5
+= 2 + 3 + 2 + 2
+= 2 + 5 + 2
+= 2 + 7
+= 3 + 2 + 2 + 2
+= 3 + 3 + 3
+= 5 + 2 + 2
+= 7 + 2
+
+
+15/63 testcases passed.
+Overall mark is a FAIL.
