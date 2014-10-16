@@ -1,0 +1,714 @@
+Breakpoint 1 at 0x400dbe: file answer06.c, line 85.
+Breakpoint 2 at 0x400e9f: file answer06.c, line 103.
+Breakpoint 3 at 0x400f42: file answer06.c, line 117.
+Breakpoint 4 at 0x400fa2: file answer06.c, line 128.
+Breakpoint 5 at 0x400fde: file answer06.c, line 140.
+Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA06/pa06 sample.2.9x7
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdaf0, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 1, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:85
+85					traverse( maze, currentLocation, dir[j], w, h, dir[j] );	// 		TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffda70, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=87 'W', w=9, h=7, move=87 'W') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd9f0, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=87 'W', w=9, h=7, move=87 'W') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd970, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=87 'W', w=9, h=7, move=87 'W') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd8f0, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd8f0, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd8f0, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd8f0, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 3, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=87 'W', w=9, h=7, move=87 'W') at answer06.c:117
+117						traverse( maze, currentLocation, dir[j], w, h, dir[j] );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd870, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd7f0, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd770, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd6f0, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd6f0, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd6f0, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd6f0, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 3, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:117
+117						traverse( maze, currentLocation, dir[j], w, h, dir[j] );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd670, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd5f0, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 1, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:85
+85					traverse( maze, currentLocation, dir[j], w, h, dir[j] );	// 		TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd570, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd4f0, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 1, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:85
+85					traverse( maze, currentLocation, dir[j], w, h, dir[j] );	// 		TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd470, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 4, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:129
+129			printf ( "BASE CASE!!\n\n" );
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd4f0, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 1, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:85
+85					traverse( maze, currentLocation, dir[j], w, h, dir[j] );	// 		TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Program received signal SIGSEGV, Segmentation fault.
+0x0000000000401293 in numWaysToGo (maze=0x7fffffffdb80, w=9, h=7, location=0x7fffffffdb40, facing=83 'S') at answer06.c:232
+232		if ( ( facing != 'N' ) && ( maze [ location[0] + 1 ][ location [1] ] == ' ' ) )
+Continuing.
+
+Program terminated with signal SIGSEGV, Segmentation fault.
+The program no longer exists.
+The program is not being run.
+Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA06/pa06 sample.2.9x7
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdaf0, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 1, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:85
+85					traverse( maze, currentLocation, dir[j], w, h, dir[j] );	// 		TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffda70, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=87 'W', w=9, h=7, move=87 'W') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd9f0, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=87 'W', w=9, h=7, move=87 'W') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd970, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=87 'W', w=9, h=7, move=87 'W') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd8f0, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd8f0, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd8f0, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd8f0, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 3, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=87 'W', w=9, h=7, move=87 'W') at answer06.c:117
+117						traverse( maze, currentLocation, dir[j], w, h, dir[j] );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd870, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd7f0, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd770, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd6f0, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd6f0, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd6f0, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd6f0, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 3, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:117
+117						traverse( maze, currentLocation, dir[j], w, h, dir[j] );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd670, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd5f0, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 1, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:85
+85					traverse( maze, currentLocation, dir[j], w, h, dir[j] );	// 		TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd570, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd4f0, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 1, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:85
+85					traverse( maze, currentLocation, dir[j], w, h, dir[j] );	// 		TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd470, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 4, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:129
+129			printf ( "BASE CASE!!\n\n" );
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd4f0, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 1, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:85
+85					traverse( maze, currentLocation, dir[j], w, h, dir[j] );	// 		TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Program received signal SIGSEGV, Segmentation fault.
+0x0000000000401293 in numWaysToGo (maze=0x7fffffffdb80, w=9, h=7, location=0x7fffffffdb40, facing=83 'S') at answer06.c:232
+232		if ( ( facing != 'N' ) && ( maze [ location[0] + 1 ][ location [1] ] == ' ' ) )
+#0  0x0000000000401293 in numWaysToGo (maze=0x7fffffffdb80, w=9, h=7, location=0x7fffffffdb40, facing=83 'S') at answer06.c:232
+#1  0x0000000000400d00 in traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:70
+#2  0x0000000000400e01 in traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:85
+#3  0x0000000000400ec4 in traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:103
+#4  0x0000000000400e01 in traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:85
+#5  0x0000000000400ec4 in traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:103
+#6  0x0000000000400f85 in traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:117
+#7  0x0000000000400ec4 in traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:103
+#8  0x0000000000400ec4 in traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:103
+#9  0x0000000000400ec4 in traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:103
+#10 0x0000000000400f85 in traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=87 'W', w=9, h=7, move=87 'W') at answer06.c:117
+#11 0x0000000000400ec4 in traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=87 'W', w=9, h=7, move=87 'W') at answer06.c:103
+#12 0x0000000000400ec4 in traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=87 'W', w=9, h=7, move=87 'W') at answer06.c:103
+#13 0x0000000000400ec4 in traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=87 'W', w=9, h=7, move=87 'W') at answer06.c:103
+#14 0x0000000000400e01 in traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:85
+#15 0x0000000000400c5c in print_directions (maze=0x7fffffffdb80, w=9, h=7) at answer06.c:35
+#16 0x0000000000400909 in main (argc=2, argv=0x7fffffffdf88) at pa06.c:38
+The program being debugged has been started already.
+Start it from the beginning? (y or n) Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA06/pa06 sample.2.9x7
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Undefined command: "cc".  Try "help".
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdaf0, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 1, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:85
+85					traverse( maze, currentLocation, dir[j], w, h, dir[j] );	// 		TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffda70, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=87 'W', w=9, h=7, move=87 'W') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd9f0, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=87 'W', w=9, h=7, move=87 'W') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd970, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=87 'W', w=9, h=7, move=87 'W') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd8f0, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd8f0, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd8f0, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd8f0, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 3, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=87 'W', w=9, h=7, move=87 'W') at answer06.c:117
+117						traverse( maze, currentLocation, dir[j], w, h, dir[j] );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd870, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd7f0, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd770, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd6f0, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd6f0, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd6f0, move=87 'W', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd6f0, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 3, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:117
+117						traverse( maze, currentLocation, dir[j], w, h, dir[j] );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd670, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd5f0, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 1, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:85
+85					traverse( maze, currentLocation, dir[j], w, h, dir[j] );	// 		TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd570, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd4f0, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 1, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:85
+85					traverse( maze, currentLocation, dir[j], w, h, dir[j] );	// 		TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd470, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 2, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:103
+103				traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=69 'E', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+Continuing.
+
+Breakpoint 4, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:129
+129			printf ( "BASE CASE!!\n\n" );
+Continuing.
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffd4f0, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+$1 = 7
+$2 = {5, 5}
+143			if ( move == 'W' || move == 1 )
+156			else if ( move == 'E' ||  move == 2 )
+169			else if ( move == 'S' || move == 3 )
+171				tempLocation[0]++;
+172				if ( maze[ tempLocation[0] ][ tempLocation[1] ] != 'X' )
+$3 = (int *) 0x7fffffffd4f0
+$4 = 5
+Undefined command: "".  Try "help".
+$5 = 5
+174						currentLocation[0] = tempLocation[0];
+176						return 1;
+197	}
+
+Breakpoint 1, traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=69 'E', w=9, h=7, move=69 'E') at answer06.c:85
+85					traverse( maze, currentLocation, dir[j], w, h, dir[j] );	// 		TRAVERSE!!
+
+Breakpoint 5, moveStep (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, move=83 'S', w=9, h=7) at answer06.c:141
+141		if ( tempLocation[0] < h-1 )
+143			if ( move == 'W' || move == 1 )
+156			else if ( move == 'E' ||  move == 2 )
+169			else if ( move == 'S' || move == 3 )
+171				tempLocation[0]++;
+172				if ( maze[ tempLocation[0] ][ tempLocation[1] ] != 'X' )
+174						currentLocation[0] = tempLocation[0];
+176						return 1;
+197	}
+$6 = 6
+$7 = 5
+traverse (maze=0x7fffffffdb80, currentLocation=0x7fffffffdb40, facing=83 'S', w=9, h=7, move=83 'S') at answer06.c:58
+58		print_loc ( maze, w, h, currentLocation );
+59		printf("\n");
+62		int numWays = 0;
+64		int i = 0;
+65		char * dir = { "WESN" };
+66		int j = 0;
+70		numWays = numWaysToGo ( maze, w, h, currentLocation, facing );
+
+Program received signal SIGSEGV, Segmentation fault.
+0x0000000000401293 in numWaysToGo (maze=0x7fffffffdb80, w=9, h=7, location=0x7fffffffdb40, facing=83 'S') at answer06.c:232
+232		if ( ( facing != 'N' ) && ( maze [ location[0] + 1 ][ location [1] ] == ' ' ) )
+A debugging session is active.
+
+	Inferior 1 [process 7712] will be killed.
+
+Quit anyway? (y or n) 
