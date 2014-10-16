@@ -28,12 +28,12 @@ void print_directions( char * * maze , int w, int h )
 {
 	int entrance;
 	int currentLocation[2];
-		
+			
 	//		FIND ENTRANCE AND EXIT POSITION
 	entrance = find_entrance ( maze, w );
 	setLocation ( currentLocation, 0, entrance );
 	traverse( maze, currentLocation, 'S', w, h, 'S' );						// TRAVERSE!!
-	
+	printf( "N 1\nPrinted This" );
 	//		PRINT DIRECTIONS
 	
 }
@@ -53,10 +53,16 @@ void traverse ( char * * maze, int * currentLocation, char facing, int w, int h,
 	if ( !moveStep( maze, currentLocation, move, w, h ) )
 	{
 		//	Can't Move further in the direction
+		
 		return;
 	}
-	print_loc ( maze, w, h, currentLocation );
-	printf("\n");
+	else
+	{
+		printf( "%c 1\n", facing );
+		maze[ currentLocation[0] ][ currentLocation[1] ] = '*';
+	}
+	//print_loc ( maze, w, h, currentLocation );
+	//printf("\n");
 	
 	//-------------------------
 	int numWays = 0;
@@ -74,7 +80,7 @@ void traverse ( char * * maze, int * currentLocation, char facing, int w, int h,
 	{
 		x = currentLocation[0];
 		y = currentLocation[1];
-		printf ( "RECURSIVE CASE!!\n\n");
+		//printf ( "RECURSIVE CASE!!\n\n");
 		setLocation ( LastRecursiveLocation, currentLocation[0], currentLocation[1] );
 		setLocation ( tempLocation, currentLocation[0], currentLocation[1] );
 		while ( i < numWays && j < 4 )
@@ -101,12 +107,6 @@ void traverse ( char * * maze, int * currentLocation, char facing, int w, int h,
 		if ( moveStep ( maze, tempLocation, facing , w, h ) )
 		{
 			traverse( maze, currentLocation, facing, w, h, facing );		// TRAVERSE!!
-			
-			/*while ( moveStep ( maze, currentLocation, facing , w, h ) )
-			{
-				print_loc ( maze, w, h, currentLocation );
-				printf("\n");
-			}*/
 		}
 		else if ( !moveStep ( maze, tempLocation, facing , w, h ) )
 		{
@@ -126,9 +126,11 @@ void traverse ( char * * maze, int * currentLocation, char facing, int w, int h,
 	//		BASE CASE
 	else if ( numWays == 0 )
 	{
-		printf ( "BASE CASE!!\n\n" );
+		//printf ( "BASE CASE!!\n\n" );
+		//	GO BACK!!
 	}
 	
+	printf("%c 1\n", oppositeDir(facing));
 }
 
 //		TO MOVE TO NEW LOCATION
