@@ -33,7 +33,6 @@ void print_directions( char * * maze , int w, int h )
 	entrance = find_entrance ( maze, w );
 	setLocation ( currentLocation, 0, entrance );
 	traverse( maze, currentLocation, 'S', w, h, 'S' );						// TRAVERSE!!
-	printf( "N 1\n" );
 	//		PRINT DIRECTIONS
 	
 }
