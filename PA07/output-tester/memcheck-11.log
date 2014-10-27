@@ -1,0 +1,97 @@
+==12419== Memcheck, a memory error detector
+==12419== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==12419== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==12419== Command: ./a.out images/02-cat-chess.ee264 student-out-11_02-cat-chess.bmp
+==12419== Parent PID: 12418
+==12419== 
+--12419-- 
+--12419-- Valgrind options:
+--12419--    --tool=memcheck
+--12419--    --leak-check=full
+--12419--    --verbose
+--12419--    --log-file=memcheck-11.log
+--12419-- Contents of /proc/version:
+--12419--   Linux version 3.13.0-36-generic (buildd@toyol) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #63-Ubuntu SMP Wed Sep 3 21:30:07 UTC 2014
+--12419-- Arch and hwcaps: AMD64, amd64-cx16-rdtscp-sse3
+--12419-- Page sizes: currently 4096, max supported 4096
+--12419-- Valgrind library directory: /usr/lib/valgrind
+--12419-- Reading syms from /tmp/.HL8O2i/a.out
+--12419-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--12419--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--12419--   .. CRC mismatch (computed 4cbae35e wanted 8d683c31)
+--12419--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--12419--   .. CRC is valid
+--12419-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--12419--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--12419--   .. CRC mismatch (computed 37cdde19 wanted adc367dd)
+--12419--    object doesn't have a symbol table
+--12419--    object doesn't have a dynamic symbol table
+--12419-- Scheduler: using generic scheduler lock implementation.
+--12419-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==12419== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-12419-by-tatparya-on-???
+==12419== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-12419-by-tatparya-on-???
+==12419== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-12419-by-tatparya-on-???
+==12419== 
+==12419== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==12419== don't want to do, unless you know exactly what you're doing,
+==12419== or are doing some strange experiment):
+==12419==   /usr/lib/valgrind/../../bin/vgdb --pid=12419 ...command...
+==12419== 
+==12419== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==12419==   /path/to/gdb ./a.out
+==12419== and then give GDB the following command
+==12419==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=12419
+==12419== --pid is optional if only one valgrind process is running
+==12419== 
+--12419-- REDIR: 0x4019ca0 (strlen) redirected to 0x38068331 (???)
+--12419-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--12419--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--12419--   .. CRC mismatch (computed 329d6860 wanted c0186920)
+--12419--    object doesn't have a symbol table
+--12419-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--12419--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--12419--   .. CRC mismatch (computed 1fb85af8 wanted 2e9e3c16)
+--12419--    object doesn't have a symbol table
+==12419== WARNING: new redirection conflicts with existing -- ignoring it
+--12419--     old: 0x04019ca0 (strlen              ) R-> (0000.0) 0x38068331 ???
+--12419--     new: 0x04019ca0 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--12419-- REDIR: 0x4019a50 (index) redirected to 0x4c2dd50 (index)
+--12419-- REDIR: 0x4019c70 (strcmp) redirected to 0x4c2f2f0 (strcmp)
+--12419-- REDIR: 0x401a9c0 (mempcpy) redirected to 0x4c31da0 (mempcpy)
+--12419-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--12419--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--12419--   .. CRC mismatch (computed e7228afa wanted 93ff6981)
+--12419--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--12419--   .. CRC is valid
+--12419-- REDIR: 0x4ec47e0 (strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12419-- REDIR: 0x4ec6ad0 (strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12419-- REDIR: 0x4ec3fb0 (memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12419-- REDIR: 0x4ec2240 (rindex) redirected to 0x4c2da30 (rindex)
+--12419-- REDIR: 0x4ebeaf0 (strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12419-- REDIR: 0x4ecf7a0 (__strcmp_sse2_unaligned) redirected to 0x4c2f1b0 (strcmp)
+--12419-- REDIR: 0x4ec0540 (strlen) redirected to 0x4c2e0e0 (strlen)
+--12419-- REDIR: 0x4ecb540 (strchrnul) redirected to 0x4c319b0 (strchrnul)
+--12419-- REDIR: 0x4eba1d0 (malloc) redirected to 0x4c2ab10 (malloc)
+--12419-- REDIR: 0x4ec2e90 (__GI_strstr) redirected to 0x4c32030 (__strstr_sse2)
+--12419-- REDIR: 0x4ec9200 (__GI_memcpy) redirected to 0x4c2fc90 (__GI_memcpy)
+--12419-- REDIR: 0x4eba870 (free) redirected to 0x4c2bd80 (free)
+--12419-- REDIR: 0x4ec4040 (memset) redirected to 0x4c31350 (memset)
+==12419== 
+==12419== HEAP SUMMARY:
+==12419==     in use at exit: 568 bytes in 1 blocks
+==12419==   total heap usage: 7 allocs, 6 frees, 272,132 bytes allocated
+==12419== 
+==12419== Searching for pointers to 1 not-freed blocks
+==12419== Checked 82,752 bytes
+==12419== 
+==12419== LEAK SUMMARY:
+==12419==    definitely lost: 0 bytes in 0 blocks
+==12419==    indirectly lost: 0 bytes in 0 blocks
+==12419==      possibly lost: 0 bytes in 0 blocks
+==12419==    still reachable: 568 bytes in 1 blocks
+==12419==         suppressed: 0 bytes in 0 blocks
+==12419== Reachable blocks (those to which a pointer was found) are not shown.
+==12419== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==12419== 
+==12419== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==12419== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

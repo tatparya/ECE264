@@ -1,0 +1,11 @@
+
+/**
+ * Testcase 23 :: images/corrupt-testcases/09-incomplete-image.ee264 
+ * There is data missing from the end of the file. (Image_load should return NULL.)
+ */
+Attempt to read 'images/corrupt-testcases/09-incomplete-image.ee264' as .ee264 format
+Success.
+Writing out 'student-out-23_-' in .bmp format
+   Memory errors detected.
+   Valgrind log saved in output-tester/testcase-24.memcheck.log.
+Image_load(...) should return NULL for corrupt images

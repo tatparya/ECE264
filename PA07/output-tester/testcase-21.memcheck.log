@@ -1,0 +1,132 @@
+==12676== Memcheck, a memory error detector
+==12676== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==12676== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==12676== Command: ./a.out images/corrupt-testcases/06-bad-comment-len.ee264 student-out-20_-
+==12676== Parent PID: 12675
+==12676== 
+--12676-- 
+--12676-- Valgrind options:
+--12676--    --tool=memcheck
+--12676--    --leak-check=full
+--12676--    --verbose
+--12676--    --log-file=memcheck-20.log
+--12676-- Contents of /proc/version:
+--12676--   Linux version 3.13.0-36-generic (buildd@toyol) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #63-Ubuntu SMP Wed Sep 3 21:30:07 UTC 2014
+--12676-- Arch and hwcaps: AMD64, amd64-cx16-rdtscp-sse3
+--12676-- Page sizes: currently 4096, max supported 4096
+--12676-- Valgrind library directory: /usr/lib/valgrind
+--12676-- Reading syms from /tmp/.HL8O2i/a.out
+--12676-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--12676--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--12676--   .. CRC mismatch (computed 4cbae35e wanted 8d683c31)
+--12676--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--12676--   .. CRC is valid
+--12676-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--12676--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--12676--   .. CRC mismatch (computed 37cdde19 wanted adc367dd)
+--12676--    object doesn't have a symbol table
+--12676--    object doesn't have a dynamic symbol table
+--12676-- Scheduler: using generic scheduler lock implementation.
+--12676-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==12676== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-12676-by-tatparya-on-???
+==12676== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-12676-by-tatparya-on-???
+==12676== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-12676-by-tatparya-on-???
+==12676== 
+==12676== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==12676== don't want to do, unless you know exactly what you're doing,
+==12676== or are doing some strange experiment):
+==12676==   /usr/lib/valgrind/../../bin/vgdb --pid=12676 ...command...
+==12676== 
+==12676== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==12676==   /path/to/gdb ./a.out
+==12676== and then give GDB the following command
+==12676==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=12676
+==12676== --pid is optional if only one valgrind process is running
+==12676== 
+--12676-- REDIR: 0x4019ca0 (strlen) redirected to 0x38068331 (???)
+--12676-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--12676--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--12676--   .. CRC mismatch (computed 329d6860 wanted c0186920)
+--12676--    object doesn't have a symbol table
+--12676-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--12676--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--12676--   .. CRC mismatch (computed 1fb85af8 wanted 2e9e3c16)
+--12676--    object doesn't have a symbol table
+==12676== WARNING: new redirection conflicts with existing -- ignoring it
+--12676--     old: 0x04019ca0 (strlen              ) R-> (0000.0) 0x38068331 ???
+--12676--     new: 0x04019ca0 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--12676-- REDIR: 0x4019a50 (index) redirected to 0x4c2dd50 (index)
+--12676-- REDIR: 0x4019c70 (strcmp) redirected to 0x4c2f2f0 (strcmp)
+--12676-- REDIR: 0x401a9c0 (mempcpy) redirected to 0x4c31da0 (mempcpy)
+--12676-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--12676--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--12676--   .. CRC mismatch (computed e7228afa wanted 93ff6981)
+--12676--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--12676--   .. CRC is valid
+--12676-- REDIR: 0x4ec47e0 (strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12676-- REDIR: 0x4ec6ad0 (strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12676-- REDIR: 0x4ec3fb0 (memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12676-- REDIR: 0x4ec2240 (rindex) redirected to 0x4c2da30 (rindex)
+--12676-- REDIR: 0x4ebeaf0 (strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12676-- REDIR: 0x4ecf7a0 (__strcmp_sse2_unaligned) redirected to 0x4c2f1b0 (strcmp)
+--12676-- REDIR: 0x4ec0540 (strlen) redirected to 0x4c2e0e0 (strlen)
+--12676-- REDIR: 0x4ecb540 (strchrnul) redirected to 0x4c319b0 (strchrnul)
+--12676-- REDIR: 0x4eba1d0 (malloc) redirected to 0x4c2ab10 (malloc)
+--12676-- REDIR: 0x4ec2e90 (__GI_strstr) redirected to 0x4c32030 (__strstr_sse2)
+--12676-- REDIR: 0x4ec9200 (__GI_memcpy) redirected to 0x4c2fc90 (__GI_memcpy)
+==12676== Warning: set address range perms: large range [0x3a00e040, 0xb87f5ebe) (undefined)
+==12676== Conditional jump or move depends on uninitialised value(s)
+==12676==    at 0x400BEF: Image_load (answer07.c:81)
+==12676==    by 0x401E4D: main (<stdin>:61)
+==12676== 
+--12676-- REDIR: 0x4eba870 (free) redirected to 0x4c2bd80 (free)
+==12676== Warning: set address range perms: large range [0x3a00e028, 0xb87f5ed6) (noaccess)
+--12676-- REDIR: 0x4ec4040 (memset) redirected to 0x4c31350 (memset)
+==12676== Syscall param write(buf) points to uninitialised byte(s)
+==12676==    at 0x4F233B0: __write_nocancel (syscall-template.S:81)
+==12676==    by 0x4EB0A82: _IO_file_write@@GLIBC_2.2.5 (fileops.c:1261)
+==12676==    by 0x4EB1F5B: _IO_do_write@@GLIBC_2.2.5 (fileops.c:538)
+==12676==    by 0x4EB17DF: _IO_file_close_it@@GLIBC_2.2.5 (fileops.c:165)
+==12676==    by 0x4EA558F: fclose@@GLIBC_2.2.5 (iofclose.c:59)
+==12676==    by 0x401B0E: Image_savebmp (<stdin>:289)
+==12676==    by 0x401F81: main (<stdin>:92)
+==12676==  Address 0x4027036 is not stack'd, malloc'd or (recently) free'd
+==12676== 
+==12676== 
+==12676== HEAP SUMMARY:
+==12676==     in use at exit: 568 bytes in 1 blocks
+==12676==   total heap usage: 7 allocs, 6 frees, 2,122,220,814 bytes allocated
+==12676== 
+==12676== Searching for pointers to 1 not-freed blocks
+==12676== Checked 82,768 bytes
+==12676== 
+==12676== LEAK SUMMARY:
+==12676==    definitely lost: 0 bytes in 0 blocks
+==12676==    indirectly lost: 0 bytes in 0 blocks
+==12676==      possibly lost: 0 bytes in 0 blocks
+==12676==    still reachable: 568 bytes in 1 blocks
+==12676==         suppressed: 0 bytes in 0 blocks
+==12676== Reachable blocks (those to which a pointer was found) are not shown.
+==12676== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==12676== 
+==12676== Use --track-origins=yes to see where uninitialised values come from
+==12676== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==12676== 
+==12676== 1 errors in context 1 of 2:
+==12676== Syscall param write(buf) points to uninitialised byte(s)
+==12676==    at 0x4F233B0: __write_nocancel (syscall-template.S:81)
+==12676==    by 0x4EB0A82: _IO_file_write@@GLIBC_2.2.5 (fileops.c:1261)
+==12676==    by 0x4EB1F5B: _IO_do_write@@GLIBC_2.2.5 (fileops.c:538)
+==12676==    by 0x4EB17DF: _IO_file_close_it@@GLIBC_2.2.5 (fileops.c:165)
+==12676==    by 0x4EA558F: fclose@@GLIBC_2.2.5 (iofclose.c:59)
+==12676==    by 0x401B0E: Image_savebmp (<stdin>:289)
+==12676==    by 0x401F81: main (<stdin>:92)
+==12676==  Address 0x4027036 is not stack'd, malloc'd or (recently) free'd
+==12676== 
+==12676== 
+==12676== 1 errors in context 2 of 2:
+==12676== Conditional jump or move depends on uninitialised value(s)
+==12676==    at 0x400BEF: Image_load (answer07.c:81)
+==12676==    by 0x401E4D: main (<stdin>:61)
+==12676== 
+==12676== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)

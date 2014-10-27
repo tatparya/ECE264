@@ -1,0 +1,62 @@
+Breakpoint 1 at 0x400978: file answer07.c, line 1.
+Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA07/pa07actual images/01-smile.ee264 images/corrected.ee264
+
+Breakpoint 1, Image_load (filename=0x7fffffffe30d "images/01-smile.ee264") at answer07.c:17
+17		FILE * fp = NULL;
+20		Image * tmp_im = NULL, * im = NULL;
+21		size_t n_bytes = 0;
+22		int err = FALSE;
+Undefined command: "nn".  Try "help".
+23		int offset = 0;
+25		if (!err)
+27			fp = fopen ( filename, "rb" );
+29		if ( !fp )
+Undefined command: "nn".  Try "help".
+37		if ( !err )
+39			read = fread ( &header, sizeof ( ImageHeader ), 1, fp );
+40			offset = sizeof(header);
+42		if ( read != 1 )
+49		if ( !img_isValid( &header ) )
+55		if ( !err )
+58			tmp_im = malloc ( sizeof ( Image ) );		
+59			if ( tmp_im == NULL )
+65			tmpCommentString = malloc ( sizeof ( char ) * header.comment_len );
+66			if ( tmpCommentString == NULL )
+71			if ( fseek( fp, offset, SEEK_SET ) == 0 )
+73				fread ( tmpCommentString, sizeof ( char ), header.comment_len, fp ); 
+74				offset += ( sizeof( char ) * header.comment_len );
+81			if ( tmpCommentString[ header.comment_len -1 ] != '\0' )
+87				tmp_im->comment = strdup ( tmpCommentString );
+88				free ( tmpCommentString );
+93		if ( !err )
+95			tmp_im->width = header.width;
+96			tmp_im->height = header.height;
+100			n_bytes = sizeof ( int ) * header.width * header.height;
+101			tmp_im->data = malloc ( n_bytes );
+102			if ( tmp_im->data == NULL )
+110		if ( !err )
+112			if ( fseek( fp, offset, SEEK_SET ) != 0 )
+119				fread ( tmp_im->data, sizeof( int ), tmp_im->width * tmp_im->height, fp );
+120				offset += ( sizeof ( int ) * header.width * header.height );
+123			if ( fgetc( fp ) != EOF )
+129		if ( err ) 
+$1 = (uint8_t *) 0x7ffff7f9f010 "\342\342ŖhQ????EK??.?\226\342\334\312\342\342\347\347\342\342\334\326\312ſ\271\263\263\263\271\271\277\326\347\355\363\363\363\355\355\355\355", '\363' <repeats 45 times>, "\355\363\363\355\363\371\355\342\305\312\334\334\326\326\334\334\342\326ʿ\277\312\320\320\326\326\320\326\326\320\320\320\326\326\334\334\334\326\326\326\326\326\342\347\355\347\347\355\355\355\355\355\355\355\363\363\355\355\355\355\355", '\363' <repeats 19 times>, "\355\355\355\355\355\363\363\363\355\363\363\355\347\334п\271\271\271\277\277\277\312\326\334\363", <incomplete sequence \312>...
+A syntax error in expression, near `'.
+$2 = 226 '\342'
+$3 = 226 '\342'
+$4 = 197 '\305'
+$5 = 150 '\226'
+$6 = 104 'h'
+$7 = 81 'Q'
+$8 = 63 '?'
+$9 = 63 '?'
+$10 = 63 '?'
+$11 = 63 '?'
+$12 = 69 'E'
+Cannot access memory at address 0x7ffff8093250
+$13 = 220 '\334'
+A debugging session is active.
+
+	Inferior 1 [process 7839] will be killed.
+
+Quit anyway? (y or n) 

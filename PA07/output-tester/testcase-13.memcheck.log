@@ -1,0 +1,102 @@
+==10784== Memcheck, a memory error detector
+==10784== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==10784== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==10784== Command: ./a.out images/03-hawkes-bay-NZ.ee264 student-out-12_03-hawkes-bay-NZ.bmp
+==10784== Parent PID: 10783
+==10784== 
+--10784-- 
+--10784-- Valgrind options:
+--10784--    --tool=memcheck
+--10784--    --leak-check=full
+--10784--    --verbose
+--10784--    --log-file=memcheck-12.log
+--10784-- Contents of /proc/version:
+--10784--   Linux version 3.13.0-36-generic (buildd@toyol) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #63-Ubuntu SMP Wed Sep 3 21:30:07 UTC 2014
+--10784-- Arch and hwcaps: AMD64, amd64-cx16-rdtscp-sse3
+--10784-- Page sizes: currently 4096, max supported 4096
+--10784-- Valgrind library directory: /usr/lib/valgrind
+--10784-- Reading syms from /tmp/.AMxVd8/a.out
+--10784-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--10784--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--10784--   .. CRC mismatch (computed 4cbae35e wanted 8d683c31)
+--10784--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--10784--   .. CRC is valid
+--10784-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--10784--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--10784--   .. CRC mismatch (computed 37cdde19 wanted adc367dd)
+--10784--    object doesn't have a symbol table
+--10784--    object doesn't have a dynamic symbol table
+--10784-- Scheduler: using generic scheduler lock implementation.
+--10784-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==10784== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-10784-by-tatparya-on-???
+==10784== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-10784-by-tatparya-on-???
+==10784== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-10784-by-tatparya-on-???
+==10784== 
+==10784== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==10784== don't want to do, unless you know exactly what you're doing,
+==10784== or are doing some strange experiment):
+==10784==   /usr/lib/valgrind/../../bin/vgdb --pid=10784 ...command...
+==10784== 
+==10784== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==10784==   /path/to/gdb ./a.out
+==10784== and then give GDB the following command
+==10784==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=10784
+==10784== --pid is optional if only one valgrind process is running
+==10784== 
+--10784-- REDIR: 0x4019ca0 (strlen) redirected to 0x38068331 (???)
+--10784-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--10784--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--10784--   .. CRC mismatch (computed 329d6860 wanted c0186920)
+--10784--    object doesn't have a symbol table
+--10784-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--10784--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--10784--   .. CRC mismatch (computed 1fb85af8 wanted 2e9e3c16)
+--10784--    object doesn't have a symbol table
+==10784== WARNING: new redirection conflicts with existing -- ignoring it
+--10784--     old: 0x04019ca0 (strlen              ) R-> (0000.0) 0x38068331 ???
+--10784--     new: 0x04019ca0 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--10784-- REDIR: 0x4019a50 (index) redirected to 0x4c2dd50 (index)
+--10784-- REDIR: 0x4019c70 (strcmp) redirected to 0x4c2f2f0 (strcmp)
+--10784-- REDIR: 0x401a9c0 (mempcpy) redirected to 0x4c31da0 (mempcpy)
+--10784-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--10784--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--10784--   .. CRC mismatch (computed e7228afa wanted 93ff6981)
+--10784--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--10784--   .. CRC is valid
+--10784-- REDIR: 0x4ec47e0 (strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10784-- REDIR: 0x4ec6ad0 (strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10784-- REDIR: 0x4ec3fb0 (memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10784-- REDIR: 0x4ec2240 (rindex) redirected to 0x4c2da30 (rindex)
+--10784-- REDIR: 0x4ebeaf0 (strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10784-- REDIR: 0x4ecf7a0 (__strcmp_sse2_unaligned) redirected to 0x4c2f1b0 (strcmp)
+--10784-- REDIR: 0x4ec0540 (strlen) redirected to 0x4c2e0e0 (strlen)
+--10784-- REDIR: 0x4ecb540 (strchrnul) redirected to 0x4c319b0 (strchrnul)
+--10784-- REDIR: 0x4eba1d0 (malloc) redirected to 0x4c2ab10 (malloc)
+--10784-- REDIR: 0x4ec2e90 (__GI_strstr) redirected to 0x4c32030 (__strstr_sse2)
+--10784-- REDIR: 0x4ec9200 (__GI_memcpy) redirected to 0x4c2fc90 (__GI_memcpy)
+--10784-- REDIR: 0x4eba870 (free) redirected to 0x4c2bd80 (free)
+--10784-- REDIR: 0x4ec4040 (memset) redirected to 0x4c31350 (memset)
+==10784== 
+==10784== HEAP SUMMARY:
+==10784==     in use at exit: 592 bytes in 2 blocks
+==10784==   total heap usage: 7 allocs, 5 frees, 242,140 bytes allocated
+==10784== 
+==10784== Searching for pointers to 2 not-freed blocks
+==10784== Checked 82,768 bytes
+==10784== 
+==10784== 24 bytes in 1 blocks are definitely lost in loss record 1 of 2
+==10784==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10784==    by 0x400B0B: Image_load (answer07.c:58)
+==10784==    by 0x401D4E: main (<stdin>:61)
+==10784== 
+==10784== LEAK SUMMARY:
+==10784==    definitely lost: 24 bytes in 1 blocks
+==10784==    indirectly lost: 0 bytes in 0 blocks
+==10784==      possibly lost: 0 bytes in 0 blocks
+==10784==    still reachable: 568 bytes in 1 blocks
+==10784==         suppressed: 0 bytes in 0 blocks
+==10784== Reachable blocks (those to which a pointer was found) are not shown.
+==10784== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==10784== 
+==10784== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==10784== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

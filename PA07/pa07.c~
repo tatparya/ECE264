@@ -43,11 +43,13 @@ int main(int argc, char * * argv)
     const char * out_filename = argv[2];
 
     // Read the file
-    Image * im = Image_loadbmp(in_filename);
+    Image * im = Image_load(in_filename);
     if(im == NULL) {
 	fprintf(stderr, "Error: failed to read '%s'\n", in_filename);
 	return EXIT_FAILURE;
     }
+
+/*
 
     // Invert pixel intensity
     int n_pixels = im->width * im->height;
@@ -61,8 +63,8 @@ int main(int argc, char * * argv)
 	ret = EXIT_FAILURE;
     }
 
-   Image_free(im); // a memory leak until you write this function
-
+   // Image_free(im); // a memory leak until you write this function
+*/
     return ret;
 }
 

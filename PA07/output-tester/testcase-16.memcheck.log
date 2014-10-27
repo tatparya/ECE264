@@ -1,0 +1,108 @@
+==12529== Memcheck, a memory error detector
+==12529== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==12529== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==12529== Command: ./a.out images/corrupt-testcases/01-incomplete-header.ee264 student-out-15_-
+==12529== Parent PID: 12528
+==12529== 
+--12529-- 
+--12529-- Valgrind options:
+--12529--    --tool=memcheck
+--12529--    --leak-check=full
+--12529--    --verbose
+--12529--    --log-file=memcheck-15.log
+--12529-- Contents of /proc/version:
+--12529--   Linux version 3.13.0-36-generic (buildd@toyol) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #63-Ubuntu SMP Wed Sep 3 21:30:07 UTC 2014
+--12529-- Arch and hwcaps: AMD64, amd64-cx16-rdtscp-sse3
+--12529-- Page sizes: currently 4096, max supported 4096
+--12529-- Valgrind library directory: /usr/lib/valgrind
+--12529-- Reading syms from /tmp/.HL8O2i/a.out
+--12529-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--12529--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--12529--   .. CRC mismatch (computed 4cbae35e wanted 8d683c31)
+--12529--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--12529--   .. CRC is valid
+--12529-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--12529--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--12529--   .. CRC mismatch (computed 37cdde19 wanted adc367dd)
+--12529--    object doesn't have a symbol table
+--12529--    object doesn't have a dynamic symbol table
+--12529-- Scheduler: using generic scheduler lock implementation.
+--12529-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==12529== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-12529-by-tatparya-on-???
+==12529== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-12529-by-tatparya-on-???
+==12529== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-12529-by-tatparya-on-???
+==12529== 
+==12529== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==12529== don't want to do, unless you know exactly what you're doing,
+==12529== or are doing some strange experiment):
+==12529==   /usr/lib/valgrind/../../bin/vgdb --pid=12529 ...command...
+==12529== 
+==12529== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==12529==   /path/to/gdb ./a.out
+==12529== and then give GDB the following command
+==12529==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=12529
+==12529== --pid is optional if only one valgrind process is running
+==12529== 
+--12529-- REDIR: 0x4019ca0 (strlen) redirected to 0x38068331 (???)
+--12529-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--12529--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--12529--   .. CRC mismatch (computed 329d6860 wanted c0186920)
+--12529--    object doesn't have a symbol table
+--12529-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--12529--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--12529--   .. CRC mismatch (computed 1fb85af8 wanted 2e9e3c16)
+--12529--    object doesn't have a symbol table
+==12529== WARNING: new redirection conflicts with existing -- ignoring it
+--12529--     old: 0x04019ca0 (strlen              ) R-> (0000.0) 0x38068331 ???
+--12529--     new: 0x04019ca0 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--12529-- REDIR: 0x4019a50 (index) redirected to 0x4c2dd50 (index)
+--12529-- REDIR: 0x4019c70 (strcmp) redirected to 0x4c2f2f0 (strcmp)
+--12529-- REDIR: 0x401a9c0 (mempcpy) redirected to 0x4c31da0 (mempcpy)
+--12529-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--12529--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--12529--   .. CRC mismatch (computed e7228afa wanted 93ff6981)
+--12529--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--12529--   .. CRC is valid
+--12529-- REDIR: 0x4ec47e0 (strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12529-- REDIR: 0x4ec6ad0 (strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12529-- REDIR: 0x4ec3fb0 (memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12529-- REDIR: 0x4ec2240 (rindex) redirected to 0x4c2da30 (rindex)
+--12529-- REDIR: 0x4ebeaf0 (strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12529-- REDIR: 0x4ecf7a0 (__strcmp_sse2_unaligned) redirected to 0x4c2f1b0 (strcmp)
+--12529-- REDIR: 0x4ec0540 (strlen) redirected to 0x4c2e0e0 (strlen)
+--12529-- REDIR: 0x4ecb540 (strchrnul) redirected to 0x4c319b0 (strchrnul)
+--12529-- REDIR: 0x4eba1d0 (malloc) redirected to 0x4c2ab10 (malloc)
+--12529-- REDIR: 0x4ec2e90 (__GI_strstr) redirected to 0x4c32030 (__strstr_sse2)
+==12529== Conditional jump or move depends on uninitialised value(s)
+==12529==    at 0x400DF6: img_isValid (answer07.c:154)
+==12529==    by 0x400AE4: Image_load (answer07.c:49)
+==12529==    by 0x401E4D: main (<stdin>:61)
+==12529== 
+--12529-- REDIR: 0x4eba870 (free) redirected to 0x4c2bd80 (free)
+==12529== 
+==12529== HEAP SUMMARY:
+==12529==     in use at exit: 568 bytes in 1 blocks
+==12529==   total heap usage: 1 allocs, 0 frees, 568 bytes allocated
+==12529== 
+==12529== Searching for pointers to 1 not-freed blocks
+==12529== Checked 82,768 bytes
+==12529== 
+==12529== LEAK SUMMARY:
+==12529==    definitely lost: 0 bytes in 0 blocks
+==12529==    indirectly lost: 0 bytes in 0 blocks
+==12529==      possibly lost: 0 bytes in 0 blocks
+==12529==    still reachable: 568 bytes in 1 blocks
+==12529==         suppressed: 0 bytes in 0 blocks
+==12529== Reachable blocks (those to which a pointer was found) are not shown.
+==12529== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==12529== 
+==12529== Use --track-origins=yes to see where uninitialised values come from
+==12529== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==12529== 
+==12529== 1 errors in context 1 of 1:
+==12529== Conditional jump or move depends on uninitialised value(s)
+==12529==    at 0x400DF6: img_isValid (answer07.c:154)
+==12529==    by 0x400AE4: Image_load (answer07.c:49)
+==12529==    by 0x401E4D: main (<stdin>:61)
+==12529== 
+==12529== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

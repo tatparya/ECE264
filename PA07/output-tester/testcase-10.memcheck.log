@@ -1,0 +1,105 @@
+==12359== Memcheck, a memory error detector
+==12359== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==12359== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==12359== Command: ./a.out images/bmps/05-sagan-stamp.bmp student-out-09_05-sagan-stamp.ee264
+==12359== Parent PID: 12358
+==12359== 
+--12359-- 
+--12359-- Valgrind options:
+--12359--    --tool=memcheck
+--12359--    --leak-check=full
+--12359--    --verbose
+--12359--    --log-file=memcheck-09.log
+--12359-- Contents of /proc/version:
+--12359--   Linux version 3.13.0-36-generic (buildd@toyol) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #63-Ubuntu SMP Wed Sep 3 21:30:07 UTC 2014
+--12359-- Arch and hwcaps: AMD64, amd64-cx16-rdtscp-sse3
+--12359-- Page sizes: currently 4096, max supported 4096
+--12359-- Valgrind library directory: /usr/lib/valgrind
+--12359-- Reading syms from /tmp/.HL8O2i/a.out
+--12359-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--12359--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--12359--   .. CRC mismatch (computed 4cbae35e wanted 8d683c31)
+--12359--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--12359--   .. CRC is valid
+--12359-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--12359--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--12359--   .. CRC mismatch (computed 37cdde19 wanted adc367dd)
+--12359--    object doesn't have a symbol table
+--12359--    object doesn't have a dynamic symbol table
+--12359-- Scheduler: using generic scheduler lock implementation.
+--12359-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==12359== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-12359-by-tatparya-on-???
+==12359== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-12359-by-tatparya-on-???
+==12359== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-12359-by-tatparya-on-???
+==12359== 
+==12359== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==12359== don't want to do, unless you know exactly what you're doing,
+==12359== or are doing some strange experiment):
+==12359==   /usr/lib/valgrind/../../bin/vgdb --pid=12359 ...command...
+==12359== 
+==12359== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==12359==   /path/to/gdb ./a.out
+==12359== and then give GDB the following command
+==12359==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=12359
+==12359== --pid is optional if only one valgrind process is running
+==12359== 
+--12359-- REDIR: 0x4019ca0 (strlen) redirected to 0x38068331 (???)
+--12359-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--12359--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--12359--   .. CRC mismatch (computed 329d6860 wanted c0186920)
+--12359--    object doesn't have a symbol table
+--12359-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--12359--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--12359--   .. CRC mismatch (computed 1fb85af8 wanted 2e9e3c16)
+--12359--    object doesn't have a symbol table
+==12359== WARNING: new redirection conflicts with existing -- ignoring it
+--12359--     old: 0x04019ca0 (strlen              ) R-> (0000.0) 0x38068331 ???
+--12359--     new: 0x04019ca0 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--12359-- REDIR: 0x4019a50 (index) redirected to 0x4c2dd50 (index)
+--12359-- REDIR: 0x4019c70 (strcmp) redirected to 0x4c2f2f0 (strcmp)
+--12359-- REDIR: 0x401a9c0 (mempcpy) redirected to 0x4c31da0 (mempcpy)
+--12359-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--12359--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--12359--   .. CRC mismatch (computed e7228afa wanted 93ff6981)
+--12359--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--12359--   .. CRC is valid
+--12359-- REDIR: 0x4ec47e0 (strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12359-- REDIR: 0x4ec6ad0 (strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12359-- REDIR: 0x4ec3fb0 (memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12359-- REDIR: 0x4ec2240 (rindex) redirected to 0x4c2da30 (rindex)
+--12359-- REDIR: 0x4ebeaf0 (strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12359-- REDIR: 0x4ecf7a0 (__strcmp_sse2_unaligned) redirected to 0x4c2f1b0 (strcmp)
+--12359-- REDIR: 0x4ec0540 (strlen) redirected to 0x4c2e0e0 (strlen)
+--12359-- REDIR: 0x4ecb540 (strchrnul) redirected to 0x4c319b0 (strchrnul)
+--12359-- REDIR: 0x4eba1d0 (malloc) redirected to 0x4c2ab10 (malloc)
+--12359-- REDIR: 0x4ec2e90 (__GI_strstr) redirected to 0x4c32030 (__strstr_sse2)
+--12359-- REDIR: 0x4ec9200 (__GI_memcpy) redirected to 0x4c2fc90 (__GI_memcpy)
+--12359-- REDIR: 0x4eba870 (free) redirected to 0x4c2bd80 (free)
+--12359-- REDIR: 0x4ec4040 (memset) redirected to 0x4c31350 (memset)
+==12359== 
+==12359== HEAP SUMMARY:
+==12359==     in use at exit: 384,277 bytes in 4 blocks
+==12359==   total heap usage: 8 allocs, 4 frees, 616,744 bytes allocated
+==12359== 
+==12359== Searching for pointers to 4 not-freed blocks
+==12359== Checked 78,408 bytes
+==12359== 
+==12359== 76,905 (24 direct, 76,881 indirect) bytes in 1 blocks are definitely lost in loss record 3 of 4
+==12359==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12359==    by 0x40131B: Image_loadbmp (<stdin>:101)
+==12359==    by 0x401E83: main (<stdin>:65)
+==12359== 
+==12359== 307,372 bytes in 1 blocks are definitely lost in loss record 4 of 4
+==12359==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12359==    by 0x400F53: Image_save (answer07.c:201)
+==12359==    by 0x401F40: main (<stdin>:88)
+==12359== 
+==12359== LEAK SUMMARY:
+==12359==    definitely lost: 307,396 bytes in 2 blocks
+==12359==    indirectly lost: 76,881 bytes in 2 blocks
+==12359==      possibly lost: 0 bytes in 0 blocks
+==12359==    still reachable: 0 bytes in 0 blocks
+==12359==         suppressed: 0 bytes in 0 blocks
+==12359== 
+==12359== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==12359== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)

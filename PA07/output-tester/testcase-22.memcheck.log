@@ -1,0 +1,106 @@
+==12711== Memcheck, a memory error detector
+==12711== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==12711== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==12711== Command: ./a.out images/corrupt-testcases/07-comment-has-no-null-byte.ee264 student-out-21_-
+==12711== Parent PID: 12710
+==12711== 
+--12711-- 
+--12711-- Valgrind options:
+--12711--    --tool=memcheck
+--12711--    --leak-check=full
+--12711--    --verbose
+--12711--    --log-file=memcheck-21.log
+--12711-- Contents of /proc/version:
+--12711--   Linux version 3.13.0-36-generic (buildd@toyol) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #63-Ubuntu SMP Wed Sep 3 21:30:07 UTC 2014
+--12711-- Arch and hwcaps: AMD64, amd64-cx16-rdtscp-sse3
+--12711-- Page sizes: currently 4096, max supported 4096
+--12711-- Valgrind library directory: /usr/lib/valgrind
+--12711-- Reading syms from /tmp/.HL8O2i/a.out
+--12711-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--12711--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--12711--   .. CRC mismatch (computed 4cbae35e wanted 8d683c31)
+--12711--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--12711--   .. CRC is valid
+--12711-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--12711--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--12711--   .. CRC mismatch (computed 37cdde19 wanted adc367dd)
+--12711--    object doesn't have a symbol table
+--12711--    object doesn't have a dynamic symbol table
+--12711-- Scheduler: using generic scheduler lock implementation.
+--12711-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==12711== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-12711-by-tatparya-on-???
+==12711== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-12711-by-tatparya-on-???
+==12711== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-12711-by-tatparya-on-???
+==12711== 
+==12711== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==12711== don't want to do, unless you know exactly what you're doing,
+==12711== or are doing some strange experiment):
+==12711==   /usr/lib/valgrind/../../bin/vgdb --pid=12711 ...command...
+==12711== 
+==12711== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==12711==   /path/to/gdb ./a.out
+==12711== and then give GDB the following command
+==12711==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=12711
+==12711== --pid is optional if only one valgrind process is running
+==12711== 
+--12711-- REDIR: 0x4019ca0 (strlen) redirected to 0x38068331 (???)
+--12711-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--12711--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--12711--   .. CRC mismatch (computed 329d6860 wanted c0186920)
+--12711--    object doesn't have a symbol table
+--12711-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--12711--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--12711--   .. CRC mismatch (computed 1fb85af8 wanted 2e9e3c16)
+--12711--    object doesn't have a symbol table
+==12711== WARNING: new redirection conflicts with existing -- ignoring it
+--12711--     old: 0x04019ca0 (strlen              ) R-> (0000.0) 0x38068331 ???
+--12711--     new: 0x04019ca0 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--12711-- REDIR: 0x4019a50 (index) redirected to 0x4c2dd50 (index)
+--12711-- REDIR: 0x4019c70 (strcmp) redirected to 0x4c2f2f0 (strcmp)
+--12711-- REDIR: 0x401a9c0 (mempcpy) redirected to 0x4c31da0 (mempcpy)
+--12711-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--12711--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--12711--   .. CRC mismatch (computed e7228afa wanted 93ff6981)
+--12711--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--12711--   .. CRC is valid
+--12711-- REDIR: 0x4ec47e0 (strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12711-- REDIR: 0x4ec6ad0 (strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12711-- REDIR: 0x4ec3fb0 (memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12711-- REDIR: 0x4ec2240 (rindex) redirected to 0x4c2da30 (rindex)
+--12711-- REDIR: 0x4ebeaf0 (strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--12711-- REDIR: 0x4ecf7a0 (__strcmp_sse2_unaligned) redirected to 0x4c2f1b0 (strcmp)
+--12711-- REDIR: 0x4ec0540 (strlen) redirected to 0x4c2e0e0 (strlen)
+--12711-- REDIR: 0x4ecb540 (strchrnul) redirected to 0x4c319b0 (strchrnul)
+--12711-- REDIR: 0x4eba1d0 (malloc) redirected to 0x4c2ab10 (malloc)
+--12711-- REDIR: 0x4ec2e90 (__GI_strstr) redirected to 0x4c32030 (__strstr_sse2)
+--12711-- REDIR: 0x4ec9200 (__GI_memcpy) redirected to 0x4c2fc90 (__GI_memcpy)
+--12711-- REDIR: 0x4eba870 (free) redirected to 0x4c2bd80 (free)
+==12711== 
+==12711== HEAP SUMMARY:
+==12711==     in use at exit: 680 bytes in 3 blocks
+==12711==   total heap usage: 3 allocs, 0 frees, 680 bytes allocated
+==12711== 
+==12711== Searching for pointers to 3 not-freed blocks
+==12711== Checked 82,768 bytes
+==12711== 
+==12711== 24 bytes in 1 blocks are definitely lost in loss record 1 of 3
+==12711==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12711==    by 0x400B03: Image_load (answer07.c:58)
+==12711==    by 0x401E4D: main (<stdin>:61)
+==12711== 
+==12711== 88 bytes in 1 blocks are definitely lost in loss record 2 of 3
+==12711==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12711==    by 0x400B40: Image_load (answer07.c:65)
+==12711==    by 0x401E4D: main (<stdin>:61)
+==12711== 
+==12711== LEAK SUMMARY:
+==12711==    definitely lost: 112 bytes in 2 blocks
+==12711==    indirectly lost: 0 bytes in 0 blocks
+==12711==      possibly lost: 0 bytes in 0 blocks
+==12711==    still reachable: 568 bytes in 1 blocks
+==12711==         suppressed: 0 bytes in 0 blocks
+==12711== Reachable blocks (those to which a pointer was found) are not shown.
+==12711== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==12711== 
+==12711== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==12711== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
