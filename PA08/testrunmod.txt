@@ -1,0 +1,694 @@
+   ---------------------------------------------------------------------------
+   Welcome to the PA08 testing program. This program takes a _long_ time
+   to execute. There is a reason for this. You should not rely on this
+   program to test your code as you go. Instead, you should think about
+   what your code should be doing, and what inputs should produce what
+   outputs for each of your functions.
+   
+        YOU SHOULD THEN TEST EVERY PIECE OF CODE AS YOU WRITE IT 
+   
+                                 AND 
+   
+                        FIX MISTAKES AS YOU GO.
+   
+   When you are convinced that you have the entire assignment 100% correct,
+   then you can use this testing program to test it. 
+   
+   This will give you your mark assuming that you submit it correctly, and 
+   there are no other irregularities.
+   ---------------------------------------------------------------------------
+
+Testcase 1
+   Testing: List_createNode("")
+Pass.
+
+Testcase 2
+   Testing: List_createNode("The quick brown Fox")
+Pass.
+
+Testcase 3
+   Testing: List_createNode("jumped over the")
+Pass.
+
+Testcase 4
+   Testing: List_createNode("lazy dog.")
+Pass.
+
+Testcase 5
+   Testing: List_destroyNode(list), where list is: "single node" ==> NULL
+Pass.
+
+Testcase 6
+   Testing: List_destroyNode(list), where list is: "one" ==> "two" ==> "three" ==> "four" ==> "five" ==> "six" ==> NULL
+Pass.
+
+Testcase 7
+   Testing: List_destroyNode(list), where list is: NULL
+Pass.
+
+Testcase 8
+   Testing: List_length(list) = 0, where list is: NULL
+Pass.
+
+Testcase 9
+   Testing: List_length(list) = 1, where list is: "[1]" ==> NULL
+Pass.
+
+Testcase 10
+   Testing: List_length(list) = 2, where list is: "[1]" ==> "[2]" ==> NULL
+Pass.
+
+Testcase 11
+   Testing: List_length(list) = 3, where list is: "[1]" ==> "[2]" ==> "[3]" ==> NULL
+Pass.
+
+Testcase 12
+   Testing: List_length(list) = 4, where list is: "[1]" ==> "[2]" ==> "[3]" ==> "[4]" ==> NULL
+Pass.
+
+Testcase 13
+   Testing: List_length(list) = 5, where list is: "[1]" ==> "[2]" ==> "[3]" ==> "[4]" ==> "[5]" ==> NULL
+Pass.
+
+Testcase 14
+   Testing: List_length(list) = 6, where list is: "[1]" ==> "[2]" ==> "[3]" ==> "[4]" ==> "[5]" ==> "[6]" ==> NULL
+Pass.
+
+Testcase 15
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + lhs is: NULL
+   + rhs is: NULL
+   
+   merged is  : NULL
+   solution is: NULL
+Pass.
+
+Testcase 16
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + lhs is: "b" ==> "d" ==> "f" ==> NULL
+   + rhs is: NULL
+   
+   merged is  : "b" ==> "d" ==> "f" ==> NULL
+   solution is: "b" ==> "d" ==> "f" ==> NULL
+Pass.
+
+Testcase 17
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + lhs is: NULL
+   + rhs is: "b" ==> "d" ==> "f" ==> NULL
+   
+   merged is  : "b" ==> "d" ==> "f" ==> NULL
+   solution is: "b" ==> "d" ==> "f" ==> NULL
+Pass.
+
+Testcase 18
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + lhs is: "b" ==> "d" ==> "f" ==> NULL
+   + rhs is: "a" ==> "c" ==> "e" ==> "g" ==> "h" ==> "i" ==> "j" ==> NULL
+   
+   merged is  : "a" ==> "c" ==> "e" ==> "g" ==> "h" ==> "i" ==> "j" ==> NULL
+   solution is: "a" ==> "b" ==> "c" ==> "d" ==> "e" ==> "f" ==> "g" ==> "h" ==> "i" ==> "j" ==> NULL
+   Error: merged solution has length 7, but it should be 10
+   Error: merged list not in order (!)
+   Error: merged list not in order (!)
+   Error: merged list not in order (!)
+   Error: merged list not in order (!)
+   Error: merged list not in order (!)
+   Error: merged list not in order (!)
+   Memory errors detected.
+   Valgrind log saved in output-tester/testcase-18.memcheck.log.
+Testcase FAILED. Log file saved to testcase-18.log
+
+Testcase 19
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return -strcmp(a, b)
+   + lhs is: "f" ==> "d" ==> "b" ==> NULL
+   + rhs is: "j" ==> "i" ==> "h" ==> "g" ==> "e" ==> "c" ==> "a" ==> NULL
+   
+   merged is  : "j" ==> "i" ==> "h" ==> "g" ==> "e" ==> "c" ==> "a" ==> NULL
+   solution is: "j" ==> "i" ==> "h" ==> "g" ==> "f" ==> "e" ==> "d" ==> "c" ==> "b" ==> "a" ==> NULL
+   Error: merged solution has length 7, but it should be 10
+   Error: merged list not in order (!)
+   Error: merged list not in order (!)
+   Error: merged list not in order (!)
+   Memory errors detected.
+   Valgrind log saved in output-tester/testcase-19.memcheck.log.
+Testcase FAILED. Log file saved to testcase-19.log
+
+Testcase 20
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + lhs is: "2" ==> "3" ==> "5" ==> "7" ==> NULL
+   + rhs is: "11" ==> "13" ==> "17" ==> "19" ==> "23" ==> NULL
+   
+   merged is  : "11" ==> "13" ==> "17" ==> "19" ==> "23" ==> NULL
+   solution is: "11" ==> "13" ==> "17" ==> "19" ==> "2" ==> "23" ==> "3" ==> "5" ==> "7" ==> NULL
+   Error: merged solution has length 5, but it should be 9
+   Error: merged list not in order (!)
+   Memory errors detected.
+   Valgrind log saved in output-tester/testcase-20.memcheck.log.
+Testcase FAILED. Log file saved to testcase-20.log
+
+Testcase 21
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return -strcmp(a, b)
+   + lhs is: "7" ==> "5" ==> "3" ==> "2" ==> NULL
+   + rhs is: "23" ==> "19" ==> "17" ==> "13" ==> "11" ==> NULL
+   
+   merged is  : "7" ==> "5" ==> "3" ==> "2" ==> NULL
+   solution is: "7" ==> "5" ==> "3" ==> "23" ==> "2" ==> "19" ==> "17" ==> "13" ==> "11" ==> NULL
+   Error: merged solution has length 4, but it should be 9
+   Error: merged list not in order (!)
+   Memory errors detected.
+   Valgrind log saved in output-tester/testcase-21.memcheck.log.
+Testcase FAILED. Log file saved to testcase-21.log
+
+Testcase 22
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return atoi(a) - atoi(b)
+   + lhs is: "2" ==> "3" ==> "5" ==> "7" ==> NULL
+   + rhs is: "11" ==> "13" ==> "17" ==> "19" ==> "23" ==> NULL
+   
+   merged is  : "2" ==> "3" ==> "5" ==> "7" ==> NULL
+   solution is: "2" ==> "3" ==> "5" ==> "7" ==> "11" ==> "13" ==> "17" ==> "19" ==> "23" ==> NULL
+   Error: merged solution has length 4, but it should be 9
+   Memory errors detected.
+   Valgrind log saved in output-tester/testcase-22.memcheck.log.
+Testcase FAILED. Log file saved to testcase-22.log
+
+Testcase 23
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + lhs is: "2010" ==> NULL
+   + rhs is: "Continue" ==> "Doctor" ==> "Hello" ==> "Name" ==> "Tomorrow" ==> "Yesterday" ==> NULL
+   
+   merged is  : "2010" ==> NULL
+   solution is: "2010" ==> "Continue" ==> "Doctor" ==> "Hello" ==> "Name" ==> "Tomorrow" ==> "Yesterday" ==> NULL
+   Error: merged solution has length 1, but it should be 7
+   Memory errors detected.
+   Valgrind log saved in output-tester/testcase-23.memcheck.log.
+Testcase FAILED. Log file saved to testcase-23.log
+
+Testcase 24
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return -strcmp(a, b)
+   + lhs is: "2010" ==> NULL
+   + rhs is: "Yesterday" ==> "Tomorrow" ==> "Name" ==> "Hello" ==> "Doctor" ==> "Continue" ==> NULL
+   
+   merged is  : "Yesterday" ==> "Tomorrow" ==> "Name" ==> "Hello" ==> "Doctor" ==> "Continue" ==> NULL
+   solution is: "Yesterday" ==> "Tomorrow" ==> "Name" ==> "Hello" ==> "Doctor" ==> "Continue" ==> "2010" ==> NULL
+   Error: merged solution has length 6, but it should be 7
+   Memory errors detected.
+   Valgrind log saved in output-tester/testcase-24.memcheck.log.
+Testcase FAILED. Log file saved to testcase-24.log
+
+Testcase 25
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return strlen(a) - strlen(b)
+   + lhs is: "a" ==> "be" ==> "sea" ==> NULL
+   + rhs is: "deee" ==> NULL
+   
+   merged is  : "a" ==> "be" ==> "sea" ==> NULL
+   solution is: "a" ==> "be" ==> "sea" ==> "deee" ==> NULL
+   Error: merged solution has length 3, but it should be 4
+   Memory errors detected.
+   Valgrind log saved in output-tester/testcase-25.memcheck.log.
+Testcase FAILED. Log file saved to testcase-25.log
+
+Testcase 26
+   Testing List_sort(list, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + list is: NULL
+   
+   sorted is  : NULL
+   solution is: NULL
+Pass.
+
+Testcase 27
+   Program received signal SIGSEGV, Segmentation fault.
+   0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   49			length = List_length( list -> next ) + 1;
+   #0  0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   #1  0x00000000004009dd in List_length (list=0x605010) at answer08.c:49
+   #2  0x0000000000400b17 in List_sort (list=0x605010, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:136
+   #3  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #4  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #5  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #6  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #7  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #8  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #9  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #10 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #11 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #12 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #13 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #14 0x0000000000400b83 in List_sort (list=0x605050, 
+Testcase FAILED. Log file saved to testcase-27.log
+
+Testcase 28
+   Program received signal SIGSEGV, Segmentation fault.
+   0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   49			length = List_length( list -> next ) + 1;
+   #0  0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   #1  0x00000000004009dd in List_length (list=0x605010) at answer08.c:49
+   #2  0x0000000000400b17 in List_sort (list=0x605010, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:136
+   #3  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #4  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #5  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #6  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #7  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #8  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #9  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #10 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #11 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #12 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #13 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #14 0x0000000000400b83 in List_sort (list=0x605050, 
+Testcase FAILED. Log file saved to testcase-28.log
+
+Testcase 29
+   Program received signal SIGSEGV, Segmentation fault.
+   0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   49			length = List_length( list -> next ) + 1;
+   #0  0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   #1  0x00000000004009dd in List_length (list=0x605010) at answer08.c:49
+   #2  0x0000000000400b17 in List_sort (list=0x605010, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:136
+   #3  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #4  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #5  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #6  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #7  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #8  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #9  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #10 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #11 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #12 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #13 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #14 0x0000000000400b83 in List_sort (list=0x605050, 
+Testcase FAILED. Log file saved to testcase-29.log
+
+Testcase 30
+   Program received signal SIGSEGV, Segmentation fault.
+   0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   49			length = List_length( list -> next ) + 1;
+   #0  0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   #1  0x00000000004009dd in List_length (list=0x605010) at answer08.c:49
+   #2  0x0000000000400b17 in List_sort (list=0x605010, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:136
+   #3  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #4  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #5  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #6  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #7  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #8  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #9  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #10 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #11 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #12 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #13 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #14 0x0000000000400b83 in List_sort (list=0x605050, 
+Testcase FAILED. Log file saved to testcase-30.log
+
+Testcase 31
+   Program received signal SIGSEGV, Segmentation fault.
+   0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   49			length = List_length( list -> next ) + 1;
+   #0  0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   #1  0x00000000004009dd in List_length (list=0x605010) at answer08.c:49
+   #2  0x0000000000400b17 in List_sort (list=0x605010, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:136
+   #3  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #4  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #5  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #6  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #7  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #8  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #9  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #10 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #11 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #12 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #13 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #14 0x0000000000400b83 in List_sort (list=0x605050, 
+Testcase FAILED. Log file saved to testcase-31.log
+
+Testcase 32
+   Program received signal SIGSEGV, Segmentation fault.
+   0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   49			length = List_length( list -> next ) + 1;
+   #0  0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   #1  0x00000000004009dd in List_length (list=0x605010) at answer08.c:49
+   #2  0x0000000000400b17 in List_sort (list=0x605010, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:136
+   #3  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #4  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #5  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #6  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #7  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #8  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #9  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #10 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #11 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #12 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #13 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #14 0x0000000000400b83 in List_sort (list=0x605050, 
+Testcase FAILED. Log file saved to testcase-32.log
+
+Testcase 33
+   Program received signal SIGSEGV, Segmentation fault.
+   0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   49			length = List_length( list -> next ) + 1;
+   #0  0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   #1  0x00000000004009dd in List_length (list=0x605010) at answer08.c:49
+   #2  0x0000000000400b17 in List_sort (list=0x605010, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:136
+   #3  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #4  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #5  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #6  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #7  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #8  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #9  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #10 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #11 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #12 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #13 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #14 0x0000000000400b83 in List_sort (list=0x605050, 
+Testcase FAILED. Log file saved to testcase-33.log
+
+Testcase 34
+   Program received signal SIGSEGV, Segmentation fault.
+   0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   49			length = List_length( list -> next ) + 1;
+   #0  0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   #1  0x00000000004009dd in List_length (list=0x605010) at answer08.c:49
+   #2  0x0000000000400b17 in List_sort (list=0x605010, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:136
+   #3  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #4  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #5  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #6  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #7  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #8  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #9  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #10 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #11 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #12 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #13 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #14 0x0000000000400b83 in List_sort (list=0x605050, 
+Testcase FAILED. Log file saved to testcase-34.log
+
+Testcase 35
+   Program received signal SIGSEGV, Segmentation fault.
+   0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   49			length = List_length( list -> next ) + 1;
+   #0  0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   #1  0x00000000004009dd in List_length (list=0x605010) at answer08.c:49
+   #2  0x0000000000400b17 in List_sort (list=0x605010, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:136
+   #3  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #4  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #5  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #6  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #7  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #8  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #9  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #10 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #11 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #12 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #13 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #14 0x0000000000400b83 in List_sort (list=0x605050, 
+Testcase FAILED. Log file saved to testcase-35.log
+
+Testcase 36
+   Program received signal SIGSEGV, Segmentation fault.
+   0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   49			length = List_length( list -> next ) + 1;
+   #0  0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   #1  0x00000000004009dd in List_length (list=0x605010) at answer08.c:49
+   #2  0x0000000000400b17 in List_sort (list=0x605010, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:136
+   #3  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #4  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #5  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #6  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #7  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #8  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #9  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #10 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #11 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #12 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #13 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400ebb <strcmp_int>) at answer08.c:159
+   #14 0x0000000000400b83 in List_sort (list=0x605050, 
+Testcase FAILED. Log file saved to testcase-36.log
+
+Testcase 37
+   Testing List_sort(list, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + list is: "2010" ==> NULL
+   
+   sorted is  : "2010" ==> NULL
+   solution is: "2010" ==> NULL
+Pass.
+
+Testcase 38
+   Testing List_sort(list, compar), where:
+   
+   + compar is: return -strcmp(a, b)
+   + list is: "2010" ==> NULL
+   
+   sorted is  : "2010" ==> NULL
+   solution is: "2010" ==> NULL
+Pass.
+
+Testcase 39
+   Program received signal SIGSEGV, Segmentation fault.
+   0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   49			length = List_length( list -> next ) + 1;
+   #0  0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   #1  0x00000000004009dd in List_length (list=0x605010) at answer08.c:49
+   #2  0x0000000000400b17 in List_sort (list=0x605010, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:136
+   #3  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #4  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #5  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #6  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #7  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #8  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #9  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #10 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #11 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #12 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #13 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e39 <strcmp_forward>) at answer08.c:159
+   #14 0x0000000000400b83 in List_sort (list=0x605050, 
+Testcase FAILED. Log file saved to testcase-39.log
+
+Testcase 40
+   Program received signal SIGSEGV, Segmentation fault.
+   0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   49			length = List_length( list -> next ) + 1;
+   #0  0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   #1  0x00000000004009dd in List_length (list=0x605010) at answer08.c:49
+   #2  0x0000000000400b17 in List_sort (list=0x605010, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:136
+   #3  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #4  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #5  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #6  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #7  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #8  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #9  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #10 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #11 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #12 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #13 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e5e <strcmp_reverse>) at answer08.c:159
+   #14 0x0000000000400b83 in List_sort (list=0x605050, 
+Testcase FAILED. Log file saved to testcase-40.log
+
+Testcase 41
+   Program received signal SIGSEGV, Segmentation fault.
+   0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   49			length = List_length( list -> next ) + 1;
+   #0  0x00000000004009d8 in List_length (list=0x605050) at answer08.c:49
+   #1  0x00000000004009dd in List_length (list=0x605010) at answer08.c:49
+   #2  0x0000000000400b17 in List_sort (list=0x605010, 
+       compar=0x400e85 <strcmp_length>) at answer08.c:136
+   #3  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e85 <strcmp_length>) at answer08.c:159
+   #4  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e85 <strcmp_length>) at answer08.c:159
+   #5  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e85 <strcmp_length>) at answer08.c:159
+   #6  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e85 <strcmp_length>) at answer08.c:159
+   #7  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e85 <strcmp_length>) at answer08.c:159
+   #8  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e85 <strcmp_length>) at answer08.c:159
+   #9  0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e85 <strcmp_length>) at answer08.c:159
+   #10 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e85 <strcmp_length>) at answer08.c:159
+   #11 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e85 <strcmp_length>) at answer08.c:159
+   #12 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e85 <strcmp_length>) at answer08.c:159
+   #13 0x0000000000400b83 in List_sort (list=0x605050, 
+       compar=0x400e85 <strcmp_length>) at answer08.c:159
+   #14 0x0000000000400b83 in List_sort (list=0x605050, 
+Testcase FAILED. Log file saved to testcase-41.log
+
+
+20/41 testcases passed.
+Overall mark is a FAIL.

@@ -1,0 +1,101 @@
+==13969== Memcheck, a memory error detector
+==13969== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==13969== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==13969== Command: ./a.out 24
+==13969== Parent PID: 13966
+==13969== 
+--13969-- 
+--13969-- Valgrind options:
+--13969--    --tool=memcheck
+--13969--    --leak-check=full
+--13969--    --verbose
+--13969--    --log-file=memcheck.log
+--13969-- Contents of /proc/version:
+--13969--   Linux version 3.13.0-39-generic (buildd@toyol) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #66-Ubuntu SMP Tue Oct 28 13:30:27 UTC 2014
+--13969-- Arch and hwcaps: AMD64, amd64-cx16-rdtscp-sse3
+--13969-- Page sizes: currently 4096, max supported 4096
+--13969-- Valgrind library directory: /usr/lib/valgrind
+--13969-- Reading syms from /tmp/.C69BXn/a.out
+--13969-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--13969--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--13969--   .. CRC mismatch (computed 4cbae35e wanted 8d683c31)
+--13969--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--13969--   .. CRC is valid
+--13969-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--13969--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--13969--   .. CRC mismatch (computed 37cdde19 wanted adc367dd)
+--13969--    object doesn't have a symbol table
+--13969--    object doesn't have a dynamic symbol table
+--13969-- Scheduler: using generic scheduler lock implementation.
+--13969-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==13969== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-13969-by-tatparya-on-???
+==13969== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-13969-by-tatparya-on-???
+==13969== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-13969-by-tatparya-on-???
+==13969== 
+==13969== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==13969== don't want to do, unless you know exactly what you're doing,
+==13969== or are doing some strange experiment):
+==13969==   /usr/lib/valgrind/../../bin/vgdb --pid=13969 ...command...
+==13969== 
+==13969== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==13969==   /path/to/gdb ./a.out
+==13969== and then give GDB the following command
+==13969==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=13969
+==13969== --pid is optional if only one valgrind process is running
+==13969== 
+--13969-- REDIR: 0x4019ca0 (strlen) redirected to 0x38068331 (???)
+--13969-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--13969--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--13969--   .. CRC mismatch (computed 329d6860 wanted c0186920)
+--13969--    object doesn't have a symbol table
+--13969-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--13969--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--13969--   .. CRC mismatch (computed 1fb85af8 wanted 2e9e3c16)
+--13969--    object doesn't have a symbol table
+==13969== WARNING: new redirection conflicts with existing -- ignoring it
+--13969--     old: 0x04019ca0 (strlen              ) R-> (0000.0) 0x38068331 ???
+--13969--     new: 0x04019ca0 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--13969-- REDIR: 0x4019a50 (index) redirected to 0x4c2dd50 (index)
+--13969-- REDIR: 0x4019c70 (strcmp) redirected to 0x4c2f2f0 (strcmp)
+--13969-- REDIR: 0x401a9c0 (mempcpy) redirected to 0x4c31da0 (mempcpy)
+--13969-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--13969--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--13969--   .. CRC mismatch (computed e7228afa wanted 93ff6981)
+--13969--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--13969--   .. CRC is valid
+--13969-- REDIR: 0x4ec47e0 (strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--13969-- REDIR: 0x4ec6ad0 (strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--13969-- REDIR: 0x4ec3fb0 (memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--13969-- REDIR: 0x4ec2240 (rindex) redirected to 0x4c2da30 (rindex)
+--13969-- REDIR: 0x4eba1d0 (malloc) redirected to 0x4c2ab10 (malloc)
+--13969-- REDIR: 0x4ec0540 (strlen) redirected to 0x4c2e0e0 (strlen)
+--13969-- REDIR: 0x4ec9200 (__GI_memcpy) redirected to 0x4c2fc90 (__GI_memcpy)
+--13969-- REDIR: 0x4ecb540 (strchrnul) redirected to 0x4c319b0 (strchrnul)
+--13969-- REDIR: 0x4ebeaf0 (strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--13969-- REDIR: 0x4ecf7a0 (__strcmp_sse2_unaligned) redirected to 0x4c2f1b0 (strcmp)
+--13969-- REDIR: 0x4eba870 (free) redirected to 0x4c2bd80 (free)
+==13969== 
+==13969== HEAP SUMMARY:
+==13969==     in use at exit: 21 bytes in 2 blocks
+==13969==   total heap usage: 17 allocs, 15 frees, 188 bytes allocated
+==13969== 
+==13969== Searching for pointers to 2 not-freed blocks
+==13969== Checked 78,264 bytes
+==13969== 
+==13969== 21 (16 direct, 5 indirect) bytes in 1 blocks are definitely lost in loss record 2 of 2
+==13969==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13969==    by 0x400C0F: List_createNode_sol (<stdin>:19)
+==13969==    by 0x401032: List_create (test_support_functions.c:48)
+==13969==    by 0x4012A4: make_list (test_support_functions.c:82)
+==13969==    by 0x401D10: tests_List_merge (test_List_merge.c:121)
+==13969==    by 0x4022F8: main (<stdin>:159)
+==13969== 
+==13969== LEAK SUMMARY:
+==13969==    definitely lost: 16 bytes in 1 blocks
+==13969==    indirectly lost: 5 bytes in 1 blocks
+==13969==      possibly lost: 0 bytes in 0 blocks
+==13969==    still reachable: 0 bytes in 0 blocks
+==13969==         suppressed: 0 bytes in 0 blocks
+==13969== 
+==13969== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==13969== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

@@ -1,0 +1,101 @@
+==7908== Memcheck, a memory error detector
+==7908== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==7908== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==7908== Command: ./a.out 16
+==7908== Parent PID: 7907
+==7908== 
+--7908-- 
+--7908-- Valgrind options:
+--7908--    --tool=memcheck
+--7908--    --leak-check=full
+--7908--    --verbose
+--7908--    --log-file=memcheck.log
+--7908-- Contents of /proc/version:
+--7908--   Linux version 3.13.0-39-generic (buildd@toyol) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #66-Ubuntu SMP Tue Oct 28 13:30:27 UTC 2014
+--7908-- Arch and hwcaps: AMD64, amd64-cx16-rdtscp-sse3
+--7908-- Page sizes: currently 4096, max supported 4096
+--7908-- Valgrind library directory: /usr/lib/valgrind
+--7908-- Reading syms from /tmp/.vyDAvR/a.out
+--7908-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--7908--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--7908--   .. CRC mismatch (computed 4cbae35e wanted 8d683c31)
+--7908--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--7908--   .. CRC is valid
+--7908-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--7908--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--7908--   .. CRC mismatch (computed 37cdde19 wanted adc367dd)
+--7908--    object doesn't have a symbol table
+--7908--    object doesn't have a dynamic symbol table
+--7908-- Scheduler: using generic scheduler lock implementation.
+--7908-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==7908== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-7908-by-tatparya-on-???
+==7908== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-7908-by-tatparya-on-???
+==7908== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-7908-by-tatparya-on-???
+==7908== 
+==7908== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==7908== don't want to do, unless you know exactly what you're doing,
+==7908== or are doing some strange experiment):
+==7908==   /usr/lib/valgrind/../../bin/vgdb --pid=7908 ...command...
+==7908== 
+==7908== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==7908==   /path/to/gdb ./a.out
+==7908== and then give GDB the following command
+==7908==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=7908
+==7908== --pid is optional if only one valgrind process is running
+==7908== 
+--7908-- REDIR: 0x4019ca0 (strlen) redirected to 0x38068331 (???)
+--7908-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--7908--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--7908--   .. CRC mismatch (computed 329d6860 wanted c0186920)
+--7908--    object doesn't have a symbol table
+--7908-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--7908--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--7908--   .. CRC mismatch (computed 1fb85af8 wanted 2e9e3c16)
+--7908--    object doesn't have a symbol table
+==7908== WARNING: new redirection conflicts with existing -- ignoring it
+--7908--     old: 0x04019ca0 (strlen              ) R-> (0000.0) 0x38068331 ???
+--7908--     new: 0x04019ca0 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--7908-- REDIR: 0x4019a50 (index) redirected to 0x4c2dd50 (index)
+--7908-- REDIR: 0x4019c70 (strcmp) redirected to 0x4c2f2f0 (strcmp)
+--7908-- REDIR: 0x401a9c0 (mempcpy) redirected to 0x4c31da0 (mempcpy)
+--7908-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--7908--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--7908--   .. CRC mismatch (computed e7228afa wanted 93ff6981)
+--7908--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--7908--   .. CRC is valid
+--7908-- REDIR: 0x4ec47e0 (strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--7908-- REDIR: 0x4ec6ad0 (strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--7908-- REDIR: 0x4ec3fb0 (memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--7908-- REDIR: 0x4ec2240 (rindex) redirected to 0x4c2da30 (rindex)
+--7908-- REDIR: 0x4eba1d0 (malloc) redirected to 0x4c2ab10 (malloc)
+--7908-- REDIR: 0x4ec0540 (strlen) redirected to 0x4c2e0e0 (strlen)
+--7908-- REDIR: 0x4ec9200 (__GI_memcpy) redirected to 0x4c2fc90 (__GI_memcpy)
+--7908-- REDIR: 0x4ebeaf0 (strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--7908-- REDIR: 0x4ecf7a0 (__strcmp_sse2_unaligned) redirected to 0x4c2f1b0 (strcmp)
+--7908-- REDIR: 0x4ecb540 (strchrnul) redirected to 0x4c319b0 (strchrnul)
+--7908-- REDIR: 0x4eba870 (free) redirected to 0x4c2bd80 (free)
+==7908== 
+==7908== HEAP SUMMARY:
+==7908==     in use at exit: 54 bytes in 6 blocks
+==7908==   total heap usage: 13 allocs, 7 frees, 132 bytes allocated
+==7908== 
+==7908== Searching for pointers to 6 not-freed blocks
+==7908== Checked 78,264 bytes
+==7908== 
+==7908== 54 (16 direct, 38 indirect) bytes in 1 blocks are definitely lost in loss record 6 of 6
+==7908==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7908==    by 0x400BAF: List_createNode_sol (<stdin>:19)
+==7908==    by 0x400FD2: List_create (test_support_functions.c:48)
+==7908==    by 0x4011AA: make_list (test_support_functions.c:75)
+==7908==    by 0x401B61: tests_List_merge (test_List_merge.c:109)
+==7908==    by 0x402298: main (<stdin>:159)
+==7908== 
+==7908== LEAK SUMMARY:
+==7908==    definitely lost: 16 bytes in 1 blocks
+==7908==    indirectly lost: 38 bytes in 5 blocks
+==7908==      possibly lost: 0 bytes in 0 blocks
+==7908==    still reachable: 0 bytes in 0 blocks
+==7908==         suppressed: 0 bytes in 0 blocks
+==7908== 
+==7908== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==7908== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

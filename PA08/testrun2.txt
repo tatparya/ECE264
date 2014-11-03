@@ -1,0 +1,360 @@
+   ---------------------------------------------------------------------------
+   Welcome to the PA08 testing program. This program takes a _long_ time
+   to execute. There is a reason for this. You should not rely on this
+   program to test your code as you go. Instead, you should think about
+   what your code should be doing, and what inputs should produce what
+   outputs for each of your functions.
+   
+        YOU SHOULD THEN TEST EVERY PIECE OF CODE AS YOU WRITE IT 
+   
+                                 AND 
+   
+                        FIX MISTAKES AS YOU GO.
+   
+   When you are convinced that you have the entire assignment 100% correct,
+   then you can use this testing program to test it. 
+   
+   This will give you your mark assuming that you submit it correctly, and 
+   there are no other irregularities.
+   ---------------------------------------------------------------------------
+
+Testcase 1
+   Testing: List_createNode("")
+Pass.
+
+Testcase 2
+   Testing: List_createNode("The quick brown Fox")
+Pass.
+
+Testcase 3
+   Testing: List_createNode("jumped over the")
+Pass.
+
+Testcase 4
+   Testing: List_createNode("lazy dog.")
+Pass.
+
+Testcase 5
+   Testing: List_destroyNode(list), where list is: "single node" ==> NULL
+Pass.
+
+Testcase 6
+   Testing: List_destroyNode(list), where list is: "one" ==> "two" ==> "three" ==> "four" ==> "five" ==> "six" ==> NULL
+Pass.
+
+Testcase 7
+   Testing: List_destroyNode(list), where list is: NULL
+Pass.
+
+Testcase 8
+   Testing: List_length(list) = 0, where list is: NULL
+Pass.
+
+Testcase 9
+   Testing: List_length(list) = 1, where list is: "[1]" ==> NULL
+Pass.
+
+Testcase 10
+   Testing: List_length(list) = 2, where list is: "[1]" ==> "[2]" ==> NULL
+Pass.
+
+Testcase 11
+   Testing: List_length(list) = 3, where list is: "[1]" ==> "[2]" ==> "[3]" ==> NULL
+Pass.
+
+Testcase 12
+   Testing: List_length(list) = 4, where list is: "[1]" ==> "[2]" ==> "[3]" ==> "[4]" ==> NULL
+Pass.
+
+Testcase 13
+   Testing: List_length(list) = 5, where list is: "[1]" ==> "[2]" ==> "[3]" ==> "[4]" ==> "[5]" ==> NULL
+Pass.
+
+Testcase 14
+   Testing: List_length(list) = 6, where list is: "[1]" ==> "[2]" ==> "[3]" ==> "[4]" ==> "[5]" ==> "[6]" ==> NULL
+Pass.
+
+Testcase 15
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + lhs is: NULL
+   + rhs is: NULL
+   
+   merged is  : NULL
+   solution is: NULL
+Pass.
+
+Testcase 16
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + lhs is: "b" ==> "d" ==> "f" ==> NULL
+   + rhs is: NULL
+   
+   merged is  : "b" ==> "d" ==> "f" ==> NULL
+   solution is: "b" ==> "d" ==> "f" ==> NULL
+Pass.
+
+Testcase 17
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + lhs is: NULL
+   + rhs is: "b" ==> "d" ==> "f" ==> NULL
+   
+   merged is  : "b" ==> "d" ==> "f" ==> NULL
+   solution is: "b" ==> "d" ==> "f" ==> NULL
+Pass.
+
+Testcase 18
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + lhs is: "b" ==> "d" ==> "f" ==> NULL
+   + rhs is: "a" ==> "c" ==> "e" ==> "g" ==> "h" ==> "i" ==> "j" ==> NULL
+   
+   merged is  : "a" ==> "b" ==> "c" ==> "d" ==> "e" ==> "f" ==> "g" ==> "h" ==> "i" ==> "j" ==> NULL
+   solution is: "a" ==> "b" ==> "c" ==> "d" ==> "e" ==> "f" ==> "g" ==> "h" ==> "i" ==> "j" ==> NULL
+Pass.
+
+Testcase 19
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return -strcmp(a, b)
+   + lhs is: "f" ==> "d" ==> "b" ==> NULL
+   + rhs is: "j" ==> "i" ==> "h" ==> "g" ==> "e" ==> "c" ==> "a" ==> NULL
+   
+   merged is  : "j" ==> "i" ==> "h" ==> "g" ==> "f" ==> "e" ==> "d" ==> "c" ==> "b" ==> "a" ==> NULL
+   solution is: "j" ==> "i" ==> "h" ==> "g" ==> "f" ==> "e" ==> "d" ==> "c" ==> "b" ==> "a" ==> NULL
+Pass.
+
+Testcase 20
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + lhs is: "2" ==> "3" ==> "5" ==> "7" ==> NULL
+   + rhs is: "11" ==> "13" ==> "17" ==> "19" ==> "23" ==> NULL
+   
+   merged is  : "11" ==> "13" ==> "17" ==> "19" ==> "2" ==> "23" ==> "3" ==> "5" ==> "7" ==> NULL
+   solution is: "11" ==> "13" ==> "17" ==> "19" ==> "2" ==> "23" ==> "3" ==> "5" ==> "7" ==> NULL
+Pass.
+
+Testcase 21
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return -strcmp(a, b)
+   + lhs is: "7" ==> "5" ==> "3" ==> "2" ==> NULL
+   + rhs is: "23" ==> "19" ==> "17" ==> "13" ==> "11" ==> NULL
+   
+   merged is  : "7" ==> "5" ==> "3" ==> "23" ==> "2" ==> "19" ==> "17" ==> "13" ==> "11" ==> NULL
+   solution is: "7" ==> "5" ==> "3" ==> "23" ==> "2" ==> "19" ==> "17" ==> "13" ==> "11" ==> NULL
+Pass.
+
+Testcase 22
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return atoi(a) - atoi(b)
+   + lhs is: "2" ==> "3" ==> "5" ==> "7" ==> NULL
+   + rhs is: "11" ==> "13" ==> "17" ==> "19" ==> "23" ==> NULL
+   
+   merged is  : "2" ==> "3" ==> "5" ==> "7" ==> "11" ==> "13" ==> "17" ==> "19" ==> "23" ==> NULL
+   solution is: "2" ==> "3" ==> "5" ==> "7" ==> "11" ==> "13" ==> "17" ==> "19" ==> "23" ==> NULL
+Pass.
+
+Testcase 23
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + lhs is: "2010" ==> NULL
+   + rhs is: "Continue" ==> "Doctor" ==> "Hello" ==> "Name" ==> "Tomorrow" ==> "Yesterday" ==> NULL
+   
+   merged is  : "2010" ==> "Continue" ==> "Doctor" ==> "Hello" ==> "Name" ==> "Tomorrow" ==> "Yesterday" ==> NULL
+   solution is: "2010" ==> "Continue" ==> "Doctor" ==> "Hello" ==> "Name" ==> "Tomorrow" ==> "Yesterday" ==> NULL
+Pass.
+
+Testcase 24
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return -strcmp(a, b)
+   + lhs is: "2010" ==> NULL
+   + rhs is: "Yesterday" ==> "Tomorrow" ==> "Name" ==> "Hello" ==> "Doctor" ==> "Continue" ==> NULL
+   
+   merged is  : "Yesterday" ==> "Tomorrow" ==> "Name" ==> "Hello" ==> "Doctor" ==> "Continue" ==> "2010" ==> NULL
+   solution is: "Yesterday" ==> "Tomorrow" ==> "Name" ==> "Hello" ==> "Doctor" ==> "Continue" ==> "2010" ==> NULL
+Pass.
+
+Testcase 25
+   Testing List_merge(lhs, rhs, compar), where:
+   
+   + compar is: return strlen(a) - strlen(b)
+   + lhs is: "a" ==> "be" ==> "sea" ==> NULL
+   + rhs is: "deee" ==> NULL
+   
+   merged is  : "a" ==> "be" ==> "sea" ==> "deee" ==> NULL
+   solution is: "a" ==> "be" ==> "sea" ==> "deee" ==> NULL
+Pass.
+
+Testcase 26
+   Testing List_sort(list, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + list is: NULL
+   
+   sorted is  : NULL
+   solution is: NULL
+Pass.
+
+Testcase 27
+   Testing List_sort(list, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + list is: "b" ==> "d" ==> "f" ==> NULL
+   
+   sorted is  : "b" ==> "d" ==> "f" ==> NULL
+   solution is: "b" ==> "d" ==> "f" ==> NULL
+Pass.
+
+Testcase 28
+   Testing List_sort(list, compar), where:
+   
+   + compar is: return -strcmp(a, b)
+   + list is: "b" ==> "d" ==> "f" ==> NULL
+   
+   sorted is  : "f" ==> "d" ==> "b" ==> NULL
+   solution is: "f" ==> "d" ==> "b" ==> NULL
+Pass.
+
+Testcase 29
+   Testing List_sort(list, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + list is: "a" ==> "c" ==> "e" ==> "g" ==> "h" ==> "i" ==> "j" ==> NULL
+   
+   sorted is  : "a" ==> "c" ==> "e" ==> "g" ==> "h" ==> "i" ==> "j" ==> NULL
+   solution is: "a" ==> "c" ==> "e" ==> "g" ==> "h" ==> "i" ==> "j" ==> NULL
+Pass.
+
+Testcase 30
+   Testing List_sort(list, compar), where:
+   
+   + compar is: return -strcmp(a, b)
+   + list is: "a" ==> "c" ==> "e" ==> "g" ==> "h" ==> "i" ==> "j" ==> NULL
+   
+   sorted is  : "j" ==> "i" ==> "h" ==> "g" ==> "e" ==> "c" ==> "a" ==> NULL
+   solution is: "j" ==> "i" ==> "h" ==> "g" ==> "e" ==> "c" ==> "a" ==> NULL
+Pass.
+
+Testcase 31
+   Testing List_sort(list, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + list is: "2" ==> "3" ==> "5" ==> "7" ==> NULL
+   
+   sorted is  : "2" ==> "3" ==> "5" ==> "7" ==> NULL
+   solution is: "2" ==> "3" ==> "5" ==> "7" ==> NULL
+Pass.
+
+Testcase 32
+   Testing List_sort(list, compar), where:
+   
+   + compar is: return -strcmp(a, b)
+   + list is: "2" ==> "3" ==> "5" ==> "7" ==> NULL
+   
+   sorted is  : "7" ==> "5" ==> "3" ==> "2" ==> NULL
+   solution is: "7" ==> "5" ==> "3" ==> "2" ==> NULL
+Pass.
+
+Testcase 33
+   Testing List_sort(list, compar), where:
+   
+   + compar is: return atoi(a) - atoi(b)
+   + list is: "2" ==> "3" ==> "5" ==> "7" ==> NULL
+   
+   sorted is  : "2" ==> "3" ==> "5" ==> "7" ==> NULL
+   solution is: "2" ==> "3" ==> "5" ==> "7" ==> NULL
+Pass.
+
+Testcase 34
+   Testing List_sort(list, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + list is: "11" ==> "13" ==> "17" ==> "19" ==> "23" ==> NULL
+   
+   sorted is  : "11" ==> "13" ==> "17" ==> "19" ==> "23" ==> NULL
+   solution is: "11" ==> "13" ==> "17" ==> "19" ==> "23" ==> NULL
+Pass.
+
+Testcase 35
+   Testing List_sort(list, compar), where:
+   
+   + compar is: return -strcmp(a, b)
+   + list is: "11" ==> "13" ==> "17" ==> "19" ==> "23" ==> NULL
+   
+   sorted is  : "23" ==> "19" ==> "17" ==> "13" ==> "11" ==> NULL
+   solution is: "23" ==> "19" ==> "17" ==> "13" ==> "11" ==> NULL
+Pass.
+
+Testcase 36
+   Testing List_sort(list, compar), where:
+   
+   + compar is: return atoi(a) - atoi(b)
+   + list is: "11" ==> "13" ==> "17" ==> "19" ==> "23" ==> NULL
+   
+   sorted is  : "11" ==> "13" ==> "17" ==> "19" ==> "23" ==> NULL
+   solution is: "11" ==> "13" ==> "17" ==> "19" ==> "23" ==> NULL
+Pass.
+
+Testcase 37
+   Testing List_sort(list, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + list is: "2010" ==> NULL
+   
+   sorted is  : "2010" ==> NULL
+   solution is: "2010" ==> NULL
+Pass.
+
+Testcase 38
+   Testing List_sort(list, compar), where:
+   
+   + compar is: return -strcmp(a, b)
+   + list is: "2010" ==> NULL
+   
+   sorted is  : "2010" ==> NULL
+   solution is: "2010" ==> NULL
+Pass.
+
+Testcase 39
+   Testing List_sort(list, compar), where:
+   
+   + compar is: return strcmp(a, b)
+   + list is: "Hello" ==> "Doctor" ==> "Name" ==> "Continue" ==> "Yesterday" ==> "Tomorrow" ==> NULL
+   
+   sorted is  : "Continue" ==> "Doctor" ==> "Hello" ==> "Name" ==> "Tomorrow" ==> "Yesterday" ==> NULL
+   solution is: "Continue" ==> "Doctor" ==> "Hello" ==> "Name" ==> "Tomorrow" ==> "Yesterday" ==> NULL
+Pass.
+
+Testcase 40
+   Testing List_sort(list, compar), where:
+   
+   + compar is: return -strcmp(a, b)
+   + list is: "Hello" ==> "Doctor" ==> "Name" ==> "Continue" ==> "Yesterday" ==> "Tomorrow" ==> NULL
+   
+   sorted is  : "Yesterday" ==> "Tomorrow" ==> "Name" ==> "Hello" ==> "Doctor" ==> "Continue" ==> NULL
+   solution is: "Yesterday" ==> "Tomorrow" ==> "Name" ==> "Hello" ==> "Doctor" ==> "Continue" ==> NULL
+Pass.
+
+Testcase 41
+   Testing List_sort(list, compar), where:
+   
+   + compar is: return strlen(a) - strlen(b)
+   + list is: "sea" ==> "a" ==> "be" ==> NULL
+   
+   sorted is  : "a" ==> "be" ==> "sea" ==> NULL
+   solution is: "a" ==> "be" ==> "sea" ==> NULL
+Pass.
+
+
+41/41 testcases passed.
+Overall mark is a PASS.
