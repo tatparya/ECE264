@@ -102,6 +102,70 @@ void treePrint( TreeNode * tn )
 	treePrint ( tn -> right );
 }
 
+char * * explode ( const char * str, const char * delims, int * arrLen )
+{
+	// Takes a string and spitls it into an array of strings using '\0'
+	
+	char * * retArray;	//	The final return array of eploded strings
+	int lastDelim = 0;	// 	To store index of last + 1 delim
+	int numDelims = 0;  //  To store the number of delims in str
+	int i = 0;			//	Index to go through loops
+	int j = 0;			//	Index to incremend through retArr[0] 
+	int l;				//	To copy strings from str to retArray
+
+	// Finding number of delims in str
+
+	while ( str[i] != '\0' )
+	{
+		if ( strchr ( delims, str[i] ) != NULL )
+		{
+			numDelims++;
+		}
+
+		i++;
+	}
+
+	//	Array length = numDelims + 1
+	* arrLen = numDelims + 1;
+
+	//	Allocating memory for Return Array
+	retArray = malloc ( ( * arrLen ) * sizeof ( char * ) );  
+
+	//	Going through str, check for delim and copy 
+	for ( i = 0; str[i] != '\0'; i++ )
+	{
+		if ( strchr ( delims, str[i] ) != NULL )
+		{
+			// Copy from str to retArr
+			retArray[j] =  malloc ( ( i - lastDelim + 1 ) * sizeof ( char ) );
+
+				
+			for ( l = 0 ; lastDelim < i; lastDelim++, l++ )
+			{
+				retArray[j][l] = str[lastDelim];
+			}
+			retArray[j][l] = '\0';
+
+			lastDelim = i + 1;
+
+			j++;
+			
+		}
+	}
+	
+	//	Copying the last array
+	retArray[j] = malloc ( ( i - lastDelim + 1 ) * sizeof ( char ) );
+	for ( l = 0; lastDelim < i; lastDelim++, l++ )
+	 {
+		retArray[j][l] = str[lastDelim];
+	 }
+	 retArray[j][l] = '\0';
+
+	// DONE
+
+	return retArray;
+}
+
 int main()
 {
 	/*
@@ -123,29 +187,37 @@ int main()
 	searchNode ( root, 8 );
 	return 0;
 	*/
+
+	char * rating;
+	char * name;
+	char * address;
+	char str[2000];
+	int length = 0;
+	char * * explodedStr = NULL;
+
 	FILE * fptr = NULL;
-	char * str;
-	char * tempstr;
 	fptr = fopen( "yelp_businesses.tsv", "r");
+
 	if ( fptr == NULL )
 	{
 		fprintf ( stderr, "Failed to open file" );
 	}
 	int i = 0;
+	int j = 0;
+	printf("\n\n");
 	while ( i < 2 )
 	{
-		fgets ( tempstr, 100, fptr );
-		if ( tempstr != NULL )
+		j = 0;
+		//fgets ( tempstr, 100, fptr );
+		fgets ( str, 2000, fptr );
+		explodedStr = explode ( str, "\t\n", &length );
+		//	Got all the strings here
+		while ( j < length )
 		{
-			str = strdup ( tempstr );
-
-			printf ( "%s\n", str );
+			printf("%s Len = %d\n", explodedStr[j], (int)strlen( explodedStr[j] ));
+			j++;
 		}
-		else
-		{
-			printf("Failed to read the line\n");
-		}
-		
+		printf ( "%s\n", str );
 		i++;
 	}
 

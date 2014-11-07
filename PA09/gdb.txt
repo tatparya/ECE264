@@ -1,36 +1,11 @@
-Breakpoint 1 at 0x400605: file filehandling.c, line 1.
-Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA09/a.out 
+Breakpoint 1 at 0x400a40: file pa09.c, line 145.
+Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA09/pa09 
 
-Breakpoint 1, main () at filehandling.c:7
-warning: Source file is more recent than executable.
-7		FILE * fptr = NULL;	//	to hold the file ptr
-8		char * str = NULL;		//	to hold the read string
-10		fptr = fopen ( "yelp_businesses.tsv", "r");
-11		if ( fptr == NULL )
-17		int i = 0;
-19		while ( i < 1 )
-21			fgets ( str, 100, fptr );
-_IO_fgets (buf=0x7fffffffdef0 "", n=0, fp=0x0) at iofgets.c:40
-40	iofgets.c: No such file or directory.
-35	in iofgets.c
-40	in iofgets.c
-35	in iofgets.c
-42	in iofgets.c
-35	in iofgets.c
-42	in iofgets.c
-50	in iofgets.c
-54	in iofgets.c
-56	in iofgets.c
-55	in iofgets.c
-56	in iofgets.c
-54	in iofgets.c
-56	in iofgets.c
-
-Program received signal SIGSEGV, Segmentation fault.
-__GI__IO_getline_info (fp=0x602010, buf=0x0, n=198, delim=10, extract_delim=1, eof=0x0) at iogetline.c:86
-86	iogetline.c: No such file or directory.
+Breakpoint 1, main () at pa09.c:145
+145			printf ( "%s\n", str );
+$1 = "3.5\tEric Goldberg, MD\t4840 E Indian School Rd, Ste 101, Phoenix, AZ 85018\n\000\000\000\000\000\000\001\327\377\377\377\177\000\000\006Z\377\367\377\177\000\000\000\000\000\000\377\177\000\000\003", '\000' <repeats 31 times>, "\240\224\377\367\377\177\000\000\340\337\377\377\377\177\000\000@\003\000\000\000\000\000\000\177ELF\002\001\001\000\000\000\000\000\000\000\000\000\003\000>\000\001\000\000\000\320\037\002\000\000\000\000\000@\000\000\000\000\000\000\000"...
 A debugging session is active.
 
-	Inferior 1 [process 9839] will be killed.
+	Inferior 1 [process 10240] will be killed.
 
 Quit anyway? (y or n) 
