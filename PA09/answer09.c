@@ -22,7 +22,7 @@ BusinessNode * create_node(char * stars, char * name, char * address)
 	node -> name = strdup ( name );
 	node -> stars = strdup ( stars );
 	node -> address = strdup ( address );
-	return tn;
+	return node;
 }
 
 
@@ -31,7 +31,46 @@ BusinessNode * create_node(char * stars, char * name, char * address)
  */
 BusinessNode * tree_insert(BusinessNode * node, BusinessNode * root)
 {
+	if ( node == NULL )
+	{
+		//	fprintf(stderr, "Empty node inserted\n" );
+		return NULL;
+	}
+	if ( root == NULL )
+	{
+		//	fprintf(stderr, "Root cannot be null\n" );
+	}
+	//	printf("Name = %s\n", root -> name );
+	//	printf("Inserting name = %s\n", node -> name );
+	//	If nodename less than euql to root name, insert into root -> left
+	if ( strcmp ( node -> name, root -> name ) <= 0 )
+	{
+		//	printf( "Got name = %s which is less than root name = %s, Insert into left\n", node -> name, root -> name );
+		if ( root -> left == NULL )
+		{
+			root -> left = node;
+		}
+		else 
+		{
+			root -> left = tree_insert ( node, root -> left );
+		}
+		
+	}
 
+	else
+	{
+		//	printf( "Got name = %s which is greater than root name = %s, Insert into right\n", node -> name, root -> name );
+		if ( root -> right == NULL )
+		{
+			root -> right = node;
+		}
+		else 
+		{
+			root -> right = tree_insert ( node, root -> right );
+		}
+	}
+
+	return root;
 }
 
 /* Parse a .tsv file line by line, create a BusinessNode for each entry, and
@@ -42,27 +81,31 @@ BusinessNode * tree_insert(BusinessNode * node, BusinessNode * root)
  */
 BusinessNode * load_tree_from_file(char * filename)
 {
-	BusinessNode * root;			//	The return value
-
+	BusinessNode * root;			//	The return value for root
+	BusinessNode * node;			//	Return while populating tree
 	char str[BUFFER];				//	Buffer to store string from file
 	int length = 0;					//	To store num of exploded strings
 	char * * explodedStr = NULL;	//	To store the exploded string
-	int i = 0;		//	Iterate through loop to read from file
-	int j = 0;		//	Iterate through loop to read exploded string
+	//int i = 0;		//	Iterate through loop to read from file
+	//int j = 0;		//	Iterate through loop to read exploded string
 
 	FILE * fptr = NULL;				// 	File pointer
-	fptr = fopen( "yelp_businesses.tsv", "r");
+	fptr = fopen( filename, "r");
 	if ( fptr == NULL )
 	{
 		fprintf ( stderr, "Failed to open file" );
 		return NULL;
 	}
 
-	//	Opened the file read and create tree
-	while ( i < 2 )
+	//	CREATING THE ROOT
+	fgets ( str, 2000, fptr );
+	explodedStr = explode ( str, "\t\n", &length );	//	Explode str to parse
+	root = create_node ( explodedStr[0], explodedStr[1], explodedStr[2] );	// Creating the root
+
+	//	READ FILE and POPULATE TREE
+	while ( !feof ( fptr )  )
 	{
-		j = 0;
-		fgets ( str, 2000, fptr );		//	Read the file from file and store in str
+		fgets ( str, 2000, fptr );		//	Read the data from file and store in str
 		explodedStr = explode ( str, "\t\n", &length );	//	Explode str to parse strings
 		/*	
 			Got all the strings here
@@ -70,8 +113,10 @@ BusinessNode * load_tree_from_file(char * filename)
 			explodedStr[1] =	name
 			explodedStr[3] =	address
 		*/
-		create_node ( explodedStr[0], explodedStr[1], explodedStr[2] );
-		i++;
+		//	CREATE NODE
+		node = create_node ( explodedStr[0], explodedStr[1], explodedStr[2] );
+		//	INSERT NODE INTO TREE
+		tree_insert( node, root );
 	}
 
 	return root;
@@ -84,7 +129,37 @@ BusinessNode * load_tree_from_file(char * filename)
  */
 BusinessNode * tree_search_name(char * name, BusinessNode * root)
 {
+	//	printf ( "Searching value %s\n", name );
+	//	printf ( "Root name =  %s\n", root -> name );
+	//	If not found
+	if ( root == NULL )
+	{
+		printf("Node not found\n");
+		return root;
+	}
 
+	//	If found
+	if ( strcmp ( name, root -> name ) == 0 )
+	{
+		//	printf("Node with name = %s found\n", root -> name );
+		return root;
+	}
+
+	//	If search val is less, go into left branch
+	if ( strcmp ( name, root -> name ) < 0 )
+	{
+		//	printf("Root name = %s is greater than node name = %s going into left branch\n", root -> name, name);
+		root = tree_search_name ( name, root -> left );
+	}
+
+	//	If search val is greater, go into right branch
+	else if ( strcmp ( name, root -> name ) > 0 )
+	{
+		//	printf("Root name = %s is less than node name = %s going into right branch\n", root -> name, name);
+		root = tree_search_name ( name, root -> right);
+	}
+
+	return root;
 }
 
 /* Print out a single node: name, address, and stars
@@ -102,7 +177,10 @@ BusinessNode * tree_search_name(char * name, BusinessNode * root)
  */
 void print_node(BusinessNode * node)
 {
-
+	printf ( "Stars :\n\t%s\n", node -> stars );
+	printf ( "Name :\n\t%s\n", node -> name );
+	printf ( "Address : \n\t%s\n", node -> address );
+	printf("\n");
 }
 
 
@@ -111,9 +189,16 @@ void print_node(BusinessNode * node)
  */
 void print_tree(BusinessNode * node)
 {
-	printf ( "Rating = %s\n", node -> stars );
-	printf ( "Name = %s\n", node -> name );
-	printf ( "Address = %s\n", node -> address );
+	if ( node == NULL )
+	{
+		//	BASE CASE
+		return;
+	}
+
+	//	RECURSIVE CASE
+	print_tree ( node -> left );
+	print_node ( node );
+	print_tree ( node -> right );
 }
 
 
