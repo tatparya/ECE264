@@ -94,7 +94,7 @@ BusinessNode * load_tree_from_file(char * filename)
 	fptr = fopen( filename, "r");
 	if ( fptr == NULL )
 	{
-		fprintf ( stderr, "Failed to open file\n" );
+		//	fprintf ( stderr, "Failed to open file\n" );
 		return NULL;
 	}
 
@@ -145,11 +145,11 @@ BusinessNode * load_tree_from_file(char * filename)
 BusinessNode * tree_search_name(char * name, BusinessNode * root)
 {
 	//	printf ( "Searching value %s\n", name );
-	//	printf ( "Root name =  %s\n", root -> name );
+	//	printf ( "root name =  %s\n", root -> name );
 	//	If not found
 	if ( root == NULL )
 	{
-		printf("Node not found\n");
+		//	printf("Node not found\n");
 		return root;
 	}
 
@@ -163,14 +163,14 @@ BusinessNode * tree_search_name(char * name, BusinessNode * root)
 	//	If search val is less, go into left branch
 	if ( strcmp ( name, root -> name ) < 0 )
 	{
-		//	printf("Root name = %s is greater than node name = %s going into left branch\n", root -> name, name);
+		//	printf("root name = %s is greater than node name = %s going into left branch\n", root -> name, name);
 		root = tree_search_name ( name, root -> left );
 	}
 
 	//	If search val is greater, go into right branch
 	else if ( strcmp ( name, root -> name ) > 0 )
 	{
-		//	printf("Root name = %s is less than node name = %s going into right branch\n", root -> name, name);
+		//	printf("root name = %s is less than node name = %s going into right branch\n", root -> name, name);
 		root = tree_search_name ( name, root -> right);
 	}
 
