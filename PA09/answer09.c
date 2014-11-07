@@ -94,14 +94,14 @@ BusinessNode * load_tree_from_file(char * filename)
 	fptr = fopen( filename, "r");
 	if ( fptr == NULL )
 	{
-		fprintf ( stderr, "Failed to open file" );
+		fprintf ( stderr, "Failed to open file\n" );
 		return NULL;
 	}
 
 	//	CREATING THE ROOT
 	fgets ( str, 2000, fptr );
 	explodedStr = explode ( str, "\t\n", &length );	//	Explode str to parse
-	root = create_node ( explodedStr[0], explodedStr[1], explodedStr[2] );	// Creating the root
+	root = create_node ( strdup( explodedStr[0] ), strdup( explodedStr[1] ), strdup( explodedStr[2] ) );	// Creating the root
 
 	//	Free exploded array
 	for ( j=0; j < length; j++ )
@@ -122,7 +122,7 @@ BusinessNode * load_tree_from_file(char * filename)
 			explodedStr[3] =	address
 		*/
 		//	CREATE NODE
-		node = create_node ( explodedStr[0], explodedStr[1], explodedStr[2] );
+		node = create_node ( strdup( explodedStr[0] ), strdup( explodedStr[1] ), strdup( explodedStr[2] ) );
 
 		//	Free exploded array
 		for ( j=0; j < length; j++ )
