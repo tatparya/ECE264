@@ -1,0 +1,1449 @@
+   ---------------------------------------------------------------------------
+   Welcome to the PA09 testing program. This program takes a _long_ time
+   to execute. There is a reason for this. You should not rely on this
+   program to test your code as you go. Instead, you should think about
+   what your code should be doing, and what inputs should produce what
+   outputs for each of your functions.
+   
+        YOU SHOULD THEN TEST EVERY PIECE OF CODE AS YOU WRITE IT 
+   
+                                 AND 
+   
+                        FIX MISTAKES AS YOU GO.
+   
+   When you are convinced that you have the entire assignment 100%% correct,
+   then you can use this testing program to test it. 
+   
+   This will give you your mark assuming that you submit it correctly, and 
+   there are no other irregularities.
+   ---------------------------------------------------------------------------
+
+test 1 :: passing incorrect filename to load_tree_from_file()
+
+	char * filename = "carzyfilename";
+	BusinessNode * root;
+	root = load_tree_from_file(filename);
+
+   (pass.)
+
+test 2 :: testing destroy_tree()
+
+	BusinessNode * root = load_tree_from_file("yelp_businesses.tsv");
+	destroy_tree(root);
+
+   (pass.)
+
+test 3 :: testing destroy_tree() when root is NULL
+
+	BusinessNode * root = NULL
+	destroy_tree(root);
+
+   (pass.)
+
+test 4 :: testing whether the tree is built correctly
+
+	BusinessNode * tree = load_tree_from_file("yelp_businesses.tsv");
+	compare_trees(tree, sol_tree);
+	destroy_tree(tree);
+
+   (pass.)
+Memory errors detected, testcase failed.
+==19790== Memcheck, a memory error detector
+==19790== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==19790== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==19790== Command: /tmp/.VcwsHo/a.out 3
+==19790== Parent PID: 19789
+==19790== 
+--19790-- 
+--19790-- Valgrind options:
+--19790--    --tool=memcheck
+--19790--    --leak-check=full
+--19790--    --verbose
+--19790--    --log-file=memcheck.log
+--19790-- Contents of /proc/version:
+--19790--   Linux version 3.13.0-39-generic (buildd@toyol) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #66-Ubuntu SMP Tue Oct 28 13:30:27 UTC 2014
+--19790-- Arch and hwcaps: AMD64, amd64-cx16-rdtscp-sse3
+--19790-- Page sizes: currently 4096, max supported 4096
+--19790-- Valgrind library directory: /usr/lib/valgrind
+--19790-- Reading syms from /tmp/.VcwsHo/a.out
+--19790-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--19790--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--19790--   .. CRC mismatch (computed 4cbae35e wanted 8d683c31)
+--19790--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--19790--   .. CRC is valid
+--19790-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--19790--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--19790--   .. CRC mismatch (computed 37cdde19 wanted adc367dd)
+--19790--    object doesn't have a symbol table
+--19790--    object doesn't have a dynamic symbol table
+--19790-- Scheduler: using generic scheduler lock implementation.
+--19790-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==19790== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-19790-by-tatparya-on-???
+==19790== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-19790-by-tatparya-on-???
+==19790== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-19790-by-tatparya-on-???
+==19790== 
+==19790== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==19790== don't want to do, unless you know exactly what you're doing,
+==19790== or are doing some strange experiment):
+==19790==   /usr/lib/valgrind/../../bin/vgdb --pid=19790 ...command...
+==19790== 
+==19790== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==19790==   /path/to/gdb /tmp/.VcwsHo/a.out
+==19790== and then give GDB the following command
+==19790==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=19790
+==19790== --pid is optional if only one valgrind process is running
+==19790== 
+--19790-- REDIR: 0x4019ca0 (strlen) redirected to 0x38068331 (???)
+--19790-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--19790--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--19790--   .. CRC mismatch (computed 329d6860 wanted c0186920)
+--19790--    object doesn't have a symbol table
+--19790-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--19790--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--19790--   .. CRC mismatch (computed 1fb85af8 wanted 2e9e3c16)
+--19790--    object doesn't have a symbol table
+==19790== WARNING: new redirection conflicts with existing -- ignoring it
+--19790--     old: 0x04019ca0 (strlen              ) R-> (0000.0) 0x38068331 ???
+--19790--     new: 0x04019ca0 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--19790-- REDIR: 0x4019a50 (index) redirected to 0x4c2dd50 (index)
+--19790-- REDIR: 0x4019c70 (strcmp) redirected to 0x4c2f2f0 (strcmp)
+--19790-- REDIR: 0x401a9c0 (mempcpy) redirected to 0x4c31da0 (mempcpy)
+--19790-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--19790--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--19790--   .. CRC mismatch (computed e7228afa wanted 93ff6981)
+--19790--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--19790--   .. CRC is valid
+--19790-- REDIR: 0x4ec47e0 (strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--19790-- REDIR: 0x4ec6ad0 (strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--19790-- REDIR: 0x4ec3fb0 (memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--19790-- REDIR: 0x4ec2240 (rindex) redirected to 0x4c2da30 (rindex)
+--19790-- REDIR: 0x4ecb540 (strchrnul) redirected to 0x4c319b0 (strchrnul)
+--19790-- REDIR: 0x4ec0540 (strlen) redirected to 0x4c2e0e0 (strlen)
+--19790-- REDIR: 0x4eba1d0 (malloc) redirected to 0x4c2ab10 (malloc)
+--19790-- REDIR: 0x4ec2e90 (__GI_strstr) redirected to 0x4c32030 (__strstr_sse2)
+--19790-- REDIR: 0x4ec3690 (memchr) redirected to 0x4c2f390 (memchr)
+--19790-- REDIR: 0x4ec9200 (__GI_memcpy) redirected to 0x4c2fc90 (__GI_memcpy)
+--19790-- REDIR: 0x4ebe8a0 (index) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--19790-- REDIR: 0x4ebe8d0 (__GI_strchr) redirected to 0x4c2db90 (__GI_strchr)
+--19790-- REDIR: 0x4ec91b0 (memcpy@@GLIBC_2.14) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--19790-- REDIR: 0x4ecfa50 (__memcpy_sse2_unaligned) redirected to 0x4c2f6b0 (memcpy@@GLIBC_2.14)
+--19790-- REDIR: 0x4eba870 (free) redirected to 0x4c2bd80 (free)
+--19790-- REDIR: 0x4ebeaf0 (strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--19790-- REDIR: 0x4ecf7a0 (__strcmp_sse2_unaligned) redirected to 0x4c2f1b0 (strcmp)
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B1: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdb40 is 0 bytes inside a block of size 21 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B4: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd8f0 is 0 bytes inside a block of size 18 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B1: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdfc0 is 0 bytes inside a block of size 9 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B4: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdd80 is 0 bytes inside a block of size 27 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B1: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fe1f0 is 0 bytes inside a block of size 28 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B4: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdfc0 is 0 bytes inside a block of size 9 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1C8: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fe1f1 is 1 bytes inside a block of size 28 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1CB: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdfc1 is 1 bytes inside a block of size 9 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B1: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fe8b0 is 0 bytes inside a block of size 25 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B4: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdb40 is 0 bytes inside a block of size 21 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B1: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65feaf0 is 0 bytes inside a block of size 25 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B4: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fe8b0 is 0 bytes inside a block of size 25 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1C8: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65ff1b1 is 1 bytes inside a block of size 30 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1CB: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdb41 is 1 bytes inside a block of size 21 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B1: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65ff3f0 is 0 bytes inside a block of size 13 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B4: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fed30 is 0 bytes inside a block of size 24 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1C8: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65ff3f1 is 1 bytes inside a block of size 13 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1CB: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fed31 is 1 bytes inside a block of size 24 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1C8: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65ff851 is 1 bytes inside a block of size 29 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1CB: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fe8b1 is 1 bytes inside a block of size 25 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B1: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65ffa90 is 0 bytes inside a block of size 30 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B4: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fe430 is 0 bytes inside a block of size 23 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1C8: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65ffa91 is 1 bytes inside a block of size 30 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1CB: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fe431 is 1 bytes inside a block of size 23 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1C8: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x6600ca1 is 1 bytes inside a block of size 15 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1CB: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdd81 is 1 bytes inside a block of size 27 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1C8: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x660fdb1 is 1 bytes inside a block of size 12 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1CB: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd8f1 is 1 bytes inside a block of size 18 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2E0E2: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4EC02AD: strdup (strdup.c:41)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x401458: compare_trees (<stdin>:284)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd8f0 is 0 bytes inside a block of size 18 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2E0F4: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4EC02AD: strdup (strdup.c:41)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x401458: compare_trees (<stdin>:284)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd8f1 is 1 bytes inside a block of size 18 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 8
+==19790==    at 0x4C2FD70: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x401458: compare_trees (<stdin>:284)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd8f0 is 0 bytes inside a block of size 18 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 2
+==19790==    at 0x4C2FDC0: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x401458: compare_trees (<stdin>:284)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd900 is 16 bytes inside a block of size 18 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 8
+==19790==    at 0x4C2FD70: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x40147E: compare_trees (<stdin>:285)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd950 is 0 bytes inside a block of size 52 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 8
+==19790==    at 0x4C2FD7E: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x40147E: compare_trees (<stdin>:285)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd960 is 16 bytes inside a block of size 52 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 2
+==19790==    at 0x4C2FDC0: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x40147E: compare_trees (<stdin>:285)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd980 is 48 bytes inside a block of size 52 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 2
+==19790==    at 0x4C2FDC0: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x4014A4: compare_trees (<stdin>:286)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd8a0 is 0 bytes inside a block of size 4 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 8
+==19790==    at 0x4C2FD7E: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x401458: compare_trees (<stdin>:284)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdd90 is 16 bytes inside a block of size 27 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2FF30: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x401458: compare_trees (<stdin>:284)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdd9a is 26 bytes inside a block of size 27 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 2
+==19790==    at 0x4C2FDCF: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x40147E: compare_trees (<stdin>:285)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fe034 is 36 bytes inside a block of size 38 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 1
+==19790==    at 0x4C2FF30: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x40147E: compare_trees (<stdin>:285)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fe272 is 34 bytes inside a block of size 35 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== Invalid read of size 2
+==19790==    at 0x4C2FDCF: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x401458: compare_trees (<stdin>:284)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x660c38c is 12 bytes inside a block of size 15 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== More than 10000000 total errors detected.  I'm not reporting any more.
+==19790== Final error counts will be inaccurate.  Go fix your program!
+==19790== Rerun with --error-limit=no to disable this cutoff.  Note
+==19790== that errors may occur in your program without prior warning from
+==19790== Valgrind, because errors are no longer being displayed.
+==19790== 
+==19790== 
+==19790== HEAP SUMMARY:
+==19790==     in use at exit: 568 bytes in 1 blocks
+==19790==   total heap usage: 716,610 allocs, 843,071 frees, 17,563,656 bytes allocated
+==19790== 
+==19790== Searching for pointers to 1 not-freed blocks
+==19790== Checked 82,656 bytes
+==19790== 
+==19790== LEAK SUMMARY:
+==19790==    definitely lost: 0 bytes in 0 blocks
+==19790==    indirectly lost: 0 bytes in 0 blocks
+==19790==      possibly lost: 0 bytes in 0 blocks
+==19790==    still reachable: 568 bytes in 1 blocks
+==19790==         suppressed: 0 bytes in 0 blocks
+==19790== Reachable blocks (those to which a pointer was found) are not shown.
+==19790== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==19790== 
+==19790== ERROR SUMMARY: 10000000 errors from 41 contexts (suppressed: 0 from 0)
+==19790== 
+==19790== 1292 errors in context 1 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1CB: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd8f1 is 1 bytes inside a block of size 18 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 1292 errors in context 2 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1C8: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x660fdb1 is 1 bytes inside a block of size 12 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 2426 errors in context 3 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1CB: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdd81 is 1 bytes inside a block of size 27 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 2426 errors in context 4 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1C8: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x6600ca1 is 1 bytes inside a block of size 15 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 2471 errors in context 5 of 41:
+==19790== Invalid read of size 2
+==19790==    at 0x4C2FDCF: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x401458: compare_trees (<stdin>:284)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x660c38c is 12 bytes inside a block of size 15 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 2734 errors in context 6 of 41:
+==19790== Invalid read of size 2
+==19790==    at 0x4C2FDCF: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x40147E: compare_trees (<stdin>:285)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fe034 is 36 bytes inside a block of size 38 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 3340 errors in context 7 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1CB: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdb41 is 1 bytes inside a block of size 21 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 3340 errors in context 8 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1C8: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65ff1b1 is 1 bytes inside a block of size 30 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 3648 errors in context 9 of 41:
+==19790== Invalid read of size 8
+==19790==    at 0x4C2FD7E: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x401458: compare_trees (<stdin>:284)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdd90 is 16 bytes inside a block of size 27 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 5028 errors in context 10 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2FF30: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x40147E: compare_trees (<stdin>:285)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fe272 is 34 bytes inside a block of size 35 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 5129 errors in context 11 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2FF30: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x401458: compare_trees (<stdin>:284)
+==19790==    by 0x401541: compare_trees (<stdin>:295)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdd9a is 26 bytes inside a block of size 27 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 12496 errors in context 12 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B4: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdd80 is 0 bytes inside a block of size 27 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 12496 errors in context 13 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B1: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdfc0 is 0 bytes inside a block of size 9 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 13028 errors in context 14 of 41:
+==19790== Invalid read of size 2
+==19790==    at 0x4C2FDC0: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x401458: compare_trees (<stdin>:284)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd900 is 16 bytes inside a block of size 18 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 13318 errors in context 15 of 41:
+==19790== Invalid read of size 2
+==19790==    at 0x4C2FDC0: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x40147E: compare_trees (<stdin>:285)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd980 is 48 bytes inside a block of size 52 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 16487 errors in context 16 of 41:
+==19790== Invalid read of size 8
+==19790==    at 0x4C2FD70: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x401458: compare_trees (<stdin>:284)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd8f0 is 0 bytes inside a block of size 18 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 20792 errors in context 17 of 41:
+==19790== Invalid read of size 2
+==19790==    at 0x4C2FDC0: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x4014A4: compare_trees (<stdin>:286)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd8a0 is 0 bytes inside a block of size 4 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 24893 errors in context 18 of 41:
+==19790== Invalid read of size 8
+==19790==    at 0x4C2FD70: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x40147E: compare_trees (<stdin>:285)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd950 is 0 bytes inside a block of size 52 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 29655 errors in context 19 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B4: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdb40 is 0 bytes inside a block of size 21 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 29655 errors in context 20 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B1: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fe8b0 is 0 bytes inside a block of size 25 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 30011 errors in context 21 of 41:
+==19790== Invalid read of size 8
+==19790==    at 0x4C2FD7E: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x40147E: compare_trees (<stdin>:285)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd960 is 16 bytes inside a block of size 52 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 31189 errors in context 22 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2E0E2: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4EC02AD: strdup (strdup.c:41)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x401458: compare_trees (<stdin>:284)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd8f0 is 0 bytes inside a block of size 18 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 42153 errors in context 23 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B4: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd8f0 is 0 bytes inside a block of size 18 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 42153 errors in context 24 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B1: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdb40 is 0 bytes inside a block of size 21 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 172262 errors in context 25 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B4: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fed30 is 0 bytes inside a block of size 24 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 172262 errors in context 26 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B1: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65ff3f0 is 0 bytes inside a block of size 13 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 177222 errors in context 27 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B4: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fe430 is 0 bytes inside a block of size 23 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 177222 errors in context 28 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B1: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65ffa90 is 0 bytes inside a block of size 30 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 190183 errors in context 29 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B4: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fe8b0 is 0 bytes inside a block of size 25 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 190183 errors in context 30 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B1: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65feaf0 is 0 bytes inside a block of size 25 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 355491 errors in context 31 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B4: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdfc0 is 0 bytes inside a block of size 9 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 355491 errors in context 32 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1B1: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fe1f0 is 0 bytes inside a block of size 28 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 389804 errors in context 33 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1CB: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fed31 is 1 bytes inside a block of size 24 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 389804 errors in context 34 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1C8: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65ff3f1 is 1 bytes inside a block of size 13 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 527951 errors in context 35 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1CB: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fe431 is 1 bytes inside a block of size 23 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 527951 errors in context 36 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1C8: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65ffa91 is 1 bytes inside a block of size 30 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 554959 errors in context 37 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1CB: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fe8b1 is 1 bytes inside a block of size 25 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 554959 errors in context 38 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1C8: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401DD7: tree_insert (answer09.c:70)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65ff851 is 1 bytes inside a block of size 29 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 683970 errors in context 39 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2E0F4: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x4EC02AD: strdup (strdup.c:41)
+==19790==    by 0x4012DF: trimcpy (<stdin>:248)
+==19790==    by 0x401373: strtrimcmp (<stdin>:258)
+==19790==    by 0x401458: compare_trees (<stdin>:284)
+==19790==    by 0x401603: test_build (<stdin>:313)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fd8f1 is 1 bytes inside a block of size 18 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401F24: load_tree_from_file (answer09.c:109)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 2114417 errors in context 40 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1CB: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fdfc1 is 1 bytes inside a block of size 9 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== 
+==19790== 2114417 errors in context 41 of 41:
+==19790== Invalid read of size 1
+==19790==    at 0x4C2F1C8: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401D65: tree_insert (answer09.c:47)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x401D9B: tree_insert (answer09.c:56)
+==19790==    by 0x402030: load_tree_from_file (answer09.c:134)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790==  Address 0x65fe1f1 is 1 bytes inside a block of size 28 free'd
+==19790==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==19790==    by 0x401FF3: load_tree_from_file (answer09.c:130)
+==19790==    by 0x4015EC: test_build (<stdin>:312)
+==19790==    by 0x401BCB: main (<stdin>:425)
+==19790== 
+==19790== ERROR SUMMARY: 10000000 errors from 41 contexts (suppressed: 0 from 0)
+
+test 5 :: testing the create_node function.
+
+	BusinessNode * node = create_node(strdup("5.0"), strdup("Purdue University Electrical Engineering"), strdup("465 Northwestern Avenue")
+   (pass.)
+
+test 6 :: testing the tree_insert function.
+
+	BusinessNode * root = load_tree_from_file("yelp_businesses.tsv");
+	BusinessNode * node = create_node(strdup("5.0"),strdup("test node"),strdup("no address"));
+	BusinessNode * root = tree_insert(node,root);
+   (pass.)
+
+test 7 :: testing the tree_insert function: insert to NULL root.
+
+	BusinessNode * root = NULL;
+	BusinessNode * node = create_node(strdup("5.0"),strdup("test node"),strdup("no address"));
+	BusinessNode * root = tree_insert(node,root);
+   (pass.)
+
+test 8 :: testing the tree_search_name function: Looking for: Pine Cone Restaurant
+
+	BusinessNode * root = load_tree_from_file("yelp_businesses.tsv");
+	BusinessNode * node = tree_search_name("Pine Cone Restaurant",root);
+   (pass.)
+
+test 9 :: testing the tree_search_name function: Looking for: Full Circle Auto Wash
+
+	BusinessNode * root = load_tree_from_file("yelp_businesses.tsv");
+	BusinessNode * node = tree_search_name("Full Circle Auto Wash",root);
+   (pass.)
+
+test 10 :: testing the tree_search_name function: Looking for: Oriental Supermarket
+
+	BusinessNode * root = load_tree_from_file("yelp_businesses.tsv");
+	BusinessNode * node = tree_search_name("Oriental Supermarket",root);
+   (pass.)
+
+test 11 :: testing the tree_search_name function: Looking for: Surfer Express Car Wash
+
+	BusinessNode * root = load_tree_from_file("yelp_businesses.tsv");
+	BusinessNode * node = tree_search_name("Surfer Express Car Wash",root);
+   (pass.)
+
+test 12 :: testing the tree_search_name function: Looking for: Dennis' Special Shop
+
+	BusinessNode * root = load_tree_from_file("yelp_businesses.tsv");
+	BusinessNode * node = tree_search_name("Dennis' Special Shop",root);
+Node not found
+   (pass.)
+
+test 13 :: testing the tree_search_name function: Looking for: Purdue University
+
+	BusinessNode * root = load_tree_from_file("yelp_businesses.tsv");
+	BusinessNode * node = tree_search_name("Purdue University",root);
+Node not found
+   (pass.)
+
+test 14 :: testing the tree_search_name function: Looking for: Vinny-Boy's Italian Market Place
+
+	BusinessNode * root = load_tree_from_file("yelp_businesses.tsv");
+	BusinessNode * node = tree_search_name("Vinny-Boy's Italian Market Place",root);
+   (pass.)
+
+test 15 :: testing the tree_search_name function: Looking for: Mando's Mexican Food
+
+	BusinessNode * root = load_tree_from_file("yelp_businesses.tsv");
+	BusinessNode * node = tree_search_name("Mando's Mexican Food",root);
+   (pass.)
+
+
+14/15 testcases passed.
+Overall mark is a FAIL.

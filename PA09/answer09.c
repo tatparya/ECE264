@@ -19,9 +19,9 @@ BusinessNode * create_node(char * stars, char * name, char * address)
 	node = malloc( sizeof(BusinessNode) );
 	node -> left = NULL;
 	node -> right = NULL;
-	node -> name = strdup ( name );
-	node -> stars = strdup ( stars );
-	node -> address = strdup ( address );
+	node -> name = name ;
+	node -> stars = stars ;
+	node -> address = address ;
 	return node;
 }
 
@@ -39,6 +39,7 @@ BusinessNode * tree_insert(BusinessNode * node, BusinessNode * root)
 	if ( root == NULL )
 	{
 		//	fprintf(stderr, "Root cannot be null\n" );
+		return node;
 	}
 	//	printf("Name = %s\n", root -> name );
 	//	printf("Inserting name = %s\n", node -> name );
@@ -87,7 +88,7 @@ BusinessNode * load_tree_from_file(char * filename)
 	int length = 0;					//	To store num of exploded strings
 	char * * explodedStr = NULL;	//	To store the exploded string
 	//int i = 0;		//	Iterate through loop to read from file
-	//int j = 0;		//	Iterate through loop to read exploded string
+	int j = 0;			//	Iterate through loop to free exploded string
 
 	FILE * fptr = NULL;				// 	File pointer
 	fptr = fopen( filename, "r");
@@ -102,6 +103,13 @@ BusinessNode * load_tree_from_file(char * filename)
 	explodedStr = explode ( str, "\t\n", &length );	//	Explode str to parse
 	root = create_node ( explodedStr[0], explodedStr[1], explodedStr[2] );	// Creating the root
 
+	//	Free exploded array
+	for ( j=0; j < length; j++ )
+	{
+		free ( explodedStr[j] );
+	}
+	free ( explodedStr );
+
 	//	READ FILE and POPULATE TREE
 	while ( !feof ( fptr )  )
 	{
@@ -115,6 +123,13 @@ BusinessNode * load_tree_from_file(char * filename)
 		*/
 		//	CREATE NODE
 		node = create_node ( explodedStr[0], explodedStr[1], explodedStr[2] );
+
+		//	Free exploded array
+		for ( j=0; j < length; j++ )
+		{
+			free ( explodedStr[j] );
+		}
+		free ( explodedStr );
 		//	INSERT NODE INTO TREE
 		tree_insert( node, root );
 	}
@@ -207,7 +222,36 @@ void print_tree(BusinessNode * node)
  */
 void destroy_tree(BusinessNode * root)
 {
-	
+	if ( root != NULL )
+	{
+		//	Free left
+		if ( root -> left != NULL )
+		{
+			destroy_tree ( root -> left );
+		}
+		//	Free right
+		if ( root -> right != NULL )
+		{
+			destroy_tree ( root -> right );
+		}
+		//	Free stars
+		if ( root -> stars != NULL )
+		{
+			free ( root -> stars );
+		}
+		//	Free name
+		if ( root -> name != NULL )
+		{
+			free ( root -> name );
+		}
+		//	Free address
+		if ( root -> address != NULL )
+		{
+			free ( root -> address );
+		}
+		//	Free root
+		free ( root );
+	}
 }
 
 
