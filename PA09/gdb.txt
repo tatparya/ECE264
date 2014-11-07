@@ -1,0 +1,10 @@
+Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA09/a.out 
+
+Program received signal SIGSEGV, Segmentation fault.
+__GI__IO_getline_info (fp=0x602010, buf=0x0, n=198, delim=10, extract_delim=1, eof=0x0) at iogetline.c:86
+86	iogetline.c: No such file or directory.
+A debugging session is active.
+
+	Inferior 1 [process 8749] will be killed.
+
+Quit anyway? (y or n) 

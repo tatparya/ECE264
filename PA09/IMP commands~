@@ -1,0 +1,19 @@
+// ~ Important Commands ~ //
+
+cd Desktop/ECE264/solutions/ECE264_sol/PA07
+
+zip pa07.zip answer07.c git.log
+
+gcc -Wall -Wshadow -g main.c answer07.c -o pa07	
+
+gdb -ex "set logging overwrite on" -ex "set logging on" ./pa07
+
+valgrind --tool=memcheck --leak-check=full --verbose --log-file=memcheck.log ./pa07
+
+gdb comands
+
+b answer07.c:1
+
+run images/01-smile.ee264 images/corrected.ee264
+
+
