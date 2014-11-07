@@ -1,0 +1,263 @@
+commit 41311ae48f96880d952db7864961a5a9fbcfb473
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Fri Nov 7 15:49:09 2014 -0500
+
+    Done with PA09
+
+commit f84e1e1aeeca3ae48f2e5adfa3dd4a35cfed6445
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Fri Nov 7 15:12:02 2014 -0500
+
+    Done, tester passes all testcases
+
+commit f3f9b2152f96978af93ec7ab116b9ae9b5819d23
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Fri Nov 7 15:04:20 2014 -0500
+
+    Need to debug one testcase
+
+commit 127df6c8da818cf83a1714e81de0de9e5a6a138f
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Fri Nov 7 03:20:20 2014 -0500
+
+    Done coding Need to code destroy and debug
+
+commit 8c6ea92c7965f1be514cb8cd939e0584cc1daff1
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Thu Nov 6 22:04:52 2014 -0500
+
+    Done coding create node and read
+
+commit 057b980d37a71de49b7e1b97bef7e685abe634cc
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Thu Nov 6 21:38:09 2014 -0500
+
+    Pared file and finished tree logic need to combine everything
+
+commit 875de751312b69c953493abd2700133c8893e6f1
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Thu Nov 6 20:47:03 2014 -0500
+
+    pa09.c works fine
+
+commit 587245f3f00fb3fa01d78aa86cb077beaa63921b
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Thu Nov 6 20:28:05 2014 -0500
+
+    Done with binary tree logic
+
+commit da1989a77f1be46568acd0c81f902109e2e999bf
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Thu Nov 6 01:21:29 2014 -0500
+
+    Started working on PA09
+
+commit e42980d5fd164286cf232f92bd7f0b3db02ffbf4
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Sun Nov 2 22:54:21 2014 -0500
+
+    Done with assignment
+
+commit ec54e60430bc11afb1ab45cf13179533b19b0015
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Sun Nov 2 15:53:03 2014 -0500
+
+    Started working on PA08
+
+commit 2e2420fc1349176ddc5fcdaeebfab272b33536b9
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Tue Oct 28 14:09:19 2014 -0400
+
+    Initial commit to PA08
+
+commit ee328fb5810e78ae2eade6a1ff6850ab442c71e3
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Sun Oct 26 22:34:38 2014 -0400
+
+    Done Coding, Debugging
+
+commit 1f4e787e987e68c410aedcb7ab6e0f5eca669bc3
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Sun Oct 26 15:30:42 2014 -0400
+
+    Started working on PA07
+
+commit d054403ebb0ecd84c031f4b86c886da547193eac
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Sun Oct 19 19:19:27 2014 -0400
+
+    Debugged accordng to tester, assignment completed
+
+commit cbb34bd0650abe7415312dec3ef181d22b588d76
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Thu Oct 16 15:21:43 2014 -0400
+
+    Assignment Completed
+
+commit 57a0c277d168b5052a5cd903280b73d572052fa2
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Thu Oct 16 04:03:16 2014 -0400
+
+    Need to correct Output, Logic works
+
+commit 94bba063409c3d4864c667941593d6e83d72d54e
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Wed Oct 15 15:38:23 2014 -0400
+
+    Started working on PA06
+
+commit 384da1d09d9482a9d67e8e28e224fde1b8be2246
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Fri Oct 10 03:45:37 2014 -0400
+
+    Assignment Completed
+
+commit a3da37a9d59ebd4c91fd14798a1327e565767e69
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Fri Oct 10 00:46:41 2014 -0400
+
+    Started working on PA05
+
+commit 503a262798e90093bc7dc8f94859bf54302d6422
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Fri Oct 3 17:48:13 2014 -0400
+
+    Completed assignment
+
+commit 8157a55bc5065602f22d2e597e8e72c4c62959d2
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Thu Oct 2 23:25:00 2014 -0400
+
+    Restarted working on grep and debugging
+
+commit a4fd18a310d48721286f3bb98115b146d8e00c9c
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Tue Sep 30 04:25:31 2014 -0400
+
+    Coded, need to debug echo-lite and cat-lite
+
+commit 1997fb857838f9cadb99293eeb4e5708ce778ad5
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Tue Sep 30 03:32:21 2014 -0400
+
+    Started working on PA04
+
+commit 6b6d934074655c6be04a84da683c55aeec9cea0d
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Fri Sep 19 17:37:46 2014 -0400
+
+    DONE CODING
+
+commit 4e7a25c64ab52201052dc1aca68035625fa31da8
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Fri Sep 19 17:28:40 2014 -0400
+
+    DONE CODINGgit add PA03
+
+commit 622c2302c6206d1cf0c14501aae8163fa2fe3000
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Thu Sep 18 14:42:51 2014 -0400
+
+    Done coding explode, working on implode
+
+commit a20e1e195c1de03f90e5e9f39d9c49256056b7b1
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Thu Sep 18 12:07:17 2014 -0400
+
+    Working on explode function
+
+commit 44e8b6d8b2a89eb194c6dd0ddcf21759d3b5525a
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Wed Sep 17 22:54:07 2014 -0400
+
+    Started working on answer03.c
+
+commit cf3562c03b27b35d379ed09ca87f6b47cad65fa6
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Wed Sep 17 22:53:08 2014 -0400
+
+    Started working on answer.c
+
+commit 2586c8312d4cf8841fe2d977fc2e1adf2e1e0a77
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Wed Sep 17 22:36:18 2014 -0400
+
+    Fixed main.c
+
+commit 215cceb8cecdb7ba2421687a4cfdc0c4b6338217
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Sun Sep 14 17:47:42 2014 -0400
+
+    Working on main.c
+
+commit e6adcf3ea1ff49977dff8953a56ca4a2d208e3ef
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Sun Sep 14 15:35:12 2014 -0400
+
+    Started working on PA03
+
+commit 555d3ce65240df869f330a421c89e4071e26f63e
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Wed Sep 10 23:50:50 2014 -0400
+
+    DONE
+
+commit a1dc700b6999bea121a38920de91fdd5e5a68be0
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Wed Sep 10 11:34:32 2014 -0400
+
+    Debugging
+
+commit 73a8054f8707d7ca4985e8f25d70467424bd7621
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Wed Sep 10 10:39:03 2014 -0400
+
+    Done debugging pointer warnings
+
+commit 56bbafc3e11ae1cad2afbd6a6814a673c35334fd
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Wed Sep 10 02:49:45 2014 -0400
+
+    Done coding
+
+commit 6733d83f46574d285a39a3b4dfc6008152b430db
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Wed Sep 10 01:07:34 2014 -0400
+
+    Done coding upto my_isspace
+
+commit 4265877b3bcc6c44e0980e0aad5c5ff50605a66b
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Tue Sep 9 22:21:24 2014 -0400
+
+    Done coding upto my_strstr
+
+commit 789af758d7b70cc44b102c235733cd27146a383f
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Sun Sep 7 23:58:23 2014 -0400
+
+    start homework 2
+
+commit 9164a68bb90f61882c6c12fb196beee1fd19cf3a
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Tue Sep 2 03:04:55 2014 -0400
+
+    Finished debugging with gdb
+
+commit aa7ebfd4a7c527f8e5350c2184fbe576e6da2cd3
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Mon Sep 1 11:48:35 2014 -0400
+
+    Finished coding
+
+commit 949ac4861f5463a3ba4164d1509249305993f85e
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Fri Aug 29 01:00:56 2014 -0400
+
+    Start Homework
+
+commit e8e3583d864b851c5ea35928545b07a6e760775a
+Author: tatparya <tatparya.shankar@gmail.com>
+Date:   Fri Aug 29 00:19:02 2014 -0400
+
+    Initial commit
