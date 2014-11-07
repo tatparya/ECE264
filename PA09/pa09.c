@@ -102,26 +102,52 @@ void treePrint( TreeNode * tn )
 	treePrint ( tn -> right );
 }
 
-
 int main()
 {
-	FILE * fptr;	//	to hold the file ptr
-	char * str = NULL;		//	to hold the read string
+	/*
+	int i=0;
+	int j;
+	int rootval = 5;
+	TreeNode * root;
+	root = treeInsert ( root, 5 );
+	for ( i = 1, j = 20; i < 21; i+=2, j -= 2 )
+	{
+		if ( i != 5 )
+		{
+			root = treeInsert ( root, i );
+			root = treeInsert ( root, j );
+		}
+	}
+	treePrint ( root );
 
-	fptr = fopen ( "yelp_businesses.tsv", "r");
+	searchNode ( root, 8 );
+	return 0;
+	*/
+	FILE * fptr = NULL;
+	char * str;
+	char * tempstr;
+	fptr = fopen( "yelp_businesses.tsv", "r");
 	if ( fptr == NULL )
 	{
-		fprintf(stderr, "File could not be open\n" );
-		return 0;
+		fprintf ( stderr, "Failed to open file" );
 	}
-
 	int i = 0;
-
-	while ( i < 1 )
+	while ( i < 2 )
 	{
-		fgets ( str, 200, fptr );
-		printf("%s\n", str);
+		fgets ( tempstr, 100, fptr );
+		if ( tempstr != NULL )
+		{
+			str = strdup ( tempstr );
+
+			printf ( "%s\n", str );
+		}
+		else
+		{
+			printf("Failed to read the line\n");
+		}
+		
 		i++;
 	}
+
 	return 0;
 }
