@@ -1,0 +1,220 @@
+Breakpoint 1 at 0x400d61: file answer10.c, line 142.
+Breakpoint 2 at 0x400f61: file answer10.c, line 203.
+Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA10/pa10 
+
+Breakpoint 2, Business_tree_destroy (root=0x603540) at answer10.c:203
+203		if ( root == NULL )
+Continuing.
+
+Breakpoint 2, Business_tree_destroy (root=0x6032f0) at answer10.c:203
+203		if ( root == NULL )
+Continuing.
+
+Breakpoint 2, Business_tree_destroy (root=0x6037b0) at answer10.c:203
+203		if ( root == NULL )
+Continuing.
+
+Breakpoint 2, Business_tree_destroy (root=0x6039d0) at answer10.c:203
+203		if ( root == NULL )
+Continuing.
+
+Breakpoint 2, Business_tree_destroy (root=0x603a40) at answer10.c:203
+203		if ( root == NULL )
+Continuing.
+
+Breakpoint 2, Business_tree_destroy (root=0x0) at answer10.c:203
+203		if ( root == NULL )
+Continuing.
+
+Breakpoint 2, Business_tree_destroy (root=0x0) at answer10.c:203
+203		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x603c80) at answer10.c:142
+142		if ( root == NULL )
+$1 = 0x603840 "Walmart"
+147		Location_tree_destroy ( root -> left );
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+144			return;
+153	}
+Location_tree_destroy (root=0x603c80) at answer10.c:148
+148		Location_tree_destroy ( root -> right );
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+144			return;
+153	}
+Location_tree_destroy (root=0x603c80) at answer10.c:151
+151		free ( root -> name );
+152		free ( root );
+153	}
+Business_tree_destroy (root=0x603a40) at answer10.c:212
+212		free ( root -> name );
+213		free ( root );
+214	}
+Business_tree_destroy (root=0x6039d0) at answer10.c:209
+209		Business_tree_destroy ( root -> right );
+
+Breakpoint 2, Business_tree_destroy (root=0x0) at answer10.c:203
+203		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x603880) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 2, Business_tree_destroy (root=0x0) at answer10.c:203
+203		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x603800) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x603dc0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 2, Business_tree_destroy (root=0x6033c0) at answer10.c:203
+203		if ( root == NULL )
+Continuing.
+
+Breakpoint 2, Business_tree_destroy (root=0x603910) at answer10.c:203
+203		if ( root == NULL )
+Continuing.
+
+Breakpoint 2, Business_tree_destroy (root=0x603bc0) at answer10.c:203
+203		if ( root == NULL )
+Continuing.
+
+Breakpoint 2, Business_tree_destroy (root=0x0) at answer10.c:203
+203		if ( root == NULL )
+Continuing.
+
+Breakpoint 2, Business_tree_destroy (root=0x0) at answer10.c:203
+203		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x604040) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x604080) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 2, Business_tree_destroy (root=0x0) at answer10.c:203
+203		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x603710) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 2, Business_tree_destroy (root=0x603b50) at answer10.c:203
+203		if ( root == NULL )
+Continuing.
+
+Breakpoint 2, Business_tree_destroy (root=0x0) at answer10.c:203
+203		if ( root == NULL )
+Continuing.
+
+Breakpoint 2, Business_tree_destroy (root=0x0) at answer10.c:203
+203		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x603ab0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x603430) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x603360) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 2, Business_tree_destroy (root=0x0) at answer10.c:203
+203		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x6032b0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+
+Breakpoint 1, Location_tree_destroy (root=0x0) at answer10.c:142
+142		if ( root == NULL )
+Continuing.
+[Inferior 1 (process 22208) exited normally]
+The program is not being run.

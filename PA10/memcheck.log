@@ -1,0 +1,1519 @@
+==23485== Memcheck, a memory error detector
+==23485== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==23485== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==23485== Command: ./pa10
+==23485== Parent PID: 18563
+==23485== 
+--23485-- 
+--23485-- Valgrind options:
+--23485--    --tool=memcheck
+--23485--    --leak-check=full
+--23485--    --verbose
+--23485--    --log-file=memcheck.log
+--23485-- Contents of /proc/version:
+--23485--   Linux version 3.13.0-39-generic (buildd@toyol) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #66-Ubuntu SMP Tue Oct 28 13:30:27 UTC 2014
+--23485-- Arch and hwcaps: AMD64, amd64-cx16-rdtscp-sse3
+--23485-- Page sizes: currently 4096, max supported 4096
+--23485-- Valgrind library directory: /usr/lib/valgrind
+--23485-- Reading syms from /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA10/pa10
+--23485-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--23485--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--23485--   .. CRC mismatch (computed 4cbae35e wanted 8d683c31)
+--23485--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--23485--   .. CRC is valid
+--23485-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--23485--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--23485--   .. CRC mismatch (computed 37cdde19 wanted adc367dd)
+--23485--    object doesn't have a symbol table
+--23485--    object doesn't have a dynamic symbol table
+--23485-- Scheduler: using generic scheduler lock implementation.
+--23485-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==23485== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-23485-by-tatparya-on-???
+==23485== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-23485-by-tatparya-on-???
+==23485== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-23485-by-tatparya-on-???
+==23485== 
+==23485== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==23485== don't want to do, unless you know exactly what you're doing,
+==23485== or are doing some strange experiment):
+==23485==   /usr/lib/valgrind/../../bin/vgdb --pid=23485 ...command...
+==23485== 
+==23485== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==23485==   /path/to/gdb ./pa10
+==23485== and then give GDB the following command
+==23485==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=23485
+==23485== --pid is optional if only one valgrind process is running
+==23485== 
+--23485-- REDIR: 0x4019ca0 (strlen) redirected to 0x38068331 (???)
+--23485-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--23485--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--23485--   .. CRC mismatch (computed 329d6860 wanted c0186920)
+--23485--    object doesn't have a symbol table
+--23485-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--23485--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--23485--   .. CRC mismatch (computed 1fb85af8 wanted 2e9e3c16)
+--23485--    object doesn't have a symbol table
+==23485== WARNING: new redirection conflicts with existing -- ignoring it
+--23485--     old: 0x04019ca0 (strlen              ) R-> (0000.0) 0x38068331 ???
+--23485--     new: 0x04019ca0 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--23485-- REDIR: 0x4019a50 (index) redirected to 0x4c2dd50 (index)
+--23485-- REDIR: 0x4019c70 (strcmp) redirected to 0x4c2f2f0 (strcmp)
+--23485-- REDIR: 0x401a9c0 (mempcpy) redirected to 0x4c31da0 (mempcpy)
+--23485-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--23485--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--23485--   .. CRC mismatch (computed e7228afa wanted 93ff6981)
+--23485--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--23485--   .. CRC is valid
+--23485-- REDIR: 0x4ec47e0 (strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--23485-- REDIR: 0x4ec6ad0 (strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--23485-- REDIR: 0x4ec3fb0 (memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--23485-- REDIR: 0x4ec2240 (rindex) redirected to 0x4c2da30 (rindex)
+--23485-- REDIR: 0x4eba1d0 (malloc) redirected to 0x4c2ab10 (malloc)
+--23485-- REDIR: 0x4ec2e90 (__GI_strstr) redirected to 0x4c32030 (__strstr_sse2)
+--23485-- REDIR: 0x4ec3690 (memchr) redirected to 0x4c2f390 (memchr)
+--23485-- REDIR: 0x4ec9200 (__GI_memcpy) redirected to 0x4c2fc90 (__GI_memcpy)
+--23485-- REDIR: 0x4ebe8a0 (index) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--23485-- REDIR: 0x4ebe8d0 (__GI_strchr) redirected to 0x4c2db90 (__GI_strchr)
+--23485-- REDIR: 0x4eba870 (free) redirected to 0x4c2bd80 (free)
+--23485-- REDIR: 0x4ec0540 (strlen) redirected to 0x4c2e0e0 (strlen)
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x400E75: Business_tree_insert (answer10.c:239)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+--23485-- REDIR: 0x4ebeaf0 (strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--23485-- REDIR: 0x4ecf7a0 (__strcmp_sse2_unaligned) redirected to 0x4c2f1b0 (strcmp)
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x40122E: explode (answer10.c:379)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4016DB: getName (answer10.c:514)
+==23485==    by 0x40107F: create_business_bst (answer10.c:308)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4016DB: getName (answer10.c:514)
+==23485==    by 0x40107F: create_business_bst (answer10.c:308)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4016DB: getName (answer10.c:514)
+==23485==    by 0x40107F: create_business_bst (answer10.c:308)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x401348: explode (answer10.c:396)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4016DB: getName (answer10.c:514)
+==23485==    by 0x40107F: create_business_bst (answer10.c:308)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4016DB: getName (answer10.c:514)
+==23485==    by 0x40107F: create_business_bst (answer10.c:308)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4016DB: getName (answer10.c:514)
+==23485==    by 0x40107F: create_business_bst (answer10.c:308)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0E9: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x4016F2: getName (answer10.c:517)
+==23485==    by 0x40107F: create_business_bst (answer10.c:308)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0F8: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x4016F2: getName (answer10.c:517)
+==23485==    by 0x40107F: create_business_bst (answer10.c:308)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x40122E: explode (answer10.c:379)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40176F: getID (answer10.c:534)
+==23485==    by 0x40109D: create_business_bst (answer10.c:309)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40176F: getID (answer10.c:534)
+==23485==    by 0x40109D: create_business_bst (answer10.c:309)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40176F: getID (answer10.c:534)
+==23485==    by 0x40109D: create_business_bst (answer10.c:309)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x401348: explode (answer10.c:396)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40176F: getID (answer10.c:534)
+==23485==    by 0x40109D: create_business_bst (answer10.c:309)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40176F: getID (answer10.c:534)
+==23485==    by 0x40109D: create_business_bst (answer10.c:309)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40176F: getID (answer10.c:534)
+==23485==    by 0x40109D: create_business_bst (answer10.c:309)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0E9: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x401782: getID (answer10.c:537)
+==23485==    by 0x40109D: create_business_bst (answer10.c:309)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0F8: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x401782: getID (answer10.c:537)
+==23485==    by 0x40109D: create_business_bst (answer10.c:309)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1BC: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400EB7: Business_tree_insert (answer10.c:246)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x400EBF: Business_tree_insert (answer10.c:247)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1BC: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400EB7: Business_tree_insert (answer10.c:246)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x400EBF: Business_tree_insert (answer10.c:247)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x400EF8: Business_tree_insert (answer10.c:252)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1BC: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400EB7: Business_tree_insert (answer10.c:246)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x400EBF: Business_tree_insert (answer10.c:247)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1BC: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400EB7: Business_tree_insert (answer10.c:246)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x400EBF: Business_tree_insert (answer10.c:247)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1BC: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400EB7: Business_tree_insert (answer10.c:246)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1D0: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400EB7: Business_tree_insert (answer10.c:246)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x40122E: explode (answer10.c:379)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40151F: getState (answer10.c:454)
+==23485==    by 0x400B0D: Location_tree_insert (answer10.c:154)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40151F: getState (answer10.c:454)
+==23485==    by 0x400B0D: Location_tree_insert (answer10.c:154)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40151F: getState (answer10.c:454)
+==23485==    by 0x400B0D: Location_tree_insert (answer10.c:154)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x401348: explode (answer10.c:396)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40151F: getState (answer10.c:454)
+==23485==    by 0x400B0D: Location_tree_insert (answer10.c:154)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40151F: getState (answer10.c:454)
+==23485==    by 0x400B0D: Location_tree_insert (answer10.c:154)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40151F: getState (answer10.c:454)
+==23485==    by 0x400B0D: Location_tree_insert (answer10.c:154)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0E9: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x401536: getState (answer10.c:457)
+==23485==    by 0x400B0D: Location_tree_insert (answer10.c:154)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0F8: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x401536: getState (answer10.c:457)
+==23485==    by 0x400B0D: Location_tree_insert (answer10.c:154)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x40122E: explode (answer10.c:379)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4015B3: getCity (answer10.c:474)
+==23485==    by 0x400B3B: Location_tree_insert (answer10.c:156)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4015B3: getCity (answer10.c:474)
+==23485==    by 0x400B3B: Location_tree_insert (answer10.c:156)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4015B3: getCity (answer10.c:474)
+==23485==    by 0x400B3B: Location_tree_insert (answer10.c:156)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x401348: explode (answer10.c:396)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4015B3: getCity (answer10.c:474)
+==23485==    by 0x400B3B: Location_tree_insert (answer10.c:156)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4015B3: getCity (answer10.c:474)
+==23485==    by 0x400B3B: Location_tree_insert (answer10.c:156)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4015B3: getCity (answer10.c:474)
+==23485==    by 0x400B3B: Location_tree_insert (answer10.c:156)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0E9: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x4015CA: getCity (answer10.c:477)
+==23485==    by 0x400B3B: Location_tree_insert (answer10.c:156)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0F8: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x4015CA: getCity (answer10.c:477)
+==23485==    by 0x400B3B: Location_tree_insert (answer10.c:156)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x40122E: explode (answer10.c:379)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x401647: getAddress (answer10.c:494)
+==23485==    by 0x400B69: Location_tree_insert (answer10.c:158)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x401647: getAddress (answer10.c:494)
+==23485==    by 0x400B69: Location_tree_insert (answer10.c:158)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x401647: getAddress (answer10.c:494)
+==23485==    by 0x400B69: Location_tree_insert (answer10.c:158)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x401348: explode (answer10.c:396)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x401647: getAddress (answer10.c:494)
+==23485==    by 0x400B69: Location_tree_insert (answer10.c:158)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x401647: getAddress (answer10.c:494)
+==23485==    by 0x400B69: Location_tree_insert (answer10.c:158)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x401647: getAddress (answer10.c:494)
+==23485==    by 0x400B69: Location_tree_insert (answer10.c:158)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0E9: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x40165E: getAddress (answer10.c:497)
+==23485==    by 0x400B69: Location_tree_insert (answer10.c:158)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0F8: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x40165E: getAddress (answer10.c:497)
+==23485==    by 0x400B69: Location_tree_insert (answer10.c:158)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1BC: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400B80: Location_tree_insert (answer10.c:159)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1D0: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400B80: Location_tree_insert (answer10.c:159)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1BC: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400B96: Location_tree_insert (answer10.c:160)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1D0: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400B96: Location_tree_insert (answer10.c:160)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1BC: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400BAC: Location_tree_insert (answer10.c:161)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1D0: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400BAC: Location_tree_insert (answer10.c:161)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0E9: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x400A32: Location_tree_create (answer10.c:131)
+==23485==    by 0x400AD6: Location_tree_insert (answer10.c:148)
+==23485==    by 0x400D46: Location_tree_insert (answer10.c:198)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0F8: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x400A32: Location_tree_create (answer10.c:131)
+==23485==    by 0x400AD6: Location_tree_insert (answer10.c:148)
+==23485==    by 0x400D46: Location_tree_insert (answer10.c:198)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0E9: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x400A49: Location_tree_create (answer10.c:132)
+==23485==    by 0x400AD6: Location_tree_insert (answer10.c:148)
+==23485==    by 0x400D46: Location_tree_insert (answer10.c:198)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0F8: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x400A49: Location_tree_create (answer10.c:132)
+==23485==    by 0x400AD6: Location_tree_insert (answer10.c:148)
+==23485==    by 0x400D46: Location_tree_insert (answer10.c:198)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== HEAP SUMMARY:
+==23485==     in use at exit: 0 bytes in 0 blocks
+==23485==   total heap usage: 427 allocs, 427 frees, 27,215 bytes allocated
+==23485== 
+==23485== All heap blocks were freed -- no leaks are possible
+==23485== 
+==23485== Use --track-origins=yes to see where uninitialised values come from
+==23485== ERROR SUMMARY: 4830 errors from 62 contexts (suppressed: 0 from 0)
+==23485== 
+==23485== 1 errors in context 1 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0F8: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x400A49: Location_tree_create (answer10.c:132)
+==23485==    by 0x400AD6: Location_tree_insert (answer10.c:148)
+==23485==    by 0x400D46: Location_tree_insert (answer10.c:198)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 2 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0E9: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x400A49: Location_tree_create (answer10.c:132)
+==23485==    by 0x400AD6: Location_tree_insert (answer10.c:148)
+==23485==    by 0x400D46: Location_tree_insert (answer10.c:198)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 3 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0E9: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x400A32: Location_tree_create (answer10.c:131)
+==23485==    by 0x400AD6: Location_tree_insert (answer10.c:148)
+==23485==    by 0x400D46: Location_tree_insert (answer10.c:198)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 4 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1BC: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400BAC: Location_tree_insert (answer10.c:161)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 5 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1BC: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400B96: Location_tree_insert (answer10.c:160)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 6 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1D0: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400B80: Location_tree_insert (answer10.c:159)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 7 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1BC: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400B80: Location_tree_insert (answer10.c:159)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 8 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0E9: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x40165E: getAddress (answer10.c:497)
+==23485==    by 0x400B69: Location_tree_insert (answer10.c:158)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 9 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0E9: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x4015CA: getCity (answer10.c:477)
+==23485==    by 0x400B3B: Location_tree_insert (answer10.c:156)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 10 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0F8: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x401536: getState (answer10.c:457)
+==23485==    by 0x400B0D: Location_tree_insert (answer10.c:154)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 11 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0E9: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x401536: getState (answer10.c:457)
+==23485==    by 0x400B0D: Location_tree_insert (answer10.c:154)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 12 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1BC: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400EB7: Business_tree_insert (answer10.c:246)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 13 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x400EBF: Business_tree_insert (answer10.c:247)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 14 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1BC: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400EB7: Business_tree_insert (answer10.c:246)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 15 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x400EBF: Business_tree_insert (answer10.c:247)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 16 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1BC: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400EB7: Business_tree_insert (answer10.c:246)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 17 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x400EF8: Business_tree_insert (answer10.c:252)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 18 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x400EBF: Business_tree_insert (answer10.c:247)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 19 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1BC: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400EB7: Business_tree_insert (answer10.c:246)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 20 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x400EBF: Business_tree_insert (answer10.c:247)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 21 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1BC: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400EB7: Business_tree_insert (answer10.c:246)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 22 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0F8: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x401782: getID (answer10.c:537)
+==23485==    by 0x40109D: create_business_bst (answer10.c:309)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 23 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0E9: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x401782: getID (answer10.c:537)
+==23485==    by 0x40109D: create_business_bst (answer10.c:309)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 24 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0E9: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x4016F2: getName (answer10.c:517)
+==23485==    by 0x40107F: create_business_bst (answer10.c:308)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 1 errors in context 25 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x400E75: Business_tree_insert (answer10.c:239)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 9 errors in context 26 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1D0: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400B96: Location_tree_insert (answer10.c:160)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 9 errors in context 27 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0F8: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x4015CA: getCity (answer10.c:477)
+==23485==    by 0x400B3B: Location_tree_insert (answer10.c:156)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 21 errors in context 28 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0F8: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x400A32: Location_tree_create (answer10.c:131)
+==23485==    by 0x400AD6: Location_tree_insert (answer10.c:148)
+==23485==    by 0x400D46: Location_tree_insert (answer10.c:198)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 21 errors in context 29 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1D0: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400EB7: Business_tree_insert (answer10.c:246)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 21 errors in context 30 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0F8: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x4016F2: getName (answer10.c:517)
+==23485==    by 0x40107F: create_business_bst (answer10.c:308)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 22 errors in context 31 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2F1D0: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x400BAC: Location_tree_insert (answer10.c:161)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 22 errors in context 32 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2E0F8: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x4EC02AD: strdup (strdup.c:41)
+==23485==    by 0x40165E: getAddress (answer10.c:497)
+==23485==    by 0x400B69: Location_tree_insert (answer10.c:158)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 120 errors in context 33 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x401647: getAddress (answer10.c:494)
+==23485==    by 0x400B69: Location_tree_insert (answer10.c:158)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 120 errors in context 34 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x401647: getAddress (answer10.c:494)
+==23485==    by 0x400B69: Location_tree_insert (answer10.c:158)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 120 errors in context 35 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4015B3: getCity (answer10.c:474)
+==23485==    by 0x400B3B: Location_tree_insert (answer10.c:156)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 120 errors in context 36 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4015B3: getCity (answer10.c:474)
+==23485==    by 0x400B3B: Location_tree_insert (answer10.c:156)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 120 errors in context 37 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40151F: getState (answer10.c:454)
+==23485==    by 0x400B0D: Location_tree_insert (answer10.c:154)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 120 errors in context 38 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40151F: getState (answer10.c:454)
+==23485==    by 0x400B0D: Location_tree_insert (answer10.c:154)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 120 errors in context 39 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40176F: getID (answer10.c:534)
+==23485==    by 0x40109D: create_business_bst (answer10.c:309)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 120 errors in context 40 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40176F: getID (answer10.c:534)
+==23485==    by 0x40109D: create_business_bst (answer10.c:309)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 120 errors in context 41 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4016DB: getName (answer10.c:514)
+==23485==    by 0x40107F: create_business_bst (answer10.c:308)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 120 errors in context 42 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DB9A: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4016DB: getName (answer10.c:514)
+==23485==    by 0x40107F: create_business_bst (answer10.c:308)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 121 errors in context 43 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x401348: explode (answer10.c:396)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x401647: getAddress (answer10.c:494)
+==23485==    by 0x400B69: Location_tree_insert (answer10.c:158)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 121 errors in context 44 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x40122E: explode (answer10.c:379)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x401647: getAddress (answer10.c:494)
+==23485==    by 0x400B69: Location_tree_insert (answer10.c:158)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 121 errors in context 45 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x401348: explode (answer10.c:396)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4015B3: getCity (answer10.c:474)
+==23485==    by 0x400B3B: Location_tree_insert (answer10.c:156)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 121 errors in context 46 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x40122E: explode (answer10.c:379)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4015B3: getCity (answer10.c:474)
+==23485==    by 0x400B3B: Location_tree_insert (answer10.c:156)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 121 errors in context 47 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x401348: explode (answer10.c:396)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40151F: getState (answer10.c:454)
+==23485==    by 0x400B0D: Location_tree_insert (answer10.c:154)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 121 errors in context 48 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x40122E: explode (answer10.c:379)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40151F: getState (answer10.c:454)
+==23485==    by 0x400B0D: Location_tree_insert (answer10.c:154)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 121 errors in context 49 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x401348: explode (answer10.c:396)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40176F: getID (answer10.c:534)
+==23485==    by 0x40109D: create_business_bst (answer10.c:309)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 121 errors in context 50 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x40122E: explode (answer10.c:379)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40176F: getID (answer10.c:534)
+==23485==    by 0x40109D: create_business_bst (answer10.c:309)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 121 errors in context 51 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x401348: explode (answer10.c:396)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4016DB: getName (answer10.c:514)
+==23485==    by 0x40107F: create_business_bst (answer10.c:308)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 121 errors in context 52 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x40122E: explode (answer10.c:379)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4016DB: getName (answer10.c:514)
+==23485==    by 0x40107F: create_business_bst (answer10.c:308)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 227 errors in context 53 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x401647: getAddress (answer10.c:494)
+==23485==    by 0x400B69: Location_tree_insert (answer10.c:158)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 227 errors in context 54 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x401647: getAddress (answer10.c:494)
+==23485==    by 0x400B69: Location_tree_insert (answer10.c:158)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 227 errors in context 55 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4015B3: getCity (answer10.c:474)
+==23485==    by 0x400B3B: Location_tree_insert (answer10.c:156)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 227 errors in context 56 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4015B3: getCity (answer10.c:474)
+==23485==    by 0x400B3B: Location_tree_insert (answer10.c:156)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 227 errors in context 57 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40151F: getState (answer10.c:454)
+==23485==    by 0x400B0D: Location_tree_insert (answer10.c:154)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 227 errors in context 58 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40151F: getState (answer10.c:454)
+==23485==    by 0x400B0D: Location_tree_insert (answer10.c:154)
+==23485==    by 0x400F55: Business_tree_insert (answer10.c:260)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x400F22: Business_tree_insert (answer10.c:255)
+==23485==    by 0x400EE9: Business_tree_insert (answer10.c:250)
+==23485==    by 0x4010F9: create_business_bst (answer10.c:312)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 227 errors in context 59 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40176F: getID (answer10.c:534)
+==23485==    by 0x40109D: create_business_bst (answer10.c:309)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 227 errors in context 60 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x40176F: getID (answer10.c:534)
+==23485==    by 0x40109D: create_business_bst (answer10.c:309)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 227 errors in context 61 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x401280: explode (answer10.c:398)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4016DB: getName (answer10.c:514)
+==23485==    by 0x40107F: create_business_bst (answer10.c:308)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== 
+==23485== 227 errors in context 62 of 62:
+==23485== Conditional jump or move depends on uninitialised value(s)
+==23485==    at 0x4C2DBB5: __GI_strchr (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23485==    by 0x40120E: explode (answer10.c:381)
+==23485==    by 0x4014B9: getlocation (answer10.c:444)
+==23485==    by 0x4016DB: getName (answer10.c:514)
+==23485==    by 0x40107F: create_business_bst (answer10.c:308)
+==23485==    by 0x4009D2: main (pa10.c:11)
+==23485== 
+==23485== ERROR SUMMARY: 4830 errors from 62 contexts (suppressed: 0 from 0)
