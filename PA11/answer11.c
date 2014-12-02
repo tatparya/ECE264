@@ -234,6 +234,59 @@ HuffNode * HuffTree_readTextHeader(FILE * fp)
  */
 HuffNode * HuffTree_readBinaryHeader(FILE * fp)
 {
+    Stack * stack = Stack_create();
+    
+    StackNode * node;
+    unsigned char newbyte;
+    unsigned char newbyteCopy;
+    unsigned char finalByte;
+
+    int bit_offset = -1;
+    unsigned char byte = 0;
+    while( !feof( fp ) ) 
+    {
+    	HuffNode * tree;
+		if(bit_offset < 0) 
+		{
+		    //	Read byte
+		    byte = fgetc(fp);
+	    	bit_offset = 7;
+		}
+		int bit = (byte >> bit_offset) & 0x01;
+		
+		if(bit == 1)
+	    {
+	    	//	PUSH
+			//	Read next 8 bits
+			byte = ( byte << ( 8 - bit_offset ) );
+			newbyte = fgetc(fp);
+			newbyteCopy = newbyte;
+			newbyteCopy = ( newbyteCopy >> bit_offset );
+
+			finalByte = ( newbyteCopy | byte );
+
+			tree = HuffNode_create( finalByte );
+			Stack_pushFront( stack, tree );
+
+			byte = newbyte;
+	    }
+		else if ( bit == 0 && numElementsInStack( stack ) > 1 )
+	    {
+			//	POP POP COMBINE PUSH
+			Stack_popPopCombinePush( stack );
+		}
+		else
+		{
+			//	DONE BUILDING TREE
+			node = stack -> head;
+			tree = node -> tree;
+			Stack_destroy(stack);
+			return tree;		//	RETURN HUFFTREE
+		}
+
+		//	Reading the next bit
+		bit_offset -= 1;
+    }
 
 	return NULL;
 }
