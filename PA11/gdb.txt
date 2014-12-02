@@ -1,0 +1,22 @@
+Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA11/a.out 
+
+Program received signal SIGSEGV, Segmentation fault.
+_IO_feof (fp=0x0) at feof.c:36
+36	feof.c: No such file or directory.
+#0  _IO_feof (fp=0x0) at feof.c:36
+#1  0x00000000004006fb in main (argc=1, argv=0x7fffffffdfd8) at readBinary.c:10
+Breakpoint 1 at 0x7ffff7a85d60: file feof.c, line 6.
+The program being debugged has been started already.
+Start it from the beginning? (y or n) Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA11/a.out 
+
+Breakpoint 1, _IO_feof (fp=0x0) at feof.c:36
+36	feof.c: No such file or directory.
+
+Program received signal SIGSEGV, Segmentation fault.
+_IO_feof (fp=0x0) at feof.c:36
+36	in feof.c
+A debugging session is active.
+
+	Inferior 1 [process 15683] will be killed.
+
+Quit anyway? (y or n) 

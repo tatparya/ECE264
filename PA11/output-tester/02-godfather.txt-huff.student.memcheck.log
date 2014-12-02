@@ -1,0 +1,85 @@
+==14833== Memcheck, a memory error detector
+==14833== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==14833== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==14833== Command: ./student.out t inputs/02-godfather.txt-huff
+==14833== Parent PID: 14832
+==14833== 
+--14833-- 
+--14833-- Valgrind options:
+--14833--    --tool=memcheck
+--14833--    --leak-check=full
+--14833--    --verbose
+--14833--    --log-file=memcheck.log
+--14833-- Contents of /proc/version:
+--14833--   Linux version 3.13.0-39-generic (buildd@toyol) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #66-Ubuntu SMP Tue Oct 28 13:30:27 UTC 2014
+--14833-- Arch and hwcaps: AMD64, amd64-cx16-rdtscp-sse3
+--14833-- Page sizes: currently 4096, max supported 4096
+--14833-- Valgrind library directory: /usr/lib/valgrind
+--14833-- Reading syms from /tmp/.gYqpzS/student.out
+--14833-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--14833--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--14833--   .. CRC mismatch (computed 4cbae35e wanted 8d683c31)
+--14833--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--14833--   .. CRC is valid
+--14833-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--14833--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--14833--   .. CRC mismatch (computed 37cdde19 wanted adc367dd)
+--14833--    object doesn't have a symbol table
+--14833--    object doesn't have a dynamic symbol table
+--14833-- Scheduler: using generic scheduler lock implementation.
+--14833-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==14833== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-14833-by-tatparya-on-???
+==14833== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-14833-by-tatparya-on-???
+==14833== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-14833-by-tatparya-on-???
+==14833== 
+==14833== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==14833== don't want to do, unless you know exactly what you're doing,
+==14833== or are doing some strange experiment):
+==14833==   /usr/lib/valgrind/../../bin/vgdb --pid=14833 ...command...
+==14833== 
+==14833== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==14833==   /path/to/gdb ./student.out
+==14833== and then give GDB the following command
+==14833==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=14833
+==14833== --pid is optional if only one valgrind process is running
+==14833== 
+--14833-- REDIR: 0x4019ca0 (strlen) redirected to 0x38068331 (???)
+--14833-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--14833--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--14833--   .. CRC mismatch (computed 329d6860 wanted c0186920)
+--14833--    object doesn't have a symbol table
+--14833-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--14833--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--14833--   .. CRC mismatch (computed 1fb85af8 wanted 2e9e3c16)
+--14833--    object doesn't have a symbol table
+==14833== WARNING: new redirection conflicts with existing -- ignoring it
+--14833--     old: 0x04019ca0 (strlen              ) R-> (0000.0) 0x38068331 ???
+--14833--     new: 0x04019ca0 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--14833-- REDIR: 0x4019a50 (index) redirected to 0x4c2dd50 (index)
+--14833-- REDIR: 0x4019c70 (strcmp) redirected to 0x4c2f2f0 (strcmp)
+--14833-- REDIR: 0x401a9c0 (mempcpy) redirected to 0x4c31da0 (mempcpy)
+--14833-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--14833--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--14833--   .. CRC mismatch (computed e7228afa wanted 93ff6981)
+--14833--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--14833--   .. CRC is valid
+--14833-- REDIR: 0x4ec47e0 (strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--14833-- REDIR: 0x4ec6ad0 (strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--14833-- REDIR: 0x4ec3fb0 (memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--14833-- REDIR: 0x4ec2240 (rindex) redirected to 0x4c2da30 (rindex)
+--14833-- REDIR: 0x4ebeaf0 (strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--14833-- REDIR: 0x4ecf7a0 (__strcmp_sse2_unaligned) redirected to 0x4c2f1b0 (strcmp)
+--14833-- REDIR: 0x4ecb540 (strchrnul) redirected to 0x4c319b0 (strchrnul)
+--14833-- REDIR: 0x4eba1d0 (malloc) redirected to 0x4c2ab10 (malloc)
+--14833-- REDIR: 0x4ec2e90 (__GI_strstr) redirected to 0x4c32030 (__strstr_sse2)
+--14833-- REDIR: 0x4eba870 (free) redirected to 0x4c2bd80 (free)
+--14833-- REDIR: 0x4ec0540 (strlen) redirected to 0x4c2e0e0 (strlen)
+==14833== 
+==14833== HEAP SUMMARY:
+==14833==     in use at exit: 0 bytes in 0 blocks
+==14833==   total heap usage: 81 allocs, 81 frees, 2,232 bytes allocated
+==14833== 
+==14833== All heap blocks were freed -- no leaks are possible
+==14833== 
+==14833== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==14833== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
