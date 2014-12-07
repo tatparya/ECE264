@@ -1,0 +1,11 @@
+// ~ Important Commands ~ //
+
+cd Desktop/ECE264/solutions/ECE264_sol/PA05
+
+zip pa03.zip answerXX.c main.c git.log
+
+gcc -Wall -Wshadow -g pa05.c answer05.c -o pa05
+
+gdb -ex "set logging overwrite on" -ex "set logging on" ./pa05
+
+valgrind --tool=memcheck --leak-check=full --verbose --log-file=memcheck.log ./pa10

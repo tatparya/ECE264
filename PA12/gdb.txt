@@ -1,0 +1,60 @@
+Breakpoint 1 at 0x400ce0: file answer12.c, line 151.
+Breakpoint 2 at 0x401126: file answer12.c, line 228.
+Starting program: /home/tatparya/Desktop/ECE264/solutions/ECE264_sol/PA12/pa12 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[New Thread 0x7ffff74ef700 (LWP 4587)]
+[Switching to Thread 0x7ffff74ef700 (LWP 4587)]
+
+Breakpoint 1, primeTest (pointer=0x7fffffffdc80) at answer12.c:152
+152			if ( dataStruct -> value % ( ( 2 * ind ) + 1 ) ==  0 )
+Continuing.
+[New Thread 0x7ffff6cee700 (LWP 4588)]
+[Switching to Thread 0x7ffff6cee700 (LWP 4588)]
+
+Breakpoint 1, primeTest (pointer=0x7fffffffdcd0) at answer12.c:152
+152			if ( dataStruct -> value % ( ( 2 * ind ) + 1 ) ==  0 )
+[Thread 0x7ffff74ef700 (LWP 4587) exited]
+[New Thread 0x7ffff64ed700 (LWP 4589)]
+[Thread 0x7ffff64ed700 (LWP 4589) exited]
+[New Thread 0x7ffff5cec700 (LWP 4590)]
+[Thread 0x7ffff5cec700 (LWP 4590) exited]
+154				dataStruct -> numDivisors++;
+150		for ( ind = dataStruct -> startValue; ind <= dataStruct -> endValue; ind++ )
+157		return NULL;
+158	}
+start_thread (arg=0x7ffff6cee700) at pthread_create.c:322
+322	pthread_create.c: No such file or directory.
+[Switching to Thread 0x7ffff7fdf740 (LWP 4583)]
+
+Breakpoint 2, primalityTestParallel (value=5, n_threads=4) at answer12.c:228
+228			total += threadDataStruct[i].numDivisors;
+[Thread 0x7ffff6cee700 (LWP 4588) exited]
+220		for ( i = 0; i < n_threads; i++ )
+223			rtv = pthread_join( trd[i], NULL );
+$1 = 0
+224			if ( rtv != 0 )
+
+Breakpoint 2, primalityTestParallel (value=5, n_threads=4) at answer12.c:228
+228			total += threadDataStruct[i].numDivisors;
+$2 = 1
+220		for ( i = 0; i < n_threads; i++ )
+223			rtv = pthread_join( trd[i], NULL );
+224			if ( rtv != 0 )
+
+Breakpoint 2, primalityTestParallel (value=5, n_threads=4) at answer12.c:228
+228			total += threadDataStruct[i].numDivisors;
+220		for ( i = 0; i < n_threads; i++ )
+223			rtv = pthread_join( trd[i], NULL );
+224			if ( rtv != 0 )
+
+Breakpoint 2, primalityTestParallel (value=5, n_threads=4) at answer12.c:228
+228			total += threadDataStruct[i].numDivisors;
+220		for ( i = 0; i < n_threads; i++ )
+231		if ( total == 0 )
+236		return 0;
+237	}A debugging session is active.
+
+	Inferior 1 [process 4583] will be killed.
+
+Quit anyway? (y or n) 
